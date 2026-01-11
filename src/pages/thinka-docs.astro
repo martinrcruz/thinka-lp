@@ -1,0 +1,637 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Thinka Docs | Procesamiento Inteligente de Documentos" description="Thinka Docs: Plataforma de procesamiento de Documentos con Inteligencia Artificial. Sube, analiza, corrige y exporta documentos a Odoo y Excel automáticamente.">
+  <Header>
+    <ul class="nav-list">
+        <li><a href="/" class="nav-link">Inicio</a></li>
+        <li><a href="#features" class="nav-link">Funcionalidades</a></li>
+        <li><a href="#process" class="nav-link">Cómo Funciona</a></li>
+        <li><a href="#integration" class="nav-link">Integraciones</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
+    </ul>
+  </Header>
+
+  <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="hero-background">
+                <div class="hero-gradient"></div>
+                <div class="hero-pattern"></div>
+            </div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <span>Nueva Plataforma Thinka Docs</span>
+                    </div>
+                    <h1 id="hero-title" class="hero-title">
+                        <span class="hero-title-main">Procesamiento de Documentos</span>
+                        <span class="hero-title-highlight">Impulsado por IA</span>
+                        <span class="hero-title-sub">Automatización Contable Inteligente</span>
+                    </h1>
+                    <p class="hero-description">
+                        Gestiona el ciclo completo de tus documentos tributarios. Sube PDFs, extrae datos con
+                        Inteligencia Artificial, valida la información y exporta directamente a Odoo, Excel o CSV en
+                        segundos.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">AI</div>
+                            <div class="stat-label">Análisis Cognitivo</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Web & Cloud</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">Odoo</div>
+                            <div class="stat-label">Integración Nativa</div>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary btn-hero">
+                            <span>Solicitar Demo</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="m9 18 6-6-6-6" />
+                            </svg>
+                        </a>
+                        <a href="#features" class="btn btn-secondary btn-hero">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                            <span>Ver Funcionalidades</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-animation">
+                        <div class="code-window">
+                            <div class="window-header">
+                                <div class="window-controls">
+                                    <span class="control red"></span>
+                                    <span class="control yellow"></span>
+                                    <span class="control green"></span>
+                                </div>
+                                <div class="window-title">Process-Invoice.ts</div>
+                            </div>
+                            <div class="code-content">
+                                <div class="code-line">
+                                    <span class="line-number">1</span>
+                                    <span class="code-text"><span class="keyword">async function</span> <span
+                                            class="method">processInvoice</span>(pdf) {</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">2</span>
+                                    <span class="code-text"> <span class="keyword">const</span> data = <span
+                                            class="keyword">await</span> <span class="class">OpenAI</span>.<span
+                                            class="method">extract</span>(pdf);</span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">3</span>
+                                    <span class="code-text"> <span class="comment">// Validating fields...</span></span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">4</span>
+                                    <span class="code-text"> <span class="keyword">return</span> <span
+                                            class="method">exportToOdoo</span>(data);</span>
+                                </div>
+                                <div class="code-line typing">
+                                    <span class="line-number">5</span>
+                                    <span class="code-text">}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating-elements">
+                            <div class="floating-card ai-card">
+                                <div class="card-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                        <polyline points="14 2 14 8 20 8"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="card-title">Análisis PDF</div>
+                                <div class="card-metric">Precisión OCR</div>
+                            </div>
+                            <div class="floating-card dashboard-card">
+                                <div class="card-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="card-title">Validación</div>
+                                <div class="card-metric">Automática</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="services" aria-labelledby="features-title">
+            <div class="services-background">
+                <div class="services-pattern"></div>
+            </div>
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
+                        <span>Flujo de Trabajo</span>
+                    </div>
+                    <h2 id="features-title" class="section-title">Gestión Integral de Documentos</h2>
+                    <p class="section-description">
+                        Una plataforma diseñada para optimizar cada paso del proceso contable, desde la recepción del
+                        documento hasta su contabilización en el ERP.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Feature 1: Carga y Almacenamiento -->
+                    <div class="service-card featured-service" data-aos="fade-up">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                            </div>
+                            <div class="service-badge">Paso 1</div>
+                        </div>
+                        <h3 class="service-title">Carga Masiva en la Nube</h3>
+                        <p class="service-description">
+                            Sube tus documentos PDF de forma individual o por lotes. Almacenamiento seguro en Digital
+                            Ocean Spaces con validación automática de formato y tamaño.
+                        </p>
+                        <ul class="service-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Drag & Drop Inteligente
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Procesamiento por Lotes
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Historial de Cargas
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Detección de Duplicados
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 2: Análisis IA -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"></path>
+                                    <path d="M12 16v-4"></path>
+                                    <path d="M8 12h8"></path>
+                                </svg>
+                            </div>
+                            <div class="service-badge">Paso 2</div>
+                        </div>
+                        <h3 class="service-title">Análisis Cognitivo con IA</h3>
+                        <p class="service-description">
+                            Procesamiento asíncrono utilizando potentes modelos de OpenAI para extraer y estructurar
+                            datos complejos de cada factura automáticamente.
+                        </p>
+                        <ul class="service-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Extracción de Emisor/Receptor
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Detalle de Líneas y Glosas
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Cálculo de Impuestos y Totales
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 3: Revisión y Corrección -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                            </div>
+                            <div class="service-badge">Paso 3</div>
+                        </div>
+                        <h3 class="service-title">Control de Calidad</h3>
+                        <p class="service-description">
+                            Interfaz intuitiva para revisar documentos procesados y corregir aquellas con alertas. Edición
+                            completa de cabeceras y líneas de detalle.
+                        </p>
+                        <ul class="service-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Validación Visual de Datos
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Alertas de Inconsistencias
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Edición Manual Asistida
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 4: Exportación -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-header">
+                            <div class="service-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                    </path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                            </div>
+                            <div class="service-badge">Paso 4</div>
+                        </div>
+                        <h3 class="service-title">Integración y Exportación</h3>
+                        <p class="service-description">
+                            Exporta tus datos limpios y estructurados. Compatible nativamente con Odoo 18 Enterprise y
+                            formatos universales como Excel y CSV.
+                        </p>
+                        <ul class="service-features">
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Conector Odoo 18 Directo
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Exportación a Excel (XLSX)
+                            </li>
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                Archivos CSV Estándar
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Section -->
+        <section id="process" class="about" aria-labelledby="about-title">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text" data-aos="fade-right">
+                        <h2 id="about-title" class="section-title">Tecnología de Vanguardia al Servicio de tu
+                            Contabilidad</h2>
+                        <p class="about-description">
+                            Thinka Docs no es solo un lector de PDFs. Es una plataforma inteligente que entiende la
+                            estructura de tus documentos financieros.
+                            Utilizamos los últimos modelos de lenguaje (LLMs) para interpretar documentos complejos que
+                            los OCR tradicionales no pueden procesar.
+                        </p>
+                        <p class="about-description">
+                            Diseñado para contadores y departamentos de finanzas que necesitan velocidad, precisión y
+                            una integración fluida con sus sistemas ERP actuales.
+                        </p>
+
+                        <div class="tech-stack">
+                            <h3 class="tech-title">Stack Tecnológico</h3>
+                            <div class="tech-tags">
+                                <span class="tech-tag">OpenAI GPT-4</span>
+                                <span class="tech-tag">Digital Ocean</span>
+                                <span class="tech-tag">Odoo 18</span>
+                                <span class="tech-tag">Cloud Storage</span>
+                                <span class="tech-tag">Seguridad SSL</span>
+                                <span class="tech-tag">Rest API</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-visual" data-aos="fade-left">
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">5x</div>
+                                <div class="stat-label">Más Rápido que Manual</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">99%</div>
+                                <div class="stat-label">Precisión de Datos</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Disponibilidad</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">50MB</div>
+                                <div class="stat-label">Archivos Grandes</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section (Adapted for generic feedback for now) -->
+        <section id="integration" class="testimonials" aria-labelledby="testimonials-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="testimonials-title" class="section-title">Diseñado para la Eficiencia</h2>
+                    <p class="section-description">
+                        Simplifica la carga operativa y elimina los errores de digitación manual.
+                    </p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card" data-aos="fade-up">
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                            </div>
+                            <blockquote class="testimonial-text">
+                                "La capacidad de exportar directamente al formato de importación de Odoo nos ahorra
+                                horas de trabajo semanales en digitación de documentos de proveedores."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <div
+                                        style="background: #e2e8f0; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #64748b;">
+                                        C</div>
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Contador Auditor</h4>
+                                    <p class="author-title">Estudio Contable</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                            </div>
+                            <blockquote class="testimonial-text">
+                                "Poder revisar y corregir los datos antes de exportarlos garantiza que nuestra
+                                contabilidad esté limpia desde el origen. La interfaz es muy amigable."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <div
+                                        style="background: #e2e8f0; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #64748b;">
+                                        G</div>
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Gerente de Finanzas</h4>
+                                    <p class="author-title">Empresa de Servicios</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                                <span class="star">⭐</span>
+                            </div>
+                            <blockquote class="testimonial-text">
+                                "El procesamiento por lotes es fundamental cuando tienes cientos de documentos a fin de
+                                mes. Thinka Docs maneja el volumen sin problemas."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <div
+                                        style="background: #e2e8f0; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #64748b;">
+                                        A</div>
+                                </div>
+                                <div class="author-info">
+                                    <h4 class="author-name">Analista Contable</h4>
+                                    <p class="author-title">Retail</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="contact-title" class="section-title">Comienza a Automatizar Hoy</h2>
+                    <p class="section-description">
+                        Solicita acceso a Thinka Docs y transforma tu proceso de gestión de documentos.
+                    </p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info" data-aos="fade-right">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                    </path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p>contacto@thinka.cl</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Teléfono</h3>
+                                <p>+56 9 4889 4523</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Ubicación</h3>
+                                <p>Colón Nro. 352 Of. 318, La Serena</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" data-aos="fade-left" novalidate name="contact-docs" netlify
+                        netlify-honeypot="website">
+                        <!-- Honeypot field for spam protection -->
+                        <input type="text" name="website" style="display: none;" tabindex="-1" autocomplete="off">
+
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nombre *</label>
+                            <input type="text" id="name" name="name" class="form-input" required
+                                aria-describedby="name-error">
+                            <div id="name-error" class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input" required
+                                aria-describedby="email-error">
+                            <div id="email-error" class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company" class="form-label">Empresa *</label>
+                            <input type="text" id="company" name="company" class="form-input" required
+                                aria-describedby="company-error">
+                            <div id="company-error" class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="volume" class="form-label">Volumen Mensual de Documentos</label>
+                            <select id="volume" name="volume" class="form-select">
+                                <option value="">Seleccionar volumen</option>
+                                <option value="bade">0 - 100 documentos</option>
+                                <option value="estandar">100 - 500 documentos</option>
+                                <option value="pro">500 - 2000 documentos</option>
+                                <option value="enterprise">+2000 documentos</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Comentarios</label>
+                            <textarea id="message" name="message" rows="4" class="form-textarea"
+                                aria-describedby="message-error"
+                                placeholder="¿Tienes alguna duda específica?"></textarea>
+                            <div id="message-error" class="form-error" role="alert"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Solicitar Acceso</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+  </main>
+  
+  <Footer>
+      <p slot="description" class="footer-description">
+         Innovación en desarrollo de software e inteligencia artificial para empresas visionarias.
+      </p>
+
+      <div slot="services-col">
+          <h3 class="footer-title">Producto</h3>
+          <ul class="footer-links">
+            <li><a href="#features">Funcionalidades</a></li>
+            <li><a href="#process">Cómo Funciona</a></li>
+            <li><a href="#integration">Integraciones</a></li>
+            <li><a href="#contact">Solicitar Demo</a></li>
+          </ul>
+      </div>
+
+      <div slot="company-col">
+          <h3 class="footer-title">Empresa</h3>
+          <ul class="footer-links">
+             <li><a href="/#about">Nosotros</a></li>
+             <li><a href="/#testimonials">Casos de Éxito</a></li>
+             <li><a href="#contact">Contacto</a></li>
+             <li><a href="/">Página Principal</a></li>
+          </ul>
+      </div>
+  </Footer>
+</Layout>

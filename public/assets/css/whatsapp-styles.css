@@ -1,0 +1,566 @@
+/* ===== WHATSAPP IA LANDING PAGE STYLES ===== */
+
+/* WhatsApp Preview Styles */
+.whatsapp-preview {
+  background: #075e54;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-2xl);
+  overflow: hidden;
+  width: 300px;
+  height: 400px;
+  position: relative;
+  animation: whatsappFloat 6s ease-in-out infinite;
+}
+
+@keyframes whatsappFloat {
+  0%, 100% { transform: translateY(0px) rotateY(0deg); }
+  50% { transform: translateY(-10px) rotateY(2deg); }
+}
+
+.whatsapp-header {
+  background: #128c7e;
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--white);
+}
+
+.whatsapp-avatar {
+  width: 40px;
+  height: 40px;
+  background: var(--primary-color);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.whatsapp-info {
+  flex: 1;
+}
+
+.whatsapp-name {
+  font-weight: 600;
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-1);
+}
+
+.whatsapp-status {
+  font-size: var(--text-xs);
+  opacity: 0.8;
+}
+
+.whatsapp-messages {
+  padding: var(--space-4);
+  height: calc(100% - 80px);
+  overflow-y: auto;
+  background: #ece5dd;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="whatsapp-bg" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(0,0,0,0.05)"/><circle cx="75" cy="75" r="1" fill="rgba(0,0,0,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23whatsapp-bg)"/></svg>');
+}
+
+.message {
+  margin-bottom: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+}
+
+.message.bot {
+  align-self: flex-start;
+}
+
+.message.user {
+  align-self: flex-end;
+}
+
+.message-content {
+  background: var(--white);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  color: var(--gray-800);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.message.user .message-content {
+  background: #dcf8c6;
+}
+
+.message-time {
+  font-size: var(--text-xs);
+  color: var(--gray-500);
+  margin-top: var(--space-1);
+  text-align: right;
+}
+
+.message.bot .message-time {
+  text-align: left;
+}
+
+.message.typing .message-content {
+  background: var(--white);
+  padding: var(--space-3);
+}
+
+.typing-indicator {
+  display: flex;
+  gap: var(--space-1);
+  align-items: center;
+}
+
+.typing-indicator span {
+  width: 6px;
+  height: 6px;
+  background: var(--gray-400);
+  border-radius: var(--radius-full);
+  animation: typingDot 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+.typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typingDot {
+  0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* Floating Cards Updates */
+.whatsapp-card {
+  top: 20%;
+  right: -20%;
+  animation-delay: 1s;
+}
+
+.analytics-card {
+  bottom: 20%;
+  right: -10%;
+  animation-delay: 3s;
+}
+
+/* Mobile Optimizations for WhatsApp Preview */
+@media (max-width: 768px) {
+  .whatsapp-preview {
+    width: 250px;
+    height: 320px;
+  }
+  
+  .whatsapp-header {
+    padding: var(--space-2) var(--space-3);
+  }
+  
+  .whatsapp-avatar {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .whatsapp-messages {
+    padding: var(--space-3);
+  }
+  
+  .message-content {
+    font-size: var(--text-xs);
+    padding: var(--space-2);
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-preview {
+    width: 220px;
+    height: 280px;
+  }
+  
+  .floating-card {
+    display: none;
+  }
+}
+
+/* WhatsApp-specific button styles */
+.btn-whatsapp {
+  background: #25d366;
+  color: var(--white);
+  border: none;
+}
+
+.btn-whatsapp:hover {
+  background: #128c7e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+}
+
+/* WhatsApp-themed CTA sections */
+.whatsapp-cta {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: var(--white);
+}
+
+.whatsapp-cta .btn-lg {
+  background: var(--white);
+  color: #25d366;
+}
+
+.whatsapp-cta .btn-lg:hover {
+  background: var(--gray-50);
+  color: #128c7e;
+}
+
+/* Service card WhatsApp theme - CORREGIDO */
+.service-card.whatsapp-themed {
+  border-left: 4px solid #25d366;
+}
+
+.service-card.whatsapp-themed:hover {
+  border-left-color: #128c7e;
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.2);
+}
+
+/* Form enhancements for WhatsApp landing */
+.contact-form.whatsapp-form {
+  background: linear-gradient(135deg, var(--gray-50), var(--white));
+  border: 2px solid #25d366;
+}
+
+.contact-form.whatsapp-form .form-input:focus,
+.contact-form.whatsapp-form .form-select:focus,
+.contact-form.whatsapp-form .form-textarea:focus {
+  border-color: #25d366;
+  box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
+}
+
+/* Hero stats WhatsApp theme */
+.hero-stats .stat-item.whatsapp-stat {
+  background: rgba(37, 211, 102, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  border: 1px solid rgba(37, 211, 102, 0.2);
+}
+
+.hero-stats .stat-item.whatsapp-stat .stat-number {
+  color: #25d366;
+}
+
+/* Testimonial WhatsApp theme */
+.testimonial-card.whatsapp-testimonial {
+  border-left: 4px solid #25d366;
+}
+
+.testimonial-card.whatsapp-testimonial:hover {
+  border-left-color: #128c7e;
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.15);
+}
+
+/* Footer WhatsApp theme */
+.footer.whatsapp-footer {
+  background: linear-gradient(135deg, var(--gray-900), #128c7e);
+}
+
+.footer.whatsapp-footer .footer-section h3 {
+  color: #25d366;
+}
+
+.footer.whatsapp-footer .social-link:hover {
+  background-color: #25d366;
+}
+
+/* Animation enhancements */
+@keyframes whatsappPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.whatsapp-preview:hover {
+  animation: whatsappPulse 2s ease-in-out infinite;
+}
+
+/* Loading states for WhatsApp */
+.whatsapp-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.whatsapp-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(37, 211, 102, 0.2), transparent);
+  animation: whatsappShimmer 1.5s infinite;
+}
+
+@keyframes whatsappShimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Responsive WhatsApp preview */
+@media (min-width: 1024px) {
+  .whatsapp-preview {
+    width: 350px;
+    height: 450px;
+  }
+  
+  .whatsapp-header {
+    padding: var(--space-4);
+  }
+  
+  .whatsapp-avatar {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .whatsapp-messages {
+    padding: var(--space-5);
+  }
+  
+  .message-content {
+    font-size: var(--text-base);
+    padding: var(--space-3) var(--space-4);
+  }
+}
+
+/* Dark mode WhatsApp styles */
+[data-theme="dark"] .whatsapp-preview {
+  background: #2c3e50;
+}
+
+[data-theme="dark"] .whatsapp-header {
+  background: #34495e;
+}
+
+[data-theme="dark"] .whatsapp-messages {
+  background: #ecf0f1;
+}
+
+[data-theme="dark"] .message-content {
+  background: var(--white);
+  color: var(--gray-800);
+}
+
+[data-theme="dark"] .message.user .message-content {
+  background: #d5f4e6;
+}
+
+/* CORRECCIONES PARA LA ESTRUCTURA DE SERVICIOS */
+/* Asegurar que los service-cards mantengan su estructura original y separación correcta */
+.services-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: var(--space-8) !important;
+  margin-bottom: var(--space-16) !important;
+}
+
+@media (min-width: 640px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+.services-grid .service-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: 500px !important;
+  margin-bottom: 0 !important;
+  border: 1px solid var(--gray-200) !important;
+  border-radius: var(--radius-2xl) !important;
+  background: var(--white) !important;
+  box-shadow: var(--shadow-md) !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.services-grid .service-card .service-header {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  padding: var(--space-6) var(--space-6) var(--space-4) !important;
+}
+
+.services-grid .service-card .service-title {
+  font-size: var(--text-xl) !important;
+  margin-bottom: var(--space-3) !important;
+  color: var(--gray-900) !important;
+  padding: 0 var(--space-6) !important;
+  font-weight: 700 !important;
+}
+
+.services-grid .service-card .service-description {
+  color: var(--gray-700) !important;
+  margin-bottom: var(--space-6) !important;
+  padding: 0 var(--space-6) !important;
+  line-height: 1.7 !important;
+}
+
+.services-grid .service-card .service-features {
+  list-style: none !important;
+  margin-bottom: var(--space-6) !important;
+  padding: 0 var(--space-6) !important;
+  flex: 1 !important;
+}
+
+.services-grid .service-card .service-features li {
+  color: var(--gray-800) !important;
+  margin-bottom: var(--space-3) !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: var(--space-3) !important;
+  font-size: var(--text-sm) !important;
+  line-height: 1.6 !important;
+  font-weight: 500 !important;
+}
+
+.services-grid .service-card .service-cta {
+  padding: var(--space-6) !important;
+  border-top: 1px solid var(--gray-100) !important;
+  margin-top: auto !important;
+}
+
+/* Featured service específico */
+.services-grid .service-card.featured-service {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+  color: var(--white) !important;
+  transform: scale(1.05) !important;
+  z-index: 2 !important;
+}
+
+.services-grid .service-card.featured-service .service-title,
+.services-grid .service-card.featured-service .service-description {
+  color: var(--white) !important;
+}
+
+.services-grid .service-card.featured-service .service-features li {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.services-grid .service-card.featured-service .service-icon {
+  color: var(--white) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.services-grid .service-card.featured-service .service-cta {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Métricas del servicio destacado */
+.services-grid .service-card .service-metrics {
+  display: flex !important;
+  gap: var(--space-4) !important;
+  margin-bottom: var(--space-6) !important;
+  padding: 0 var(--space-6) !important;
+}
+
+.services-grid .service-card .service-metrics .metric {
+  text-align: center !important;
+  flex: 1 !important;
+  padding: var(--space-3) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--radius-lg) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.services-grid .service-card .service-metrics .metric-value {
+  display: block !important;
+  font-size: var(--text-2xl) !important;
+  font-weight: 800 !important;
+  color: var(--white) !important;
+  line-height: 1 !important;
+  margin-bottom: var(--space-1) !important;
+}
+
+.services-grid .service-card .service-metrics .metric-label {
+  font-size: var(--text-xs) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Corrección específica para mostrar 24/7 correctamente */
+.stat-number:contains("24/7"),
+.metric-value:contains("24/7") {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-variant-numeric: tabular-nums !important;
+  letter-spacing: 0.02em !important;
+  white-space: nowrap !important;
+}
+
+/* Alternativa usando atributos para mayor compatibilidad */
+.stat-number[data-value="24/7"],
+.metric-value[data-value="24/7"] {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-variant-numeric: tabular-nums !important;
+  letter-spacing: 0.02em !important;
+  white-space: nowrap !important;
+}
+
+/* Corrección adicional para el carácter "/" en 24/7 */
+.stat-number[data-value="24/7"]::after,
+.metric-value[data-value="24/7"]::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+}
+
+/* Asegurar que el texto 24/7 se muestre correctamente */
+.stat-number[data-value="24/7"],
+.metric-value[data-value="24/7"] {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-variant-numeric: tabular-nums !important;
+  letter-spacing: 0.02em !important;
+  white-space: nowrap !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+/* Responsive fixes para servicios */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-6) !important;
+  }
+  
+  .services-grid .service-card {
+    min-height: auto !important;
+  }
+  
+  .services-grid .service-card.featured-service {
+    transform: none !important;
+    order: -1 !important;
+  }
+  
+  .services-grid .service-card .service-header {
+    padding: var(--space-4) var(--space-4) var(--space-3) !important;
+  }
+  
+  .services-grid .service-card .service-title {
+    font-size: var(--text-lg) !important;
+    padding: 0 var(--space-4) !important;
+  }
+  
+  .services-grid .service-card .service-description {
+    padding: 0 var(--space-4) !important;
+  }
+  
+  .services-grid .service-card .service-features {
+    padding: 0 var(--space-4) !important;
+  }
+  
+  .services-grid .service-card .service-cta {
+    padding: var(--space-4) !important;
+  }
+  
+  .services-grid .service-card .service-metrics {
+    padding: 0 var(--space-4) !important;
+  }
+}

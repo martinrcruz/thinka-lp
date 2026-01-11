@@ -1,0 +1,20 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Thinka Text -->
+  <text x="10" y="28" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" fill="url(#logoGradient)">
+    Thinka
+  </text>
+  
+  <!-- AI Brain Icon -->
+  <circle cx="95" cy="20" r="8" fill="url(#logoGradient)" opacity="0.9"/>
+  <path d="M95 12c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 12c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z" fill="white"/>
+  <circle cx="93" cy="18" r="1" fill="url(#logoGradient)"/>
+  <circle cx="97" cy="18" r="1" fill="url(#logoGradient)"/>
+  <path d="M93 22c0 1.1.9 2 2 2s2-.9 2-2" stroke="url(#logoGradient)" stroke-width="1.5" fill="none"/>
+</svg>

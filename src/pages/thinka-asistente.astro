@@ -1,0 +1,311 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Thinka Asistente | Chatbots de IA Avanzada" description="Asistentes virtuales inteligentes con procesamiento de lenguaje natural. Automatiza el soporte y las ventas 24/7 con Thinka Asistente.">
+  <Header>
+    <ul class="nav-list">
+        <li><a href="/" class="nav-link">Inicio</a></li>
+        <li><a href="#features" class="nav-link">Capacidades</a></li>
+        <li><a href="#integrations" class="nav-link">Canales</a></li>
+        <li><a href="#demo" class="nav-link">Demo</a></li>
+        <li><a href="#contact" class="nav-link">Contacto</a></li>
+    </ul>
+  </Header>
+
+  <main id="main-content" role="main">
+    <!-- Hero Section -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>IA Conversacional</span>
+                </div>
+                <h1 id="hero-title" class="hero-title">
+                    <span class="hero-title-main">Thinka Asistente</span>
+                    <span class="hero-title-highlight">Tu Agente 24/7</span>
+                    <span class="hero-title-sub">Atención al Cliente Inteligente</span>
+                </h1>
+                <p class="hero-description">
+                    Revoluciona la comunicación con tus clientes. Nuestros chatbots entienden el contexto, aprenden de cada interacción y resuelven consultas complejas al instante, liberando a tu equipo para tareas estratégicas.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary btn-hero">
+                        <span>Hablar con Ventas</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+                    </a>
+                    <a href="#demo" class="btn btn-secondary btn-hero">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                             <circle cx="12" cy="12" r="10"></circle>
+                             <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                        </svg>
+                        <span>Ver Demo en Vivo</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-animation">
+                     <div class="code-window">
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <span class="control red"></span>
+                                <span class="control yellow"></span>
+                                <span class="control green"></span>
+                            </div>
+                            <div class="window-title">Chat.tsx</div>
+                        </div>
+                        <div class="code-content">
+                            <div class="code-line">
+                                <span class="line-number">1</span>
+                                <span class="code-text"><span class="comment">// User: "Quiero agendar una hora"</span></span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">2</span>
+                                <span class="code-text"><span class="keyword">const</span> intent = <span class="class">NLP</span>.detect(input);</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">3</span>
+                                <span class="code-text"><span class="keyword">if</span> (intent === <span class="string">'BOOKING'</span>) {</span>
+                            </div>
+                             <div class="code-line">
+                                <span class="line-number">4</span>
+                                <span class="code-text">  <span class="keyword">return</span> <span class="class">Calendar</span>.getSlots();</span>
+                            </div>
+                             <div class="code-line typing">
+                                <span class="line-number">5</span>
+                                <span class="code-text">}</span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="floating-elements">
+                        <div class="floating-card ai-card">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"></path>
+                                    <path d="M12 16v-4"></path>
+                                    <path d="M8 12h8"></path>
+                                </svg>
+                            </div>
+                            <div class="card-title">NLP Avanzado</div>
+                            <div class="card-metric">Entiende Contexto</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="services" aria-labelledby="features-title">
+        <div class="services-background">
+            <div class="services-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                   </svg>
+                    <span>Capacidades</span>
+                </div>
+                <h2 id="features-title" class="section-title">Más que un Chatbot</h2>
+                <p class="section-description">
+                    Potenciado por modelos de lenguaje de última generación (LLMs) para ofrecer experiencias conversacionales humanas.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card featured-service" data-aos="fade-up">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="service-badge">Core</div>
+                    </div>
+                    <h3 class="service-title">Procesamiento de Lenguaje Natural</h3>
+                    <p class="service-description">
+                        No funciona con keywords rígidas. Entiende la intención, el sentimiento y el contexto de cada mensaje.
+                    </p>
+                    <ul class="service-features">
+                        <li>
+                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                             Análisis de Sentimiento
+                        </li>
+                        <li>
+                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                             Manejo de Contexto
+                        </li>
+                         <li>
+                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                             Corrección Ortográfica Automática
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                     <div class="service-header">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="service-title">Omnicanalidad</h3>
+                    <p class="service-description">
+                        Despliega tu asistente donde tus clientes están. Una sola configuración, múltiples canales.
+                    </p>
+                     <ul class="service-features">
+                        <li>
+                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                             WhatsApp Business API
+                        </li>
+                        <li>
+                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                             Instagram DM
+                        </li>
+                        <li>
+                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                             Widget Web
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                     <div class="service-header">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="service-title">Agendamiento Automático</h3>
+                    <p class="service-description">
+                        Permite que tus clientes agenden reuniones o servicios directamente en el chat, sincronizado con tu calendario.
+                    </p>
+                    <ul class="service-features">
+                        <li>
+                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                             Google Calendar / Outlook
+                        </li>
+                        <li>
+                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                             Recordatorios Automáticos
+                        </li>
+                        <li>
+                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                             Gestión de Cupos
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section id="integrations" class="about" aria-labelledby="integrations-title">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h2 id="integrations-title" class="section-title">Integrado con tu Ecosistema</h2>
+                    <p class="about-description">
+                        Thinka Asistente no es una isla. Se conecta con tus sistemas existentes para consultar stock, estado de pedidos o crear tickets de soporte.
+                    </p>
+                    <div class="tech-stack">
+                        <h3 class="tech-title">Conectores Nativos</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Salesforce</span>
+                            <span class="tech-tag">HubSpot</span>
+                            <span class="tech-tag">Zendesk</span>
+                            <span class="tech-tag">Shopify</span>
+                            <span class="tech-tag">WooCommerce</span>
+                            <span class="tech-tag">Zapier</span>
+                        </div>
+                    </div>
+                </div>
+                 <div class="about-visual" data-aos="fade-left">
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">80%</div>
+                            <div class="stat-label">Automatización</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3x</div>
+                            <div class="stat-label">Más Conversión</div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo CTA -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="contact-title" class="section-title">Prueba la Diferencia</h2>
+                <p class="section-description">
+                    Agenda una demo y ve cómo Thinka Asistente puede transformar tu servicio al cliente.
+                </p>
+            </div>
+             <div class="contact-content">
+                <div class="contact-info">
+                     <div class="contact-item">
+                         <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                         </div>
+                         <div class="contact-details">
+                             <h3>Llámanos</h3>
+                             <p>+56 9 4889 4523</p>
+                         </div>
+                     </div>
+                      <div class="contact-item">
+                         <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                         </div>
+                         <div class="contact-details">
+                             <h3>Email</h3>
+                             <p>contacto@thinka.cl</p>
+                         </div>
+                     </div>
+                </div>
+
+                <form class="contact-form" netlify name="contact-asistente">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company" class="form-label">Empresa</label>
+                        <input type="text" id="company" name="company" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                     <button type="submit" class="btn btn-primary btn-full">Solicitar Demo</button>
+                </form>
+             </div>
+        </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

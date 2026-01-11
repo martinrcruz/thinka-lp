@@ -1,0 +1,442 @@
+/* ===== DARK MODE STYLES ===== */
+
+[data-theme="dark"] {
+    /* Color Palette Overrides */
+    --primary-color: #818cf8;
+    --primary-dark: #6366f1;
+    --primary-light: #c7d2fe;
+    
+    /* Background Colors */
+    --white: #111827;
+    --gray-50: #1f2937;
+    --gray-100: #374151;
+    --gray-200: #4b5563;
+    --gray-300: #6b7280;
+    --gray-400: #9ca3af;
+    --gray-500: #d1d5db;
+    --gray-600: #e5e7eb;
+    --gray-700: #f3f4f6;
+    --gray-800: #f9fafb;
+    --gray-900: #ffffff;
+    --black: #ffffff;
+    
+    /* Semantic Colors */
+    --success: #34d399;
+    --warning: #fbbf24;
+    --error: #f87171;
+    --info: #60a5fa;
+}
+
+/* ===== DARK MODE SPECIFIC STYLES ===== */
+
+[data-theme="dark"] body {
+    background-color: var(--white);
+    color: var(--gray-900);
+}
+
+[data-theme="dark"] .header {
+    background: rgba(17, 24, 39, 0.95);
+    border-bottom-color: var(--gray-200);
+}
+
+[data-theme="dark"] .header.scrolled {
+    background: rgba(17, 24, 39, 0.98);
+}
+
+[data-theme="dark"] .nav-link {
+    color: var(--gray-300);
+}
+
+[data-theme="dark"] .nav-link:hover {
+    color: var(--primary-color);
+    background-color: var(--gray-100);
+}
+
+[data-theme="dark"] .language-toggle,
+[data-theme="dark"] .theme-toggle {
+    color: var(--gray-300);
+}
+
+[data-theme="dark"] .language-toggle:hover,
+[data-theme="dark"] .theme-toggle:hover {
+    background-color: var(--gray-100);
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .mobile-menu-toggle span {
+    background-color: var(--gray-300);
+}
+
+[data-theme="dark"] .hero {
+    background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
+}
+
+[data-theme="dark"] .hero-title-main {
+    color: var(--gray-900);
+}
+
+[data-theme="dark"] .hero-description {
+    color: var(--gray-400);
+}
+
+[data-theme="dark"] .floating-card {
+    background: var(--gray-100);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.3), 0 8px 10px -6px rgb(0 0 0 / 0.3);
+}
+
+[data-theme="dark"] .card-text {
+    color: var(--primary-color);
+}
+
+[data-theme="dark"] .services {
+    background-color: var(--gray-50);
+}
+
+[data-theme="dark"] .about {
+    background-color: var(--white);
+}
+
+[data-theme="dark"] .portfolio {
+    background-color: var(--gray-50);
+}
+
+[data-theme="dark"] .contact {
+    background-color: var(--white);
+}
+
+[data-theme="dark"] .footer {
+    background-color: var(--gray-900);
+    color: var(--white);
+    border-top-color: var(--gray-800);
+}
+
+[data-theme="dark"] .footer-title {
+    color: var(--white);
+}
+
+[data-theme="dark"] .footer-description {
+    color: var(--gray-400);
+}
+
+[data-theme="dark"] .footer-links a {
+    color: var(--gray-400);
+}
+
+[data-theme="dark"] .footer-links a:hover {
+    color: var(--white);
+}
+
+[data-theme="dark"] .footer-bottom {
+    border-top-color: var(--gray-800);
+}
+
+[data-theme="dark"] .footer-bottom p {
+    color: var(--gray-400);
+}
+
+[data-theme="dark"] .footer-legal a {
+    color: var(--gray-400);
+}
+
+[data-theme="dark"] .footer-legal a:hover {
+    color: var(--white);
+}
+
+[data-theme="dark"] .portfolio-cta {
+    background-color: var(--gray-100);
+    border-color: var(--gray-200);
+}
+
+[data-theme="dark"] .portfolio-cta .cta-content h3 {
+    color: var(--gray-900);
+}
+
+[data-theme="dark"] .portfolio-cta .cta-content p {
+    color: var(--gray-400);
+}
+
+/* ===== DARK MODE TESTIMONIALS ===== */
+[data-theme="dark"] .testimonials {
+    background-color: var(--gray-50);
+}
+
+[data-theme="dark"] .testimonial-card {
+    background: var(--gray-100);
+    border-color: var(--gray-200);
+}
+
+[data-theme="dark"] .testimonial-card:hover {
+    border-color: var(--primary-color);
+}
+
+[data-theme="dark"] .testimonial-text {
+    color: var(--gray-300);
+}
+
+[data-theme="dark"] .author-name {
+    color: var(--gray-900);
+}
+
+[data-theme="dark"] .author-company {
+    color: var(--gray-400);
+}
+
+[data-theme="dark"] .testimonials-stats .stat-item {
+    background: var(--gray-100);
+    border-color: var(--gray-200);
+}
+
+[data-theme="dark"] .testimonials-stats .stat-item:hover {
+    border-color: var(--primary-color);
+}
+
+[data-theme="dark"] .testimonials-stats .stat-label {
+    color: var(--gray-400);
+}
+
+[data-theme="dark"] .service-card {
+    background: var(--gray-100);
+    border-color: var(--gray-200);
+}
+
+[data-theme="dark"] .service-card:hover {
+    border-color: var(--primary-color);
+}
+
+[data-theme="dark"] .service-title {
+    color: var(--gray-900);
+}
+
+[data-theme="dark"] .service-description {
+    color: var(--gray-400);
+}
+
+[data-theme="dark"] .service-features li {
+    color: var(--gray-300);
+}
+
+[data-theme="dark"] .about-description {
+    color: var(--gray-400);
+}
+
+[data-theme="dark"] .tech-title {
+    color: var(--gray-200);
+}
+
+[data-theme="dark"] .tech-tag {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+[data-theme="dark"] .stat-item {
+    background: var(--gray-100);
+}
+
+[data-theme="dark"] .stat-label {
+    color: var(--gray-400);
+}
+
+[data-theme="dark"] .portfolio-item {
+    background: var(--gray-100);
+}
+
+[data-theme="dark"] .portfolio-title {
+    color: var(--gray-900);
+}
+
+[data-theme="dark"] .portfolio-description {
+    color: var(--gray-400);
+}
+
+[data-theme="dark"] .tech-badge {
+    background-color: var(--gray-200);
+    color: var(--gray-300);
+}
+
+[data-theme="dark"] .contact-form {
+    background: var(--gray-100);
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-textarea {
+    background-color: var(--gray-50);
+    border-color: var(--gray-300);
+    color: var(--gray-900);
+}
+
+[data-theme="dark"] .form-input:focus,
+[data-theme="dark"] .form-select:focus,
+[data-theme="dark"] .form-textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+[data-theme="dark"] .form-label {
+    color: var(--gray-300);
+}
+
+[data-theme="dark"] .contact-details h3 {
+    color: var(--gray-900);
+}
+
+[data-theme="dark"] .contact-details p {
+    color: var(--gray-400);
+}
+
+/* ===== DARK MODE LEGAL PAGES ===== */
+
+[data-theme="dark"] .legal-content {
+    background-color: var(--white);
+}
+
+[data-theme="dark"] .legal-main {
+    background: var(--gray-100);
+    border-color: var(--gray-200);
+    color: var(--gray-900) !important;
+}
+
+[data-theme="dark"] .legal-main * {
+    color: inherit !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+[data-theme="dark"] .legal-text {
+    color: var(--gray-900) !important;
+}
+
+[data-theme="dark"] .legal-text * {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+[data-theme="dark"] .legal-section h2 {
+    color: var(--gray-900) !important;
+    border-bottom-color: var(--primary-color);
+}
+
+[data-theme="dark"] .legal-section h3 {
+    color: var(--gray-800) !important;
+}
+
+[data-theme="dark"] .legal-section p {
+    color: var(--gray-700) !important;
+}
+
+[data-theme="dark"] .legal-section li {
+    color: var(--gray-700) !important;
+}
+
+[data-theme="dark"] .legal-sidebar {
+    background: var(--gray-100);
+    border-color: var(--gray-200);
+}
+
+[data-theme="dark"] .legal-nav h3 {
+    color: var(--gray-900);
+    border-bottom-color: var(--primary-color);
+}
+
+[data-theme="dark"] .legal-nav-list a {
+    color: var(--gray-300);
+}
+
+[data-theme="dark"] .legal-nav-list a:hover {
+    color: var(--primary-color);
+    background-color: var(--gray-200);
+}
+
+[data-theme="dark"] .contact-info {
+    background: var(--gray-200);
+    border-left-color: var(--primary-color);
+}
+
+[data-theme="dark"] .contact-info p {
+    color: var(--gray-800) !important;
+}
+
+[data-theme="dark"] .contact-info strong {
+    color: var(--primary-color);
+}
+
+/* ===== DARK MODE TRANSITIONS ===== */
+
+[data-theme="dark"] * {
+    transition: background-color var(--transition-normal), 
+                color var(--transition-normal), 
+                border-color var(--transition-normal);
+}
+
+/* ===== DARK MODE SCROLLBAR ===== */
+
+[data-theme="dark"] ::-webkit-scrollbar {
+    width: 12px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--gray-100);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--gray-300);
+    border-radius: var(--radius-full);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-400);
+}
+
+/* ===== DARK MODE SELECTION ===== */
+
+[data-theme="dark"] ::selection {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+[data-theme="dark"] ::-moz-selection {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* ===== DARK MODE FOCUS INDICATORS ===== */
+
+[data-theme="dark"] .btn:focus,
+[data-theme="dark"] .nav-link:focus,
+[data-theme="dark"] .language-toggle:focus,
+[data-theme="dark"] .theme-toggle:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* ===== DARK MODE ANIMATIONS ===== */
+
+[data-theme="dark"] .floating-card {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+}
+
+[data-theme="dark"] .service-card:hover {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+}
+
+[data-theme="dark"] .portfolio-item:hover {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+}
+
+/* ===== DARK MODE PRINT STYLES ===== */
+
+@media print and (prefers-color-scheme: dark) {
+    [data-theme="dark"] body {
+        background: white;
+        color: black;
+    }
+    
+    [data-theme="dark"] .hero,
+    [data-theme="dark"] .services,
+    [data-theme="dark"] .about,
+    [data-theme="dark"] .portfolio,
+    [data-theme="dark"] .contact {
+        background: white;
+        color: black;
+    }
+}

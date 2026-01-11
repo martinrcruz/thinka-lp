@@ -1,0 +1,81 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Google Tag Manager -->
+  <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MS4W936T');</script>
+  <!-- End Google Tag Manager -->
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDZ7FKT105"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QDZ7FKT105');
+  </script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description || "Thinka - Soluciones de desarrollo de software con inteligencia artificial."}>
+  <meta name="keywords" content="desarrollo software, inteligencia artificial, chatbots, dashboards, aplicaciones web, microservicios, Spring Boot, automatización">
+  <meta name="author" content="Thinka">
+  <meta name="robots" content="index, follow">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description || "Thinka - Soluciones de Software con IA"}>
+  <meta property="og:image" content="/assets/images/og-image.jpg">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description || "Thinka - Soluciones de Software con IA"}>
+
+  <title>{title}</title>
+
+  <link rel="icon" type="image/webp" href="/assets/logo/thinka-logo-cuadrado-fondo-uva.webp">
+  <link rel="shortcut icon" type="image/webp" href="/assets/logo/thinka-logo-cuadrado-fondo-uva.webp">
+  <link rel="apple-touch-icon" href="/assets/logo/thinka-logo-cuadrado-fondo-uva.webp">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/css/styles.css" as="style">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/dark-mode.css">
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MS4W936T"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- Mobile Menu Backdrop -->
+  <div class="mobile-backdrop" id="mobile-backdrop"></div>
+
+  <slot />
+
+  <!-- Scripts -->
+  <script is:inline src="/assets/js/main.js"></script>
+  <script is:inline src="/assets/js/animations.js"></script>
+  <script is:inline src="/assets/js/form-validation.js"></script>
+</body>
+</html>

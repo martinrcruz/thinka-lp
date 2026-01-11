@@ -1,0 +1,18 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="avatarGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="60" cy="60" r="60" fill="url(#avatarGradient3)" opacity="0.1"/>
+  
+  <!-- Person Icon -->
+  <circle cx="60" cy="45" r="20" fill="url(#avatarGradient3)"/>
+  <path d="M30 95c0-16.6 13.4-30 30-30s30 13.4 30 30" fill="url(#avatarGradient3)"/>
+  
+  <!-- Initials -->
+  <text x="60" y="50" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" text-anchor="middle" fill="white">AS</text>
+</svg>
