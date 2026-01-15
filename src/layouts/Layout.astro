@@ -2,9 +2,11 @@
 interface Props {
   title: string;
   description?: string;
+  favicon?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, favicon } = Astro.props;
+const faviconSrc = favicon || "/assets/logo/thinka-logo-cuadrado-fondo-uva.webp";
 ---
 
 <!DOCTYPE html>
@@ -46,9 +48,9 @@ const { title, description } = Astro.props;
 
   <title>{title}</title>
 
-  <link rel="icon" type="image/webp" href="/assets/logo/thinka-logo-cuadrado-fondo-uva.webp">
-  <link rel="shortcut icon" type="image/webp" href="/assets/logo/thinka-logo-cuadrado-fondo-uva.webp">
-  <link rel="apple-touch-icon" href="/assets/logo/thinka-logo-cuadrado-fondo-uva.webp">
+  <link rel="icon" type="image/webp" href={faviconSrc}>
+  <link rel="shortcut icon" type="image/webp" href={faviconSrc}>
+  <link rel="apple-touch-icon" href={faviconSrc}>
   
   <!-- Preload critical resources -->
   <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>

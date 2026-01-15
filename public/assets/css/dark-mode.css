@@ -2,10 +2,10 @@
 
 [data-theme="dark"] {
     /* Color Palette Overrides */
-    --primary-color: #818cf8;
-    --primary-dark: #6366f1;
-    --primary-light: #c7d2fe;
-    
+    --primary-color: #9D84F5;
+    --primary-dark: #7E65C4;
+    --primary-light: #C4B5FD;
+
     /* Background Colors */
     --white: #111827;
     --gray-50: #1f2937;
@@ -19,7 +19,7 @@
     --gray-800: #f9fafb;
     --gray-900: #ffffff;
     --black: #ffffff;
-    
+
     /* Semantic Colors */
     --success: #34d399;
     --warning: #fbbf24;
@@ -363,9 +363,9 @@
 /* ===== DARK MODE TRANSITIONS ===== */
 
 [data-theme="dark"] * {
-    transition: background-color var(--transition-normal), 
-                color var(--transition-normal), 
-                border-color var(--transition-normal);
+    transition: background-color var(--transition-normal),
+        color var(--transition-normal),
+        border-color var(--transition-normal);
 }
 
 /* ===== DARK MODE SCROLLBAR ===== */
@@ -430,7 +430,7 @@
         background: white;
         color: black;
     }
-    
+
     [data-theme="dark"] .hero,
     [data-theme="dark"] .services,
     [data-theme="dark"] .about,

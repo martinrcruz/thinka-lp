@@ -1,4 +1,5 @@
 ---
+const { logoSrc = "/assets/images/logo-white.svg" } = Astro.props;
 ---
 <!-- Footer -->
 <footer class="footer" role="contentinfo">
@@ -6,7 +7,7 @@
     <div class="footer-content">
       <div class="footer-section">
         <div class="footer-logo">
-          <img src="/assets/images/logo-white.svg" alt="Thinka Logo" width="120" height="40">
+          <img src={logoSrc} alt="Thinka Logo" width="120" height="40">
         </div>
         <p class="footer-description" data-translate="footer-description">
           <slot name="description">
