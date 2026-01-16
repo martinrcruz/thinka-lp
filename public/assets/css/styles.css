@@ -676,11 +676,17 @@ a:hover {
 .btn-primary.btn-hero {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+    border: 2px solid transparent;
+    /* Prevent layout shift on hover */
+    color: var(--white);
 }
 
 .btn-primary.btn-hero:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 35px rgba(99, 102, 241, 0.4);
+    /* Keep text white and background primary (default) */
+    color: var(--white);
+    border-color: transparent;
 }
 
 .btn-secondary.btn-hero {
@@ -1064,7 +1070,6 @@ a:hover {
 /* ===== SECTIONS ===== */
 .section-header {
     text-align: center;
-    margin-bottom: var(--space-16);
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
@@ -1214,16 +1219,7 @@ a:hover {
     position: relative;
 }
 
-.testimonial-text::before {
-    content: '';
-    position: absolute;
-    left: -var(--space-4);
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-    border-radius: var(--radius-full);
-}
+
 
 .testimonial-author {
     display: flex;
@@ -1271,20 +1267,25 @@ a:hover {
 }
 
 .testimonials-stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-8);
-    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-6);
+    max-width: 1000px;
     margin: 0 auto;
+    width: 100%;
+    padding: 0;
 }
 
-@media (min-width: 640px) {
-    .testimonials-stats {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
+/* Remove grid media query or just let flex handle it */
 
 .testimonials-stats .stat-item {
+    flex: 1 1 200px;
+    /* Adapts to available space, wraps if needed */
+    min-width: 180px;
+    /* Minimum width for readability */
+    max-width: 280px;
+    /* Prevent them from getting too wide */
     text-align: center;
     padding: var(--space-6);
     background: var(--white);
@@ -1486,7 +1487,8 @@ a:hover {
 
 .service-card:hover .service-icon {
     transform: scale(1.1) rotate(5deg);
-    background: var(--primary-light);
+    background: var(--primary-color);
+    color: var(--white);
 }
 
 .featured-service:hover .service-icon {

@@ -4,13 +4,14 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Thinka - Soluciones de Software con Inteligencia Artificial">
-  <Header>
+<Layout title="Thinka - Soluciones de Software con Inteligencia Artificial" favicon="/assets/logo/faviconThinka.png">
+  <Header logoSrc="/assets/images/headerThinka.png" showSettings={false}>
     <ul class="nav-list">
       <li><a href="#home" class="nav-link" data-translate="nav-inicio">Inicio</a></li>
+      <li><a href="#solutions" class="nav-link" data-translate="nav-soluciones">Soluciones</a></li>
       <li><a href="#services" class="nav-link" data-translate="nav-servicios">Servicios</a></li>
       <li><a href="#about" class="nav-link" data-translate="nav-nosotros">Nosotros</a></li>
-      <li><a href="#portfolio" class="nav-link" data-translate="nav-portafolio">Portafolio</a></li>
+
       <li><a href="#testimonials" class="nav-link" data-translate="nav-testimonios">Testimonios</a></li>
       <li><a href="#contact" class="nav-link" data-translate="nav-contacto">Contacto</a></li>
     </ul>
@@ -145,6 +146,94 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions" aria-labelledby="solutions-title">
+      <div class="container">
+        <div class="section-header">
+           <div class="section-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+            <span>Nuestras Soluciones</span>
+          </div>
+          <h2 id="solutions-title" class="section-title">Ecosistema Thinka</h2>
+          <p class="section-description">
+            Herramientas especializadas diseñadas para potenciar cada aspecto de tu organización con la fuerza de la IA.
+          </p>
+        </div>
+
+        <div class="solutions-grid">
+          <!-- Card 1: Thinka Negocio -->
+          <a href="/thinka-negocios" class="solution-card card-business" data-aos="fade-up">
+             <div class="solution-icon-wrapper">
+              <div class="solution-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 21h18"/>
+                  <path d="M5 21V7l8-4 8 4v14"/>
+                  <path d="M17 21v-8.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0-.5.5V21"/>
+                  <path d="M11 21v-3.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5V21"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="solution-title">Thinka Negocio</h3>
+            <p class="solution-desc">Soluciones integrales para la gestión empresarial. Automatiza flujos de trabajo y optimiza la toma de decisiones estratégicas.</p>
+            <ul class="solution-features">
+              <li>Dashboards en tiempo real</li>
+              <li>Automatización de procesos</li>
+              <li>Integración de sistemas</li>
+            </ul>
+             <span class="btn-link">Ver más <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Card 2: Thinka Documentos -->
+          <a href="/thinka-docs" class="solution-card card-docs featured" data-aos="fade-up" data-aos-delay="100">
+            <div class="solution-badge">Popular</div>
+            <div class="solution-icon-wrapper">
+              <div class="solution-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </div>
+            </div>
+            <h3 class="solution-title">Thinka Documentos</h3>
+            <p class="solution-desc">Procesamiento inteligente de documentos. Extrae, clasifica y analiza información de archivos PDF e imágenes automáticamente.</p>
+            <ul class="solution-features">
+              <li>Extracción de datos con IA</li>
+              <li>Clasificación automática</li>
+              <li>Búsqueda semántica</li>
+            </ul>
+             <span class="btn-link">Ver más <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Card 3: Thinka Asistente -->
+          <a href="/thinka-asistente" class="solution-card card-assistant" data-aos="fade-up" data-aos-delay="200">
+             <div class="solution-icon-wrapper">
+              <div class="solution-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  <path d="M8 10h.01"></path>
+                  <path d="M12 10h.01"></path>
+                  <path d="M16 10h.01"></path>
+                </svg>
+              </div>
+            </div>
+            <h3 class="solution-title">Thinka Asistente</h3>
+            <p class="solution-desc">Tu asistente virtual avanzado. Atiende clientes 24/7, agende reuniones y resuelve consultas con lenguaje natural.</p>
+             <ul class="solution-features">
+              <li>Atención 24/7</li>
+              <li>Agendamiento inteligente</li>
+              <li>Multicanal (Web, WhatsApp)</li>
+            </ul>
+             <span class="btn-link">Ver más <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Services Section -->
     <section id="services" class="services" aria-labelledby="services-title">
       <div class="services-background">
@@ -160,7 +249,7 @@ import Footer from '../components/Footer.astro';
           </div>
           <h2 id="services-title" class="section-title" data-translate="services-title">Soluciones Tecnológicas de
             Vanguardia</h2>
-          <p class="section-description" data-translate="services-description">
+          <p class="section-description" data-translate="services-description" style="margin-bottom: 3rem;">
             Desarrollamos software a medida integrando inteligencia artificial para transformar
             digitalmente tu empresa con soluciones escalables y de alto rendimiento.
           </p>
@@ -383,7 +472,7 @@ import Footer from '../components/Footer.astro';
         <div class="section-header">
           <h2 id="testimonials-title" class="section-title" data-translate="testimonials-title">Lo que Dicen Nuestros
             Clientes</h2>
-          <p class="section-description" data-translate="testimonials-description">
+          <p class="section-description" data-translate="testimonials-description" style="margin-bottom: 3rem;">
             Descubre por qué las empresas confían en Thinka para transformar sus procesos con tecnología
           </p>
         </div>
@@ -496,7 +585,7 @@ import Footer from '../components/Footer.astro';
         <div class="section-header">
           <h2 id="contact-title" class="section-title" data-translate="contact-title">¿Listo para Transformar tu
             Negocio?</h2>
-          <p class="section-description" data-translate="contact-description">
+          <p class="section-description" data-translate="contact-description" style="margin-bottom: 3rem;">
             Contáctanos para discutir cómo podemos ayudarte a implementar soluciones tecnológicas innovadoras
           </p>
         </div>
@@ -550,7 +639,7 @@ import Footer from '../components/Footer.astro';
 
             <div class="form-group">
               <label for="name" class="form-label">Nombre *</label>
-              <input type="text" id="name" name="name" class="form-input" required aria-describedby="name-error">
+              <input type="text" id="name" name="Nombre" class="form-input" required aria-describedby="name-error">
               <div id="name-error" class="form-error" role="alert"></div>
             </div>
 
@@ -562,7 +651,7 @@ import Footer from '../components/Footer.astro';
 
             <div class="form-group">
               <label for="company" class="form-label">Empresa</label>
-              <input type="text" id="company" name="company" class="form-input">
+              <input type="text" id="company" name="Empresa" class="form-input">
             </div>
 
             <div class="form-group">
@@ -592,5 +681,309 @@ import Footer from '../components/Footer.astro';
     </section>
   </main>
 
-  <Footer />
+  <Footer logoSrc="/assets/images/footerThinka.png" />
 </Layout>
+
+<style>
+  /* Solutions Section Styles */
+  .solutions {
+    padding: 6rem 0;
+    background-color: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-top: 3rem;
+  }
+
+  .solution-card {
+    /* Stronger static tint for differentiation */
+    background: color-mix(in srgb, var(--card-primary), white 95%);
+    /* Static colored border */
+    border: 1px solid color-mix(in srgb, var(--card-primary), transparent 60%);
+    border-radius: 2rem;
+    padding: 3rem 2.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    text-decoration: none;
+    z-index: 1;
+    
+    /* Default Colors (Fallback) */
+    --card-primary: var(--primary-color);
+    --card-secondary: var(--secondary-color);
+  }
+
+  /* Specific Card Branding */
+  .card-docs {
+    --card-primary: #44239E;
+    --card-secondary: #508CA4;
+  }
+
+  .card-business {
+    --card-primary: #23639E;
+    --card-secondary: #DB8A74;
+  }
+
+  .card-assistant {
+    --card-primary: #119DF3;
+    --card-secondary: #3A405A;
+  }
+
+  /* Hover Effects: Lift only */
+  .solution-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px color-mix(in srgb, var(--card-primary), transparent 85%);
+    /* Border stays the same or gets slightly stronger, but color is already there */
+    border-color: var(--card-primary);
+    background: white; /* Optional: pop to white, or keep tinted. User wanted distinct, let's keep tint or make it stronger. Let's keep tint actually, or lighten it. Let's make it white on hover for "pop" but distinct by default. */
+    background: color-mix(in srgb, var(--card-primary), white 98%); /* Lighter on hover */
+  }
+
+  /* Top Accent Line (Minimalist Branding) */
+  .solution-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--card-primary), var(--card-secondary));
+    opacity: 0.8;
+  }
+
+  .solution-badge {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: color-mix(in srgb, var(--card-primary), transparent 90%);
+    color: var(--card-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .solution-icon-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  .solution-icon {
+    width: 64px;
+    height: 64px;
+    background: transparent;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Aligned center for clean look */
+    color: var(--card-primary);
+    transition: all 0.3s ease;
+  }
+  
+  /* Icon becomes filled on hover (optional, or just keeps being clean) */
+  .solution-card:hover .solution-icon {
+    background: var(--card-primary);
+    color: white;
+  }
+
+  .solution-icon svg {
+    width: 48px;
+    height: 48px;
+    filter: drop-shadow(0 4px 10px color-mix(in srgb, var(--card-primary), transparent 80%));
+    transition: all 0.3s ease;
+  }
+  
+  .solution-card:hover .solution-icon svg {
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
+  }
+
+  .solution-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--card-primary);
+  }
+
+  .solution-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+  }
+
+  .solution-features li {
+    padding-left: 2rem; /* Increased spacing */
+    position: relative;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .solution-features li::before {
+    content: "✓";
+    color: var(--card-primary);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 800;
+    font-size: 1.1em;
+  }
+  
+  .btn-link {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--card-primary);
+    background: transparent;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0; /* Text link style for minimalism */
+    transition: all 0.3s ease;
+    width: fit-content;
+    font-size: 1.05rem;
+  }
+
+  .btn-link:hover {
+    gap: 1rem;
+    color: var(--card-secondary);
+  }
+  
+  .btn-link svg {
+    transition: transform 0.3s ease;
+  }
+  
+  .btn-link:hover svg {
+    transform: translateX(5px);
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 992px) {
+    .solutions-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .solutions-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .solution-card {
+      padding: 2rem;
+    }
+
+    /* Mobile overrides for inline margins */
+    .section-description[style] {
+      margin-bottom: 2rem !important; /* Slightly reduced */
+    }
+
+    /* Reduce massive hero stats on mobile */
+    .hero-stats .stat-number {
+      font-size: 2.5rem;
+    }
+    
+    .hero-stats {
+      gap: 1rem;
+      justify-content: center; /* Center stats on mobile */
+    }
+
+    /* Force center alignment for Hero on mobile/tablet */
+    .hero-container {
+      text-align: center;
+    }
+
+    .hero-content {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-actions {
+      justify-content: center;
+      margin-bottom: 2rem; /* Add spacing below buttons on mobile */
+    }
+
+    /* Mobile Floating Cards Override */
+    .hero-visual {
+      height: auto;
+      margin-top: 4rem; /* Increased spacing to prevent overlap with buttons */
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-animation {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .floating-elements {
+      display: none; /* Hide floating elements container on mobile */
+    }
+
+    /* About Section Mobile Optimizations */
+    .about-text {
+      text-align: center;
+    }
+
+    .tech-tags {
+      justify-content: center;
+    }
+
+    .about-stats {
+      grid-template-columns: 1fr !important; /* Stack stats on mobile */
+      gap: 1.5rem;
+    }
+  }
+
+  /* Hero Stats Overrides */
+  .hero-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap; /* Allow wrapping for mobile */
+  }
+
+  .stat-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center individual stat labels */
+  }
+
+  .hero-stats .stat-number {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 10px 20px rgba(68, 35, 158, 0.2));
+    font-family: var(--font-family-primary);
+    letter-spacing: -0.02em;
+  }
+
+  /* Smaller stats for the About section */
+  .about-stats .stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-family-primary);
+  }
+
+  .stat-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+</style>
