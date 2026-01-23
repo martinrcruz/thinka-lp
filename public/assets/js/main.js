@@ -200,11 +200,11 @@ class ThinkaApp {
             themeToggle.addEventListener('click', () => this.toggleTheme());
         }
 
-        // Language toggle
-        const languageToggle = document.getElementById('language-toggle');
-        if (languageToggle) {
-            languageToggle.addEventListener('click', () => this.toggleLanguage());
-        }
+        // Language toggle - DISABLED (site is Spanish only)
+        // const languageToggle = document.getElementById('language-toggle');
+        // if (languageToggle) {
+        //     languageToggle.addEventListener('click', () => this.toggleLanguage());
+        // }
 
         // Mobile menu toggle
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -296,16 +296,17 @@ class ThinkaApp {
         );
     }
 
-    toggleLanguage() {
-        this.currentLanguage = this.currentLanguage === 'es' ? 'en' : 'es';
-        this.applyLanguage();
-        this.saveUserPreferences();
+    // toggleLanguage - DISABLED (site is Spanish only)
+    // toggleLanguage() {
+    //     this.currentLanguage = this.currentLanguage === 'es' ? 'en' : 'es';
+    //     this.applyLanguage();
+    //     this.saveUserPreferences();
 
-        // Announce language change for screen readers
-        this.announceToScreenReader(
-            this.translations[this.currentLanguage]['language-activated']
-        );
-    }
+    //     // Announce language change for screen readers
+    //     this.announceToScreenReader(
+    //         this.translations[this.currentLanguage]['language-activated']
+    //     );
+    // }
 
     toggleMobileMenu() {
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -663,10 +664,14 @@ class ThinkaApp {
                 this.applyTheme();
             }
 
-            if (preferences.language) {
-                this.currentLanguage = preferences.language;
-                this.applyLanguage();
-            }
+            // Force Spanish language - ignore saved preferences
+            // if (preferences.language) {
+            //     this.currentLanguage = preferences.language;
+            //     this.applyLanguage();
+            // }
+            // Always use Spanish
+            this.currentLanguage = 'es';
+            this.applyLanguage();
         } catch (error) {
             console.warn('Could not load user preferences:', error);
         }
