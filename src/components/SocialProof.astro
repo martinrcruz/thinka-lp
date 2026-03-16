@@ -1,0 +1,64 @@
+---
+const clients = [
+  { name: "Empresa 1", logo: "https://via.placeholder.com/150x50?text=Cliente+1" },
+  { name: "Empresa 2", logo: "https://via.placeholder.com/150x50?text=Cliente+2" },
+  { name: "Empresa 3", logo: "https://via.placeholder.com/150x50?text=Cliente+3" },
+  { name: "Empresa 4", logo: "https://via.placeholder.com/150x50?text=Cliente+4" },
+];
+
+const reasons = [
+  {
+    title: "Experiencia Técnica Probada",
+    description: "Equipo de desarrolladores senior y especialistas en machine learning con historial de éxito."
+  },
+  {
+    title: "Enfoque en Resultados",
+    description: "No solo implementamos tecnología; garantizamos un ROI medible y optimización de procesos."
+  },
+  {
+    title: "Soporte Local en Chile",
+    description: "Atención personalizada y comprensión del mercado chileno para soluciones a medida."
+  }
+];
+---
+
+<section class="py-16 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+        Confianza que impulsa la innovación
+      </h2>
+      <p class="mt-4 text-lg text-gray-500 dark:text-gray-400">
+        Empresas que ya están transformando su futuro con Thinka.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-4 items-center justify-items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+      {clients.map((client) => (
+        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50 dark:bg-gray-800 rounded-lg">
+          <span class="text-gray-400 font-bold text-xl">{client.name}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-24">
+      <div class="lg:grid lg:grid-cols-3 lg:gap-8">
+        {reasons.map((reason) => (
+          <div class="mt-10 lg:mt-0">
+            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white mx-auto">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div class="mt-5 text-center">
+              <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">{reason.title}</h3>
+              <p class="mt-2 text-base text-gray-500 dark:text-gray-400">
+                {reason.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

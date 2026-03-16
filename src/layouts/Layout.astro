@@ -1,84 +1,99 @@
 ---
+import { SEO } from 'astro-seo';
+
 interface Props {
-  title: string;
-  description?: string;
-  favicon?: string;
+	title: string;
+	description?: string;
+    image?: string;
+    favicon?: string;
 }
 
-const { title, description, favicon } = Astro.props;
-const faviconSrc = favicon || "/assets/logo/thinka-logo-cuadrado-fondo-uva.webp";
+const { 
+    title, 
+    description = "Automatización de procesos con IA en Chile. Consultoría tecnológica especializada en reducción de costos, desarrollo de software y transformación digital.",
+    image = "/assets/images/og-image.jpg",
+    favicon = "/favicon.svg"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const jsonLD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Thinka",
+  "url": "https://thinka.cl",
+  "logo": "https://thinka.cl/assets/logo/thinka-logo-cuadrado-fondo-uva.webp",
+  "sameAs": [
+    "https://www.linkedin.com/company/thinka",
+    "https://twitter.com/thinka"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+56912345678",
+    "contactType": "customer service",
+    "areaServed": "CL",
+    "availableLanguage": "Spanish"
+  },
+  "description": description
+};
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <!-- Google Tag Manager -->
-  <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-MS4W936T');</script>
-  <!-- End Google Tag Manager -->
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDZ7FKT105"></script>
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href={favicon} />
+		<meta name="generator" content={Astro.generator} />
+        
+        <SEO
+            title={title}
+            description={description}
+            canonical={canonicalURL.toString()}
+            openGraph={{
+                basic: {
+                    title: title,
+                    type: "website",
+                    image: image,
+                    url: canonicalURL.toString(),
+                },
+                optional: {
+                    description: description,
+                    locale: "es_CL",
+                    siteName: "Thinka - Consultoría de IA en Chile",
+                }
+            }}
+            twitter={{
+                card: "summary_large_image",
+                site: "@thinka",
+                creator: "@thinka",
+                title: title,
+                description: description,
+                image: image,
+            }}
+            extend={{
+                meta: [
+                    { name: "keywords", content: "Automatización de procesos con IA, Consultoría IA Chile, Reducción de costos IA, Desarrollo de software con IA, IA en Chile, Optimización de modelos LLM" },
+                ],
+            }}
+        />
 
-    gtag('config', 'G-QDZ7FKT105');
-  </script>
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content={description || "Thinka - Soluciones de desarrollo de software con inteligencia artificial."}>
-  <meta name="keywords" content="desarrollo software, inteligencia artificial, chatbots, dashboards, aplicaciones web, microservicios, Spring Boot, automatización">
-  <meta name="author" content="Thinka">
-  <meta name="robots" content="index, follow">
-  <meta name="google" content="notranslate">
-  
-  <meta property="og:type" content="website">
-  <meta property="og:title" content={title}>
-  <meta property="og:description" content={description || "Thinka - Soluciones de Software con IA"}>
-  <meta property="og:image" content="/assets/images/og-image.jpg">
-  
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content={title}>
-  <meta name="twitter:description" content={description || "Thinka - Soluciones de Software con IA"}>
+        <!-- JSON-LD -->
+        <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLD)} />
 
-  <title>{title}</title>
+        <!-- Google Fonts Inter -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="icon" type="image/webp" href={faviconSrc}>
-  <link rel="shortcut icon" type="image/webp" href={faviconSrc}>
-  <link rel="apple-touch-icon" href={faviconSrc}>
-  
-  <!-- Preload critical resources -->
-  <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/css/styles.css" as="style">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/dark-mode.css">
-</head>
-
-<body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MS4W936T"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  
-  <!-- Skip to main content for accessibility -->
-  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-
-  <!-- Mobile Menu Backdrop -->
-  <div class="mobile-backdrop" id="mobile-backdrop"></div>
-
-  <slot />
-
-  <!-- Scripts -->
-  <script is:inline src="/assets/js/main.js"></script>
-  <script is:inline src="/assets/js/animations.js"></script>
-  <script is:inline src="/assets/js/form-validation.js"></script>
-</body>
+        <style is:global>
+            /* Custom global styles if needed, mainly handled by Tailwind */
+            body {
+                font-family: 'Inter', sans-serif;
+            }
+        </style>
+	</head>
+	<body class="bg-white text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-100">
+		<slot />
+	</body>
 </html>

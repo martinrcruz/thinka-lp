@@ -1,0 +1,63 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-gray-800 text-white">
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="col-span-1 md:col-span-1">
+        <span class="text-2xl font-bold text-purple-400">Thinka</span>
+        <p class="mt-2 text-sm text-gray-400">
+          Expertos en Inteligencia Artificial y Automatización de Procesos.
+        </p>
+      </div>
+      <div class="col-span-1 md:col-span-1">
+        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Servicios</h3>
+        <ul class="mt-4 space-y-4">
+          <li><a href="#services" class="text-base text-gray-300 hover:text-white">Automatización</a></li>
+          <li><a href="#services" class="text-base text-gray-300 hover:text-white">Consultoría IA</a></li>
+          <li><a href="#services" class="text-base text-gray-300 hover:text-white">Optimización de Costos</a></li>
+        </ul>
+      </div>
+      <div class="col-span-1 md:col-span-1">
+        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Empresa</h3>
+        <ul class="mt-4 space-y-4">
+          <li><a href="#about" class="text-base text-gray-300 hover:text-white">Nosotros</a></li>
+          <li><a href="#contact" class="text-base text-gray-300 hover:text-white">Contacto</a></li>
+          <li><a href="/privacidad" class="text-base text-gray-300 hover:text-white">Privacidad</a></li>
+        </ul>
+      </div>
+      <div class="col-span-1 md:col-span-1">
+        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Contacto</h3>
+        <ul class="mt-4 space-y-4">
+          <li class="flex items-center text-gray-300">
+            <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            contacto@thinka.cl
+          </li>
+          <li class="flex items-center text-gray-300">
+            <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            Santiago, Chile
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+      <div class="flex space-x-6 md:order-2">
+        <a href="#" class="text-gray-400 hover:text-gray-300">
+          <span class="sr-only">LinkedIn</span>
+          <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+      <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
+        &copy; {currentYear} Thinka. Todos los derechos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
