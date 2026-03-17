@@ -1,4 +1,5 @@
 ---
+import Icon from "./Icon.astro";
 ---
 
 <section id="contact" class="bg-purple-700 relative overflow-hidden">
@@ -15,21 +16,15 @@
           </p>
           <ul class="mt-8 space-y-4 text-purple-100">
             <li class="flex items-center">
-              <svg class="h-6 w-6 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
+              <Icon name="check" size={24} class="h-6 w-6 text-purple-300" />
               <span class="ml-3">Análisis de viabilidad sin costo</span>
             </li>
             <li class="flex items-center">
-              <svg class="h-6 w-6 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
+              <Icon name="check" size={24} class="h-6 w-6 text-purple-300" />
               <span class="ml-3">Propuesta de arquitectura Token-Efficient</span>
             </li>
             <li class="flex items-center">
-              <svg class="h-6 w-6 text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
+              <Icon name="check" size={24} class="h-6 w-6 text-purple-300" />
               <span class="ml-3">Roadmap de implementación ágil</span>
             </li>
           </ul>
@@ -42,19 +37,19 @@
             <div class="sm:col-span-2">
               <label for="name" class="block text-sm font-medium text-purple-100">Nombre completo</label>
               <div class="mt-1">
-                <input type="text" name="name" id="name" autocomplete="name" class="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-purple-500 focus:border-purple-500 border-purple-300 rounded-md" placeholder="Tu nombre">
+                <input type="text" name="name" id="name" autocomplete="name" required aria-required="true" class="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-purple-500 focus:border-purple-500 border-purple-300 rounded-md" placeholder="Tu nombre">
               </div>
             </div>
             <div class="sm:col-span-2">
               <label for="email" class="block text-sm font-medium text-purple-100">Correo corporativo</label>
               <div class="mt-1">
-                <input type="email" name="email" id="email" autocomplete="email" class="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-purple-500 focus:border-purple-500 border-purple-300 rounded-md" placeholder="nombre@empresa.com">
+                <input type="email" name="email" id="email" autocomplete="email" required aria-required="true" class="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-purple-500 focus:border-purple-500 border-purple-300 rounded-md" placeholder="nombre@empresa.com">
               </div>
             </div>
             <div class="sm:col-span-2">
               <label for="message" class="block text-sm font-medium text-purple-100">¿Cómo podemos ayudarte?</label>
               <div class="mt-1">
-                <textarea id="message" name="message" rows="4" class="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-purple-500 focus:border-purple-500 border-purple-300 rounded-md" placeholder="Describe tu proyecto o necesidad..."></textarea>
+                <textarea id="message" name="message" rows="4" required aria-required="true" class="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-purple-500 focus:border-purple-500 border-purple-300 rounded-md" placeholder="Describe tu proyecto o necesidad..."></textarea>
               </div>
             </div>
             <div class="sm:col-span-2">

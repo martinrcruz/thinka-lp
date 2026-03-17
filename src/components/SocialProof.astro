@@ -1,4 +1,5 @@
 ---
+import Icon from "./Icon.astro";
 const clients = [
   { name: "Empresa 1", logo: "https://via.placeholder.com/150x50?text=Cliente+1" },
   { name: "Empresa 2", logo: "https://via.placeholder.com/150x50?text=Cliente+2" },
@@ -16,8 +17,8 @@ const reasons = [
     description: "No solo implementamos tecnología; garantizamos un ROI medible y optimización de procesos."
   },
   {
-    title: "Soporte Local en Chile",
-    description: "Atención personalizada y comprensión del mercado chileno para soluciones a medida."
+    title: "Soporte Personalizado",
+    description: "Atención directa y comprensión profunda de los objetivos de tu negocio para soluciones a medida."
   }
 ];
 ---
@@ -46,9 +47,7 @@ const reasons = [
         {reasons.map((reason) => (
           <div class="mt-10 lg:mt-0">
             <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white mx-auto">
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-              </svg>
+              <Icon name="check" size={24} class="h-6 w-6" />
             </div>
             <div class="mt-5 text-center">
               <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">{reason.title}</h3>

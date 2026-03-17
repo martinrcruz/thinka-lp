@@ -1,27 +1,28 @@
 ---
+import Icon from "./Icon.astro";
 const services = [
   {
     title: "Automatización de Procesos con IA",
     description: "Maximiza el ROI y ahorra tiempo automatizando tareas repetitivas. Implementamos agentes autónomos que trabajan 24/7 para tu negocio.",
-    icon: "Cpu",
+    icon: "cpu",
     keywords: ["Automatización", "ROI", "Eficiencia"]
   },
   {
     title: "Consultoría e Implementación",
     description: "Estrategia personalizada para la transformación digital con IA. Te guiamos desde la conceptualización hasta la puesta en marcha.",
-    icon: "Briefcase",
+    icon: "briefcase",
     keywords: ["Consultoría IA", "Estrategia", "Transformación Digital"]
   },
   {
     title: "Eficiencia de Tokens y Costos",
     description: "Reducimos tu factura de API de OpenAI/Anthropic hasta un 70%. Optimizamos prompts y arquitecturas para soluciones token-efficient.",
-    icon: "TrendingDown",
+    icon: "trending-down",
     keywords: ["Optimización de costos de IA", "Ahorro API", "Token-Efficient"]
   },
   {
     title: "Desarrollo de Software con IA",
     description: "Desarrollo ágil y escalable de aplicaciones potenciadas por Inteligencia Artificial. Software a medida que evoluciona con tu empresa.",
-    icon: "Code",
+    icon: "code",
     keywords: ["Desarrollo Software", "Apps IA", "Scalability"]
   }
 ];
@@ -36,7 +37,7 @@ const services = [
         Soluciones Tecnológicas de Alto Impacto
       </p>
       <p class="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 mx-auto">
-        Impulsamos la innovación en empresas de Chile con servicios especializados en IA y desarrollo de software.
+        Impulsamos la innovación en empresas con servicios especializados en IA y desarrollo de software.
       </p>
     </div>
 
@@ -46,10 +47,7 @@ const services = [
           <div class="bg-white dark:bg-gray-900 overflow-hidden shadow rounded-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700 group">
             <div class="p-6">
               <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white mb-4 group-hover:bg-purple-600 transition-colors">
-                <!-- Simple SVG Icon Placeholder based on service.icon -->
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+                <Icon name={service.icon} size={24} class="h-6 w-6" />
               </div>
               <h3 class="text-lg font-medium text-gray-900 dark:text-white">{service.title}</h3>
               <p class="mt-2 text-base text-gray-500 dark:text-gray-400 h-24 overflow-hidden">

@@ -201,23 +201,43 @@ a:hover {
     padding: 0 var(--space-4);
 }
 
-@media (min-width: 1400px) {
+/* Breakpoints Responsivos Mobile-First */
+@media (min-width: 320px) {
     .container {
-        max-width: 1400px;
+        padding: 0 var(--space-4);
     }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
     .container {
+        max-width: 720px;
         padding: 0 var(--space-6);
     }
 }
 
 @media (min-width: 1024px) {
     .container {
+        max-width: 960px;
         padding: 0 var(--space-8);
     }
 }
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* Micro-interacciones globales */
+.btn, .nav-link, .service-card, .social-link {
+    transition: all 0.3s ease-in-out !important;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
 
 /* ===== HEADER & NAVIGATION ===== */
 .header {

@@ -10,7 +10,7 @@ interface Props {
 
 const { 
     title, 
-    description = "Automatización de procesos con IA en Chile. Consultoría tecnológica especializada en reducción de costos, desarrollo de software y transformación digital.",
+    description = "Automatización de procesos con IA. Consultoría tecnológica especializada en reducción de costos, desarrollo de software y transformación digital.",
     image = "/assets/images/og-image.jpg",
     favicon = "/favicon.svg"
 } = Astro.props;
@@ -24,15 +24,16 @@ const jsonLD = {
   "url": "https://thinka.cl",
   "logo": "https://thinka.cl/assets/logo/thinka-logo-cuadrado-fondo-uva.webp",
   "sameAs": [
-    "https://www.linkedin.com/company/thinka",
-    "https://twitter.com/thinka"
+    "https://www.linkedin.com/company/thinka-cl",
+    "https://www.facebook.com/people/Thinka-Desarrollo-de-Software-con-IA/61580902276921/",
+    "https://www.instagram.com/thinka.cl/"
   ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+56912345678",
+    "telephone": "+56948894523",
     "contactType": "customer service",
-    "areaServed": "CL",
-    "availableLanguage": "Spanish"
+    "areaServed": "Global",
+    "availableLanguage": ["Spanish", "English"]
   },
   "description": description
 };
@@ -59,21 +60,21 @@ const jsonLD = {
                 },
                 optional: {
                     description: description,
-                    locale: "es_CL",
-                    siteName: "Thinka - Consultoría de IA en Chile",
+                    locale: "es_ES",
+                    siteName: "Thinka - Consultoría de IA",
                 }
             }}
             twitter={{
                 card: "summary_large_image",
-                site: "@thinka",
-                creator: "@thinka",
+                site: "@thinka_cl",
+                creator: "@thinka_cl",
                 title: title,
                 description: description,
                 image: image,
             }}
             extend={{
                 meta: [
-                    { name: "keywords", content: "Automatización de procesos con IA, Consultoría IA Chile, Reducción de costos IA, Desarrollo de software con IA, IA en Chile, Optimización de modelos LLM" },
+                    { name: "keywords", content: "Automatización de procesos con IA, Consultoría IA, Reducción de costos IA, Desarrollo de software con IA, Inteligencia Artificial, Optimización de modelos LLM" },
                 ],
             }}
         />
