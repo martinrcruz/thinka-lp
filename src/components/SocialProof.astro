@@ -1,24 +1,27 @@
 ---
 import Icon from "./Icon.astro";
 const clients = [
-  { name: "Empresa 1", logo: "https://via.placeholder.com/150x50?text=Cliente+1" },
-  { name: "Empresa 2", logo: "https://via.placeholder.com/150x50?text=Cliente+2" },
-  { name: "Empresa 3", logo: "https://via.placeholder.com/150x50?text=Cliente+3" },
-  { name: "Empresa 4", logo: "https://via.placeholder.com/150x50?text=Cliente+4" },
+  { name: "Alabarteam", logo: "/assets/images/clients/alabarteam-logo.jpg" },
+  { name: "Extinguidor", logo: "/assets/images/clients/extinguidor-logo.png" },
+  { name: "Fenorte", logo: "/assets/images/clients/fenorte-logo.png" },
+  { name: "Lubeal", logo: "/assets/images/clients/lubeal-logo.png", invert: true },
 ];
 
 const reasons = [
   {
     title: "Experiencia Técnica Probada",
-    description: "Equipo de desarrolladores senior y especialistas en machine learning con historial de éxito."
+    description: "Equipo de desarrolladores senior y especialistas en machine learning con historial de éxito.",
+    icon: "code"
   },
   {
     title: "Enfoque en Resultados",
-    description: "No solo implementamos tecnología; garantizamos un ROI medible y optimización de procesos."
+    description: "No solo implementamos tecnología; garantizamos un ROI medible y optimización de procesos.",
+    icon: "chart"
   },
   {
     title: "Soporte Personalizado",
-    description: "Atención directa y comprensión profunda de los objetivos de tu negocio para soluciones a medida."
+    description: "Atención directa y comprensión profunda de los objetivos de tu negocio para soluciones a medida.",
+    icon: "briefcase"
   }
 ];
 ---
@@ -36,8 +39,12 @@ const reasons = [
     
     <div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-4 items-center justify-items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
       {clients.map((client) => (
-        <div class="col-span-1 flex justify-center py-8 px-8 bg-gray-50 dark:bg-gray-800 rounded-lg">
-          <span class="text-gray-400 font-bold text-xl">{client.name}</span>
+        <div class="col-span-1 flex justify-center items-center py-4 px-8 bg-gray-50/50 dark:bg-gray-800/50 rounded-xl hover:bg-white dark:hover:bg-gray-700 transition-colors duration-300 w-full h-32">
+          <img 
+            src={client.logo} 
+            alt={`Logo de ${client.name}`} 
+            class={`max-w-full max-h-full object-contain filter drop-shadow-sm ${(client as any).invert ? 'brightness-0 contrast-200 opacity-100' : ''}`}
+          />
         </div>
       ))}
     </div>
@@ -47,7 +54,7 @@ const reasons = [
         {reasons.map((reason) => (
           <div class="mt-10 lg:mt-0">
             <div class="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white mx-auto">
-              <Icon name="check" size={24} class="h-6 w-6" />
+              <Icon name={reason.icon as any} size={24} class="h-6 w-6" />
             </div>
             <div class="mt-5 text-center">
               <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white">{reason.title}</h3>

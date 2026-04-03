@@ -1,0 +1,32 @@
+---
+const partners = [
+  { name: "OpenAI", logo: "/assets/images/partners/openai-logo.png" },
+  { name: "Claude", logo: "/assets/images/partners/claude-logo.png" },
+  { name: "DeepSeek", logo: "/assets/images/partners/deepseek-logo.png" },
+  { name: "Ollama", logo: "/assets/images/partners/ollama-logo.webp" },
+  { name: "Python", logo: "/assets/images/partners/Python-logo.png" },
+  { name: "DigitalOcean", logo: "/assets/images/partners/DigitalOcean-logo.png" },
+];
+---
+
+<section class="py-12 bg-gray-50 dark:bg-gray-800/50 border-y border-gray-100 dark:border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-8">
+      <h3 class="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-widest">
+        Tecnologías & Partners Estratégicos
+      </h3>
+    </div>
+    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+      {partners.map((partner) => (
+        <div class="flex justify-center items-center h-12 w-32 md:w-40">
+          <img 
+            src={partner.logo} 
+            alt={`Logo de ${partner.name}`} 
+            class="max-w-full max-h-full object-contain filter drop-shadow-sm transition-transform duration-300 hover:scale-110"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
