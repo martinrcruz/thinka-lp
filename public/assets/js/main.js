@@ -25,10 +25,10 @@ class ThinkaApp {
 
                 // Hero Section
                 'hero-badge': 'Tecnología de Vanguardia',
-                'hero-title-main': 'Desarrollo de Software',
-                'hero-title-highlight': 'a Medida',
-                'hero-title-sub': 'con Inteligencia Artificial',
-                'hero-description': 'Transformamos ideas en soluciones digitales inteligentes. Especializados en chatbots avanzados, aplicaciones web personalizadas y sistemas de automatización que revolucionan tu negocio.',
+                'hero-title-main': 'Software, SaaS',
+                'hero-title-highlight': '& IA',
+                'hero-title-sub': 'Soluciones Globales',
+                'hero-description': 'Transformamos ideas en soluciones digitales inteligentes. Especializados en SaaS, software a medida y sistemas de IA que revolucionan tu negocio.',
                 'hero-stat-proyectos': 'Proyectos',
                 'hero-stat-satisfaccion': 'Satisfacción',
                 'hero-stat-anos': 'Años',
@@ -39,7 +39,7 @@ class ThinkaApp {
                 // Services Section
                 'services-badge': 'Servicios Especializados',
                 'services-title': 'Soluciones Tecnológicas de Vanguardia',
-                'services-description': 'Desarrollamos software a medida integrando inteligencia artificial para transformar digitalmente tu empresa con soluciones escalables y de alto rendimiento.',
+                'services-description': 'Desarrollamos software a medida, plataformas SaaS e inteligencia artificial para transformar digitalmente tu empresa con soluciones escalables y de alto rendimiento.',
 
                 // About Section
                 'about-title': '¿Por qué Thinka?',
@@ -48,7 +48,7 @@ class ThinkaApp {
                 // Portfolio Section
                 'portfolio-badge': 'Casos de Éxito',
                 'portfolio-title': 'Proyectos que Transforman Negocios',
-                'portfolio-description': 'Descubre cómo nuestras soluciones de IA y desarrollo a medida han revolucionado la operación de empresas líderes en diversos sectores industriales.',
+                'portfolio-description': 'Descubre cómo nuestras soluciones de Software, SaaS e IA han revolucionado la operación de empresas líderes en diversos sectores industriales.',
                 'portfolio-filter-all': 'Todos los Proyectos',
                 'portfolio-filter-chatbot': 'Chatbots IA',
                 'portfolio-filter-dashboard': 'Dashboards',
@@ -74,7 +74,7 @@ class ThinkaApp {
                 'contact-form-select': 'Seleccionar servicio',
 
                 // Footer
-                'footer-description': 'Soluciones de software inteligentes que transforman tu negocio a través de la innovación tecnológica.',
+                'footer-description': 'Soluciones de Software, SaaS e IA que transforman tu negocio a través de la innovación tecnológica.',
                 'footer-services': 'Servicios',
                 'footer-company': 'Empresa',
                 'footer-follow': 'Síguenos',
@@ -109,10 +109,10 @@ class ThinkaApp {
 
                 // Hero Section
                 'hero-badge': 'Cutting-Edge Technology',
-                'hero-title-main': 'Custom Software',
-                'hero-title-highlight': 'Development',
-                'hero-title-sub': 'with Artificial Intelligence',
-                'hero-description': 'We transform ideas into intelligent digital solutions. Specialized in advanced chatbots, custom web applications, and automation systems that revolutionize your business.',
+                'hero-title-main': 'Software, SaaS',
+                'hero-title-highlight': '& AI',
+                'hero-title-sub': 'Global Solutions',
+                'hero-description': 'We transform ideas into intelligent digital solutions. Specialized in SaaS, custom software, and AI systems that revolutionize your business.',
                 'hero-stat-proyectos': 'Projects',
                 'hero-stat-satisfaccion': 'Satisfaction',
                 'hero-stat-anos': 'Years',
@@ -123,7 +123,7 @@ class ThinkaApp {
                 // Services Section
                 'services-badge': 'Specialized Services',
                 'services-title': 'Cutting-Edge Technology Solutions',
-                'services-description': 'We develop custom software integrating artificial intelligence to digitally transform your company with scalable, high-performance solutions.',
+                'services-description': 'We develop custom software, SaaS platforms, and artificial intelligence to digitally transform your company with scalable, high-performance solutions.',
 
                 // About Section
                 'about-title': 'Why Thinka?',
@@ -132,7 +132,7 @@ class ThinkaApp {
                 // Portfolio Section
                 'portfolio-badge': 'Success Stories',
                 'portfolio-title': 'Projects that Transform Businesses',
-                'portfolio-description': 'Discover how our AI and custom development solutions have revolutionized the operations of leading companies across various industrial sectors.',
+                'portfolio-description': 'Discover how our Software, SaaS, and AI solutions have revolutionized the operations of leading companies across various industrial sectors.',
                 'portfolio-filter-all': 'All Projects',
                 'portfolio-filter-chatbot': 'AI Chatbots',
                 'portfolio-filter-dashboard': 'Dashboards',
@@ -158,7 +158,7 @@ class ThinkaApp {
                 'contact-form-select': 'Select service',
 
                 // Footer
-                'footer-description': 'Intelligent software solutions that transform your business through technological innovation.',
+                'footer-description': 'Software, SaaS, and AI solutions that transform your business through technological innovation.',
                 'footer-services': 'Services',
                 'footer-company': 'Company',
                 'footer-follow': 'Follow Us',

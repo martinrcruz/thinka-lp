@@ -1,0 +1,172 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import SimpleFooter from '../../components/SimpleFooter.astro';
+import Icon from '../../components/Icon.astro';
+
+// This is the specific detail page for Thinka Asistente product
+---
+
+<Layout 
+  title="Thinka Asistente | SaaS de Chatbots de IA Avanzada" 
+  description="Nuestra solución SaaS de asistentes virtuales inteligentes. Automatiza el soporte y las ventas 24/7 con la potencia de la IA y el Software de Thinka." 
+  favicon="/assets/logo/fav-asistente.png"
+>
+  <Navbar />
+
+  <main class="bg-white dark:bg-gray-900">
+    <!-- Hero Section -->
+    <section class="relative py-24 lg:py-32 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-white dark:from-blue-950/10 dark:to-gray-900 pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+          <div>
+            <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 text-sm font-bold mb-8">
+              <Icon name="activity" size={16} class="mr-2" />
+              SaaS de IA Conversacional
+            </div>
+            <h1 class="text-5xl lg:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight">
+              Thinka <span class="text-blue-600">Asistente</span>
+            </h1>
+            <p class="mt-8 text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+              Tu agente 24/7 que entiende, aprende y resuelve. No es solo un chatbot; es un integrante inteligente de tu equipo que escala tu atención al cliente y ventas de forma infinita.
+            </p>
+            <div class="mt-12 flex flex-col sm:flex-row gap-4">
+              <a href="#pricing" class="inline-flex justify-center items-center px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/25">
+                Ver Planes
+              </a>
+              <a href="/cotizar" class="inline-flex justify-center items-center px-8 py-4 border-2 border-gray-100 dark:border-gray-800 text-gray-600 dark:text-gray-300 font-bold rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all">
+                Solicitar Demo
+              </a>
+            </div>
+          </div>
+          
+          <div class="mt-16 lg:mt-0 relative">
+            <div class="bg-gray-900 rounded-[2.5rem] p-8 shadow-2xl border border-gray-800 relative overflow-hidden group">
+              <div class="flex items-center gap-2 mb-6 border-b border-gray-800 pb-4">
+                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">T</div>
+                <div class="text-white font-bold">Thinka AI</div>
+              </div>
+              <div class="space-y-4">
+                <div class="bg-gray-800/50 p-4 rounded-2xl rounded-tl-none max-w-[80%]">
+                  <p class="text-gray-300 text-sm">¡Hola! ¿En qué puedo ayudarte hoy?</p>
+                </div>
+                <div class="bg-blue-600 p-4 rounded-2xl rounded-tr-none max-w-[80%] ml-auto">
+                  <p class="text-white text-sm">Quiero agendar una reunión para mañana a las 10am.</p>
+                </div>
+                <div class="bg-gray-800/50 p-4 rounded-2xl rounded-tl-none max-w-[80%]">
+                  <p class="text-gray-300 text-sm">¡Perfecto! Tengo disponible a las 10:00 AM. ¿Confirmo tu cita?</p>
+                </div>
+              </div>
+              <!-- Floating badge -->
+              <div class="absolute bottom-6 right-6 bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 animate-bounce">
+                <div class="flex items-center gap-3">
+                  <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <span class="text-xs font-bold dark:text-white">Agendado con éxito</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Capabilities -->
+    <section class="py-24 bg-gray-50 dark:bg-gray-800/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">Más que un Chatbot</h2>
+          <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto italic">Potenciado por modelos de lenguaje de última generación (LLMs) y RAG.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-gray-900 p-10 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-xl">
+            <div class="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 mb-8">
+              <Icon name="activity" size={28} />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">NLP Avanzado</h3>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">Entiende intención, sentimiento y contexto. No más respuestas robóticas basadas en palabras clave rígidas.</p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-900 p-10 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-xl">
+            <div class="w-14 h-14 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-8">
+              <Icon name="package" size={28} />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Omnicanalidad</h3>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">WhatsApp Business, Instagram DM y Widget Web. Un solo cerebro, múltiples canales de contacto.</p>
+          </div>
+          
+          <div class="bg-white dark:bg-gray-900 p-10 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-xl">
+            <div class="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-purple-400 mb-8">
+              <Icon name="shield" size={28} />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Integración RAG</h3>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">Conectamos la IA con tus bases de datos y documentos internos para respuestas 100% precisas y seguras.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">Planes Flexibles</h2>
+          <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Escala tu equipo de IA según tus necesidades.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          <!-- Base -->
+          <div class="bg-white dark:bg-gray-900 rounded-[2.5rem] p-10 border border-gray-100 dark:border-gray-800 shadow-xl flex flex-col">
+            <h4 class="text-lg font-bold text-blue-600 mb-2">Asistente Base</h4>
+            <div class="flex items-baseline mb-8">
+              <span class="text-4xl font-extrabold text-gray-900 dark:text-white">$29.990</span>
+              <span class="text-gray-500 ml-2">/mes</span>
+            </div>
+            <ul class="space-y-4 mb-10 flex-grow text-sm">
+              <li class="flex items-center text-gray-600 dark:text-gray-300"><Icon name="check" size={14} class="mr-3 text-blue-600" /> 1 Asistente Entrenado</li>
+              <li class="flex items-center text-gray-600 dark:text-gray-300"><Icon name="check" size={14} class="mr-3 text-blue-600" /> Atención Automatizada</li>
+              <li class="flex items-center text-gray-600 dark:text-gray-300"><Icon name="check" size={14} class="mr-3 text-blue-600" /> Fuentes FAQ</li>
+            </ul>
+            <a href="/cotizar" class="w-full py-4 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-center">Elegir Plan</a>
+          </div>
+
+          <!-- Pro -->
+          <div class="bg-gray-900 rounded-[2.5rem] p-10 border-2 border-blue-600 shadow-2xl flex flex-col relative transform lg:-translate-y-4">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Recomendado</div>
+            <h4 class="text-lg font-bold text-blue-400 mb-2">Asistente Pro</h4>
+            <div class="flex items-baseline mb-8">
+              <span class="text-4xl font-extrabold text-white">$59.990</span>
+              <span class="text-gray-400 ml-2">/mes</span>
+            </div>
+            <ul class="space-y-4 mb-10 flex-grow text-sm">
+              <li class="flex items-center text-gray-300"><Icon name="check" size={14} class="mr-3 text-blue-400" /> Todo lo de Base</li>
+              <li class="flex items-center text-gray-300"><Icon name="check" size={14} class="mr-3 text-blue-400" /> Uso de RAG (Docs Internos)</li>
+              <li class="flex items-center text-gray-300"><Icon name="check" size={14} class="mr-3 text-blue-400" /> Reglas Configurables</li>
+              <li class="flex items-center text-gray-300"><Icon name="check" size={14} class="mr-3 text-blue-400" /> Control de Costos</li>
+            </ul>
+            <a href="/cotizar" class="w-full py-4 rounded-2xl bg-blue-600 text-white font-bold text-center shadow-lg shadow-blue-500/30">Elegir Plan</a>
+          </div>
+
+          <!-- Avanzado -->
+          <div class="bg-white dark:bg-gray-900 rounded-[2.5rem] p-10 border border-gray-100 dark:border-gray-800 shadow-xl flex flex-col">
+            <h4 class="text-lg font-bold text-blue-600 mb-2">Asistente Avanzado</h4>
+            <div class="flex items-baseline mb-8">
+              <span class="text-4xl font-extrabold text-gray-900 dark:text-white">$99.990</span>
+              <span class="text-gray-500 ml-2">/mes</span>
+            </div>
+            <ul class="space-y-4 mb-10 flex-grow text-sm">
+              <li class="flex items-center text-gray-600 dark:text-gray-300"><Icon name="check" size={14} class="mr-3 text-blue-600" /> Todo lo de Pro</li>
+              <li class="flex items-center text-gray-600 dark:text-gray-300"><Icon name="check" size={14} class="mr-3 text-blue-600" /> RAG Completo (APIs + BD)</li>
+              <li class="flex items-center text-gray-600 dark:text-gray-300"><Icon name="check" size={14} class="mr-3 text-blue-600" /> Contexto Persistente</li>
+              <li class="flex items-center text-gray-600 dark:text-gray-300"><Icon name="check" size={14} class="mr-3 text-blue-600" /> Soporte Prioritario</li>
+            </ul>
+            <a href="/cotizar" class="w-full py-4 rounded-2xl bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-bold text-center">Elegir Plan</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SimpleFooter />
+</Layout>

@@ -1,0 +1,131 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import SimpleFooter from '../../components/SimpleFooter.astro';
+import Icon from '../../components/Icon.astro';
+
+const features = [
+  {
+    title: "Arquitectura Cloud-Native",
+    description: "Diseñamos sistemas preparados para escalar desde el primer día, utilizando microservicios y contenedores.",
+    icon: "shield"
+  },
+  {
+    title: "Modelos de Suscripción",
+    description: "Implementamos sistemas de facturación recurrente, gestión de planes y cuotas para tu SaaS.",
+    icon: "package"
+  },
+  {
+    title: "Seguridad por Diseño",
+    description: "Protección de datos y cumplimiento normativo integrados en el núcleo de cada desarrollo.",
+    icon: "lock"
+  },
+  {
+    title: "UX/UI de Clase Mundial",
+    description: "Interfaces intuitivas que garantizan la adopción del usuario y reducen la fricción operativa.",
+    icon: "eye"
+  }
+];
+---
+
+<Layout 
+  title="Soluciones de Software y SaaS | Thinka"
+  description="Desarrollamos plataformas SaaS robustas y escalables. Transformamos tu visión en un producto digital listo para el mercado global."
+>
+  <Navbar />
+  
+  <main class="bg-white dark:bg-gray-900">
+    <!-- Hero Section -->
+    <section class="relative py-24 lg:py-32 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-purple-50 to-white dark:from-purple-950/10 dark:to-gray-900 pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+          <div>
+            <nav class="flex mb-8" aria-label="Breadcrumb">
+              <ol class="flex items-center space-x-2">
+                <li><a href="/" class="text-sm text-gray-500 hover:text-purple-600 transition-colors">Inicio</a></li>
+                <li><Icon name="arrow-right" size={12} class="text-gray-400" /></li>
+                <li><span class="text-sm font-bold text-purple-600">Servicios</span></li>
+              </ol>
+            </nav>
+            <h1 class="text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight">
+              Soluciones de <span class="text-purple-600">Software y SaaS</span>
+            </h1>
+            <p class="mt-8 text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+              En Thinka, no solo escribimos código; construimos modelos de negocio digitales. Ayudamos a empresas a lanzar, escalar y optimizar plataformas SaaS con arquitectura de vanguardia.
+            </p>
+            <div class="mt-12 flex flex-col sm:flex-row gap-4">
+              <a href="/cotizar" class="inline-flex justify-center items-center px-8 py-4 bg-purple-600 text-white font-bold rounded-2xl hover:bg-purple-700 transition-all shadow-lg hover:shadow-purple-500/25">
+                Empezar Proyecto
+              </a>
+              <a href="#proceso" class="inline-flex justify-center items-center px-8 py-4 border-2 border-gray-100 dark:border-gray-800 text-gray-600 dark:text-gray-300 font-bold rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all">
+                Nuestro Proceso
+              </a>
+            </div>
+          </div>
+          <div class="mt-16 lg:mt-0 relative">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-800 aspect-video bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+               <Icon name="package" size={120} class="text-purple-200 dark:text-purple-900" />
+               <!-- Decorative elements -->
+               <div class="absolute -top-10 -right-10 w-40 h-40 bg-purple-400/10 rounded-full blur-3xl"></div>
+               <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-indigo-400/10 rounded-full blur-3xl"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-24 bg-gray-50 dark:bg-gray-800/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">Capacidades Core</h2>
+          <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Soluciones integrales que cubren todo el ciclo de vida de un producto SaaS.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map(f => (
+            <div class="bg-white dark:bg-gray-900 p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-all duration-300 group">
+              <div class="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6 group-hover:scale-110 transition-transform">
+                <Icon name={f.icon as any} size={28} />
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">{f.title}</h3>
+              <p class="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">{f.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Proceso -->
+    <section id="proceso" class="py-24">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-16">Metodología Thinka</h2>
+        <div class="space-y-12 text-left">
+          <div class="flex gap-6 items-start">
+            <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl">1</div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Descubrimiento y Estrategia</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Analizamos tu mercado, competencia y usuarios para definir el MVP (Producto Mínimo Viable) que realmente aporte valor.</p>
+            </div>
+          </div>
+          <div class="flex gap-6 items-start">
+            <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl">2</div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Diseño de Experiencia (UX/UI)</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Creamos prototipos de alta fidelidad centrados en la retención del usuario y la facilidad de uso.</p>
+            </div>
+          </div>
+          <div class="flex gap-6 items-start">
+            <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-xl">3</div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Desarrollo Ágil</h3>
+              <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Iteraciones constantes con entregas funcionales quincenales bajo estándares de calidad senior.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SimpleFooter />
+</Layout>

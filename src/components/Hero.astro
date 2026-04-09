@@ -1,116 +1,106 @@
 ---
-// Placeholder for hero image - you should add a real image to src/assets/images
-// import heroImage from '../assets/images/hero-ai.png'; 
+import Icon from "./Icon.astro";
 ---
 
-<section class="relative bg-white dark:bg-gray-900 overflow-hidden noise-texture">
-  <!-- Sutil gradiente de fondo -->
-  <div class="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-indigo-50/30 dark:from-purple-950/10 dark:to-indigo-950/5 pointer-events-none"></div>
+<section class="relative bg-white dark:bg-gray-900 overflow-hidden min-h-[90vh] flex items-center">
+  <!-- Dynamic Background -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[120px] animate-pulse"></div>
+    <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px] animate-pulse" style="animation-delay: 2s;"></div>
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%239C92AC\" fill-opacity=\"0.05\" fill-rule=\"evenodd\"%3E%3Ccircle cx=\"3\" cy=\"3\" r=\"3\"/%3E%3C/g%3E%3C/svg%3E')] bg-repeat opacity-30"></div>
+  </div>
 
-  <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 py-24 lg:py-32 relative z-10 parallax-content">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 py-20 relative z-10">
     <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
-      <div class="sm:text-center md:max-w-3xl md:mx-auto lg:col-span-7 lg:text-left">
-        <div class="inline-flex items-center px-3 py-1 rounded-full border border-purple-200 bg-purple-50 text-purple-800 text-sm font-medium mb-6 transition-all duration-300 hover:scale-105">
-          <span class="flex h-2 w-2 rounded-full bg-purple-600 mr-2 animate-pulse"></span>
-          Agencia de IA Global
+      <div class="sm:text-center lg:col-span-7 lg:text-left">
+        <div class="inline-flex items-center px-4 py-2 rounded-full border border-purple-100 bg-purple-50/50 dark:bg-purple-900/20 dark:border-purple-800/50 text-purple-700 dark:text-purple-300 text-sm font-bold mb-8 animate-fade-in">
+          <span class="flex h-2 w-2 rounded-full bg-purple-600 mr-3 animate-ping"></span>
+          Software, SaaS & IA de Clase Mundial
         </div>
-        <h1 class="text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl leading-tight">
-          <span class="block xl:inline">Automatización de</span>
-          <span class="block text-purple-600 xl:inline">procesos con IA</span>
+        
+        <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black text-gray-900 dark:text-white leading-[0.95] tracking-tight mb-8">
+          <span class="block">Construimos el</span>
+          <span class="block bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent italic">futuro digital</span>
         </h1>
-        <p class="mt-6 text-lg text-gray-500 dark:text-gray-300 sm:text-xl sm:max-w-2xl sm:mx-auto md:text-2xl lg:mx-0 leading-relaxed">
-          Transformamos empresas en todo el mundo con soluciones de Inteligencia Artificial que optimizan costos y maximizan la eficiencia operativa. Consultoría tecnológica de vanguardia.
+        
+        <p class="mt-8 text-xl text-gray-600 dark:text-gray-300 max-w-2xl sm:mx-auto lg:mx-0 leading-relaxed font-medium">
+          Transformamos empresas con soluciones de Software, SaaS e Inteligencia Artificial que escalan tu negocio y optimizan cada proceso operativo. Consultoría tecnológica de vanguardia para la era de la IA.
         </p>
-        <div class="mt-10 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
-          <div class="flex flex-col sm:flex-row gap-5">
-            <a href="#contact" class="inline-flex justify-center items-center px-10 py-4 border border-transparent text-lg font-bold rounded-xl text-white bg-purple-600 hover:bg-purple-700 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 active:scale-95">
-              Agenda una Consultoría
-            </a>
-            <a href="#services" class="inline-flex justify-center items-center px-10 py-4 border-2 border-gray-200 dark:border-gray-700 text-lg font-bold rounded-xl text-gray-700 dark:text-gray-200 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 active:scale-95">
-              Ver Servicios
-            </a>
+        
+        <div class="mt-12 flex flex-col sm:flex-row gap-5 sm:justify-center lg:justify-start">
+          <a href="/cotizar" class="group inline-flex justify-center items-center px-10 py-5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-lg font-bold rounded-2xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 active:scale-95">
+            Iniciar Proyecto
+            <Icon name="arrow-right" size={20} class="ml-3 group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a href="#services" class="inline-flex justify-center items-center px-10 py-5 border-2 border-gray-100 dark:border-gray-800 text-lg font-bold rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 hover:shadow-xl active:scale-95">
+            Explorar Servicios
+          </a>
+        </div>
+
+        <div class="mt-12 pt-12 border-t border-gray-100 dark:border-gray-800 flex flex-wrap gap-8 sm:justify-center lg:justify-start">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center text-purple-600">
+              <Icon name="check" size={20} />
+            </div>
+            <span class="text-sm font-bold text-gray-500 dark:text-gray-400">Arquitectura Escalable</span>
           </div>
-          <p class="mt-5 text-sm text-gray-500 dark:text-gray-400 font-medium italic">
-            Expertos en arquitecturas token-efficient y optimización de costos.
-          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center text-indigo-600">
+              <Icon name="cpu" size={20} />
+            </div>
+            <span class="text-sm font-bold text-gray-500 dark:text-gray-400">IA de Vanguardia</span>
+          </div>
         </div>
       </div>
-      <div class="mt-16 lg:mt-0 lg:col-span-5 flex justify-center items-center">
-        <div class="relative w-full lg:scale-125 xl:scale-150 transition-transform duration-700">
-          <img
-            src="/assets/images/main-hero-image.png"
-            width="1400"
-            height="1400"
-            alt="Inteligencia Artificial Avanzada por Thinka"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-            class="w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
-          />
+
+      <div class="mt-20 lg:mt-0 lg:col-span-5 relative">
+        <div class="relative z-10 animate-float">
+          <div class="relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 p-2 rounded-[3rem] shadow-2xl border border-gray-100 dark:border-gray-700">
+            <img
+              src="/assets/images/main-hero-image.png"
+              width="800"
+              height="800"
+              alt="Soluciones de Software y IA Thinka"
+              class="rounded-[2.5rem] w-full h-auto object-cover shadow-inner"
+              loading="eager"
+            />
+            <!-- Overlay element -->
+            <div class="absolute -bottom-10 -left-10 bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700 hidden sm:block">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center text-white">
+                  <Icon name="activity" size={24} />
+                </div>
+                <div>
+                  <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Sistemas Activos</p>
+                  <p class="text-xl font-black text-gray-900 dark:text-white">99.9% Uptime</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        
+        <!-- Decorative shapes -->
+        <div class="absolute -top-20 -right-20 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl -z-10"></div>
       </div>
     </div>
   </div>
 
   <style>
-    /* Ruido CSS al 5% de opacidad */
-    .noise-texture::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      opacity: 0.05;
-      pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    }
-
-    /* Efecto de difuminación en los bordes */
-    .hero-edge-blur {
-      box-shadow: inset 0 0 20px 10px rgba(255, 255, 255, 1);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      mask-image: radial-gradient(circle, transparent 60%, black 100%);
-      -webkit-mask-image: radial-gradient(circle, transparent 60%, black 100%);
-    }
-
-    :global([data-theme="dark"]) .hero-edge-blur {
-      box-shadow: inset 0 0 20px 10px rgba(17, 24, 39, 1);
-    }
-
-    .hero-blur-effect {
-      filter: blur(0px);
-      transition: filter 0.3s ease;
-    }
-
-    /* Parallax suave */
-    @media (min-width: 1024px) {
-      .parallax-content {
-        animation: float 6s ease-in-out infinite;
-      }
-    }
-
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      50% { transform: translateY(-20px); }
     }
-
-    /* Breakpoints personalizados */
-    @media (min-width: 320px) { /* Mobile small */ }
-    @media (min-width: 768px) { /* Tablet */ }
-    @media (min-width: 1024px) { /* Desktop */ }
-    @media (min-width: 1440px) { /* Ultra-wide */ }
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
-
-  
-  <!-- Background decoration -->
-  <div class="absolute top-0 right-0 -mr-20 -mt-20 opacity-20">
-    <svg width="404" height="404" fill="none" viewBox="0 0 404 404" aria-hidden="true" class="text-purple-200 dark:text-purple-900">
-      <defs>
-        <pattern id="de316486-4a29-4312-bdfc-fbce2132a2c1" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-          <rect x="0" y="0" width="4" height="4" fill="currentColor" />
-        </pattern>
-      </defs>
-      <rect width="404" height="404" fill="url(#de316486-4a29-4312-bdfc-fbce2132a2c1)" />
-    </svg>
-  </div>
 </section>
+
