@@ -1,0 +1,64 @@
+---
+import Layout from './Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import SimpleFooter from '../components/SimpleFooter.astro';
+
+interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<Layout title={`${title} | Thinka`} description={`${title} de Thinka. Soluciones profesionales de software e IA.`}>
+  <Navbar />
+  
+  <main>
+    <!-- Header Legal -->
+    <header class="legal-header">
+      <div class="container">
+        <div class="legal-header-content">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ul class="breadcrumb-list">
+              <li><a href="/">Inicio</a></li>
+              <li aria-current="page">{title}</li>
+            </ul>
+          </nav>
+          <h1 class="legal-title">{title}</h1>
+          <p class="legal-subtitle">{subtitle}</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido Legal -->
+    <section class="legal-content">
+      <div class="container">
+        <div class="legal-wrapper">
+          <!-- Sidebar -->
+          <aside class="legal-sidebar">
+            <nav class="legal-nav">
+              <h3>Documentación</h3>
+              <ul class="legal-nav-list">
+                <li><a href="/politica-privacidad">Política de Privacidad</a></li>
+                <li><a href="/terminos-condiciones">Términos y Condiciones</a></li>
+                <li><a href="/aviso-legal">Aviso Legal</a></li>
+                <li><a href="/politica-cookies">Política de Cookies</a></li>
+                <li><a href="/confidencialidad">Confidencialidad (NDA)</a></li>
+              </ul>
+            </nav>
+          </aside>
+
+          <!-- Main Content -->
+          <div class="legal-main">
+            <article class="legal-text">
+              <slot />
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SimpleFooter />
+</Layout>
