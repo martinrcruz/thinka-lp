@@ -25,8 +25,8 @@ class ThinkaApp {
 
                 // Hero Section
                 'hero-badge': 'Tecnología de Vanguardia',
-                'hero-title-main': 'Software, SaaS',
-                'hero-title-highlight': '& IA',
+                'hero-title-main': 'SaaS, Software',
+                'hero-title-highlight': 'e Inteligencia Artificial',
                 'hero-title-sub': 'Soluciones Globales',
                 'hero-description': 'Transformamos ideas en soluciones digitales inteligentes. Especializados en SaaS, software a medida y sistemas de IA que revolucionan tu negocio.',
                 'hero-stat-proyectos': 'Proyectos',
@@ -109,8 +109,8 @@ class ThinkaApp {
 
                 // Hero Section
                 'hero-badge': 'Cutting-Edge Technology',
-                'hero-title-main': 'Software, SaaS',
-                'hero-title-highlight': '& AI',
+                'hero-title-main': 'SaaS, Software',
+                'hero-title-highlight': 'and Artificial Intelligence',
                 'hero-title-sub': 'Global Solutions',
                 'hero-description': 'We transform ideas into intelligent digital solutions. Specialized in SaaS, custom software, and AI systems that revolutionize your business.',
                 'hero-stat-proyectos': 'Projects',

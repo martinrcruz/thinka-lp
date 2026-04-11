@@ -3,58 +3,74 @@ import Icon from "./Icon.astro";
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-gray-800 text-white">
-  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div class="col-span-1 md:col-span-1">
-        <img src="/assets/images/logo-thinka.png" alt="Thinka Logo" class="h-12 w-auto mb-4 brightness-0 invert" />
-        <p class="mt-2 text-sm text-gray-400">
-          Expertos en Software, SaaS e Inteligencia Artificial.
+<footer class="bg-gray-900 border-t border-gray-800 pt-20 pb-10">
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
+      <div class="lg:col-span-2">
+        <a href="/" class="inline-block mb-8">
+          <img src="/assets/images/logo-thinka.png" alt="Thinka Logo" class="h-10 w-auto brightness-0 invert" />
+        </a>
+        <p class="text-gray-400 text-lg max-w-sm leading-relaxed mb-8">
+          Liderando la transformación digital en Chile con soluciones de Software, SaaS e Inteligencia Artificial de alto impacto.
         </p>
+        <div class="flex gap-4">
+          <a href="https://www.linkedin.com/company/thinka-cl/" class="w-10 h-10 rounded-xl bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-purple-600 hover:text-white transition-all duration-300" target="_blank">
+            <Icon name="linkedin" size={20} />
+          </a>
+          <a href="https://www.instagram.com/thinka.cl/" class="w-10 h-10 rounded-xl bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-purple-600 hover:text-white transition-all duration-300" target="_blank">
+            <Icon name="instagram" size={20} />
+          </a>
+          <a href="https://www.facebook.com/people/Thinka-Desarrollo-de-Software-con-IA/61580902276921/" class="w-10 h-10 rounded-xl bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-purple-600 hover:text-white transition-all duration-300" target="_blank">
+            <Icon name="facebook" size={20} />
+          </a>
+        </div>
       </div>
-      <div class="col-span-1 md:col-span-1">
-        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Servicios</h3>
-        <ul class="mt-4 space-y-4">
-          <li><a href="#services" class="text-base text-gray-300 hover:text-white">Software a Medida</a></li>
-          <li><a href="#services" class="text-base text-gray-300 hover:text-white">Plataformas SaaS</a></li>
-          <li><a href="#services" class="text-base text-gray-300 hover:text-white">Inteligencia Artificial</a></li>
-          <li><a href="#about" class="text-base text-gray-300 hover:text-white">Nosotros</a></li>
+
+      <div>
+        <h3 class="text-white font-bold mb-8 uppercase tracking-widest text-sm">Servicios</h3>
+        <ul class="space-y-4">
+          <li><a href="/servicios/software-saas" class="text-gray-400 hover:text-purple-400 transition-colors">Software & SaaS</a></li>
+          <li><a href="/servicios/inteligencia-artificial" class="text-gray-400 hover:text-purple-400 transition-colors">IA Aplicada</a></li>
+          <li><a href="/servicios/desarrollo-software" class="text-gray-400 hover:text-purple-400 transition-colors">Desarrollo a Medida</a></li>
+          <li><a href="/cotizar" class="text-gray-400 hover:text-purple-400 transition-colors">Consultoría TI</a></li>
         </ul>
       </div>
-      <div class="col-span-1 md:col-span-1">
-        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
-        <ul class="mt-4 space-y-4">
-          <li><a href="/politica-privacidad" class="text-base text-gray-300 hover:text-white">Privacidad</a></li>
-          <li><a href="/terminos-condiciones" class="text-base text-gray-300 hover:text-white">Términos</a></li>
-          <li><a href="/aviso-legal" class="text-base text-gray-300 hover:text-white">Aviso Legal</a></li>
-          <li><a href="/politica-cookies" class="text-base text-gray-300 hover:text-white">Cookies</a></li>
-          <li><a href="/confidencialidad" class="text-base text-gray-300 hover:text-white">Confidencialidad</a></li>
+
+      <div>
+        <h3 class="text-white font-bold mb-8 uppercase tracking-widest text-sm">Productos</h3>
+        <ul class="space-y-4">
+          <li><a href="/productos/agentes" class="text-gray-400 hover:text-purple-400 transition-colors">Thinka Agentes</a></li>
+          <li><a href="/productos/dataguard" class="text-gray-400 hover:text-purple-400 transition-colors">Thinka Dataguard</a></li>
+          <li><span class="text-gray-600">Thinka Analítica</span></li>
         </ul>
       </div>
-      <div class="col-span-1 md:col-span-1">
-        <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Contacto & Soporte</h3>
-        <ul class="mt-4 space-y-4">
-          <li class="flex items-center text-gray-300">
-            <Icon name="mail" size={20} class="h-5 w-5 mr-2" />
-            contacto@thinka.cl
-          </li>
-          <li class="flex items-center text-gray-300">
-            <Icon name="map-pin" size={20} class="mr-2" />
-            Remoto / Global
-          </li>
+
+      <div>
+        <h3 class="text-white font-bold mb-8 uppercase tracking-widest text-sm">Legal</h3>
+        <ul class="space-y-4">
+          <li><a href="/politica-privacidad" class="text-gray-400 hover:text-purple-400 transition-colors">Privacidad</a></li>
+          <li><a href="/terminos-condiciones" class="text-gray-400 hover:text-purple-400 transition-colors">Términos</a></li>
+          <li><a href="/aviso-legal" class="text-gray-400 hover:text-purple-400 transition-colors">Aviso Legal</a></li>
+          <li><a href="/politica-cookies" class="text-gray-400 hover:text-purple-400 transition-colors">Cookies</a></li>
+          <li><a href="/confidencialidad" class="text-gray-400 hover:text-purple-400 transition-colors">Confidencialidad</a></li>
         </ul>
       </div>
     </div>
-    <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
-      <div class="flex space-x-6 md:order-2">
-        <a href="https://www.linkedin.com/company/thinka-cl/" class="text-gray-400 hover:text-gray-300" target="_blank" rel="noopener noreferrer">
-          <span class="sr-only">LinkedIn</span>
-          <Icon name="linkedin" size={24} class="h-6 w-6" />
+
+    <div class="pt-10 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-8">
+        <p class="text-gray-500 text-sm">&copy; {currentYear} Thinka. Todos los derechos reservados.</p>
+        <div class="hidden md:flex items-center gap-2 text-gray-500 text-sm">
+          <Icon name="map-pin" size={14} />
+          Santiago, Chile
+        </div>
+      </div>
+      <div class="flex items-center gap-6 text-sm">
+        <a href="mailto:contacto@thinka.cl" class="text-gray-400 hover:text-white flex items-center gap-2">
+          <Icon name="mail" size={16} />
+          contacto@thinka.cl
         </a>
       </div>
-      <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
-        &copy; {currentYear} Thinka. Todos los derechos reservados.
-      </p>
     </div>
   </div>
 </footer>

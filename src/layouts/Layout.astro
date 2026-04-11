@@ -19,23 +19,42 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const jsonLD = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Thinka",
-  "url": "https://thinka.cl",
-  "logo": "https://thinka.cl/assets/images/logo-thinka.png",
-  "sameAs": [
-    "https://www.linkedin.com/company/thinka-cl",
-    "https://www.facebook.com/people/Thinka-Desarrollo-de-Software-con-IA/61580902276921/",
-    "https://www.instagram.com/thinka.cl/"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+56948894523",
-    "contactType": "customer service",
-    "areaServed": "Global",
-    "availableLanguage": ["Spanish", "English"]
-  },
-  "description": description
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://thinka.cl/#organization",
+      "name": "Thinka",
+      "url": "https://thinka.cl",
+      "logo": "https://thinka.cl/assets/images/logo-thinka.png",
+      "sameAs": [
+        "https://www.linkedin.com/company/thinka-cl",
+        "https://www.facebook.com/people/Thinka-Desarrollo-de-Software-con-IA/61580902276921/",
+        "https://www.instagram.com/thinka.cl/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+56948894523",
+        "contactType": "customer service",
+        "areaServed": "Global",
+        "availableLanguage": ["Spanish", "English"]
+      },
+      "description": description
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://thinka.cl/#website",
+      "url": "https://thinka.cl",
+      "name": "Thinka",
+      "publisher": { "@id": "https://thinka.cl/#organization" }
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Software Development",
+      "provider": { "@id": "https://thinka.cl/#organization" },
+      "areaServed": "Global",
+      "description": "Desarrollo de Software a medida, plataformas SaaS e integración de Inteligencia Artificial."
+    }
+  ]
 };
 ---
 
@@ -95,6 +114,32 @@ const jsonLD = {
         </style>
 	</head>
 	<body class="bg-white text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-100">
+		<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-purple-600 text-white px-4 py-2 rounded-lg z-[60]">
+			Saltar al contenido principal
+		</a>
 		<slot />
+
+		<script is:inline>
+			// Tracking placeholder
+			function trackEvent(eventName, eventParams) {
+				console.log(`[Tracking Event]: ${eventName}`, eventParams);
+				if (typeof window.gtag === 'function') {
+					window.gtag('event', eventName, eventParams);
+				}
+			}
+
+			document.addEventListener('DOMContentLoaded', () => {
+				const ctas = document.querySelectorAll('a[id], button[id]');
+				ctas.forEach(cta => {
+					cta.addEventListener('click', () => {
+						trackEvent('click_cta', {
+							cta_id: cta.id,
+							cta_text: cta.innerText.trim(),
+							page_path: window.location.pathname
+						});
+					});
+				});
+			});
+		</script>
 	</body>
 </html>

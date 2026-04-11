@@ -2,6 +2,7 @@
 import Layout from './Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import SimpleFooter from '../components/SimpleFooter.astro';
+import Icon from '../components/Icon.astro';
 
 interface Props {
   title: string;
@@ -9,51 +10,108 @@ interface Props {
 }
 
 const { title, subtitle } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const legalLinks = [
+  { href: "/politica-privacidad", label: "Política de Privacidad", icon: "shield" },
+  { href: "/terminos-condiciones", label: "Términos y Condiciones", icon: "file-text" },
+  { href: "/aviso-legal", label: "Aviso Legal", icon: "eye" },
+  { href: "/politica-cookies", label: "Política de Cookies", icon: "package" },
+  { href: "/confidencialidad", label: "Confidencialidad (NDA)", icon: "lock" },
+];
 ---
 
 <Layout title={`${title} | Thinka`} description={`${title} de Thinka. Soluciones profesionales de software e IA.`}>
   <Navbar />
   
-  <main>
+  <main class="bg-gray-50/50 dark:bg-gray-950/20">
     <!-- Header Legal -->
-    <header class="legal-header">
-      <div class="container">
-        <div class="legal-header-content">
-          <nav class="breadcrumb" aria-label="Breadcrumb">
-            <ul class="breadcrumb-list">
-              <li><a href="/">Inicio</a></li>
-              <li aria-current="page">{title}</li>
-            </ul>
+    <header class="relative py-20 lg:py-32 overflow-hidden bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800">
+      <div class="absolute inset-0 pointer-events-none opacity-30">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-[100px]"></div>
+      </div>
+      
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        <div class="max-w-4xl">
+          <nav class="flex items-center space-x-2 text-sm font-bold text-purple-600 dark:text-purple-400 mb-6" aria-label="Breadcrumb">
+            <a href="/" class="hover:text-purple-700 dark:hover:text-purple-300 transition-colors">Inicio</a>
+            <Icon name="arrow-right" size={14} class="text-gray-300 dark:text-gray-600" />
+            <span class="text-gray-500 dark:text-gray-400">{title}</span>
           </nav>
-          <h1 class="legal-title">{title}</h1>
-          <p class="legal-subtitle">{subtitle}</p>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white leading-tight mb-6 tracking-tight">
+            {title}
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed font-medium max-w-2xl">
+            {subtitle}
+          </p>
         </div>
       </div>
     </header>
 
     <!-- Contenido Legal -->
-    <section class="legal-content">
-      <div class="container">
-        <div class="legal-wrapper">
+    <section class="py-16 lg:py-24">
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-12 lg:gap-20 items-start">
           <!-- Sidebar -->
-          <aside class="legal-sidebar">
-            <nav class="legal-nav">
-              <h3>Documentación</h3>
-              <ul class="legal-nav-list">
-                <li><a href="/politica-privacidad">Política de Privacidad</a></li>
-                <li><a href="/terminos-condiciones">Términos y Condiciones</a></li>
-                <li><a href="/aviso-legal">Aviso Legal</a></li>
-                <li><a href="/politica-cookies">Política de Cookies</a></li>
-                <li><a href="/confidencialidad">Confidencialidad (NDA)</a></li>
-              </ul>
-            </nav>
+          <aside class="sticky top-32 space-y-8 order-2 lg:order-1">
+            <div class="bg-white dark:bg-gray-900 rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm">
+              <h3 class="text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em] mb-8 flex items-center">
+                <Icon name="file-text" size={14} class="mr-2" />
+                Documentación
+              </h3>
+              <nav class="space-y-2">
+                {legalLinks.map((link) => (
+                  <a 
+                    href={link.href} 
+                    class:list={[
+                      "flex items-center p-4 rounded-2xl text-sm font-bold transition-all border",
+                      currentPath === link.href 
+                        ? "bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 border-purple-100 dark:border-purple-800" 
+                        : "text-gray-600 dark:text-gray-400 border-transparent hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white"
+                    ]}
+                  >
+                    <div class:list={[
+                      "w-8 h-8 rounded-lg flex items-center justify-center mr-4 transition-colors",
+                      currentPath === link.href 
+                        ? "bg-purple-100 dark:bg-purple-900/40 text-purple-600" 
+                        : "bg-gray-100 dark:bg-gray-800 text-gray-400 group-hover:text-gray-600"
+                    ]}>
+                      <Icon name={link.icon as any} size={18} />
+                    </div>
+                    {link.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+
+            <!-- Ayuda Rápida Sidebar -->
+            <div class="bg-gradient-to-br from-purple-600 to-indigo-700 rounded-3xl p-8 text-white shadow-xl shadow-purple-500/20 overflow-hidden relative group">
+              <div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+              <div class="relative z-10">
+                <h4 class="text-lg font-black mb-4 leading-tight">¿Tienes dudas legales o de privacidad?</h4>
+                <p class="text-purple-100 text-sm mb-8 leading-relaxed font-medium">Nuestro equipo legal está disponible para resolver tus inquietudes.</p>
+                <a href="/contacto" class="inline-flex items-center justify-center w-full py-4 bg-white text-purple-700 rounded-xl text-sm font-bold hover:shadow-lg transition-all active:scale-95">
+                  Contactar Legal
+                </a>
+              </div>
+            </div>
           </aside>
 
           <!-- Main Content -->
-          <div class="legal-main">
-            <article class="legal-text">
-              <slot />
-            </article>
+          <div class="order-1 lg:order-2">
+            <div class="bg-white dark:bg-gray-900 rounded-[2.5rem] p-8 sm:p-12 lg:p-16 border border-gray-100 dark:border-gray-800 shadow-sm relative overflow-hidden">
+              <!-- Watermark Background -->
+              <div class="absolute top-0 right-0 opacity-[0.02] dark:opacity-[0.05] pointer-events-none -mr-20 -mt-20">
+                <Icon name="shield" size={400} />
+              </div>
+
+              <article class="prose prose-purple dark:prose-invert max-w-none relative z-10">
+                <div class="legal-content-container">
+                  <slot />
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </div>
@@ -62,3 +120,52 @@ const { title, subtitle } = Astro.props;
 
   <SimpleFooter />
 </Layout>
+
+<style is:global>
+  /* Estilos específicos para contenido legal enriquecido */
+  .legal-content-container {
+    @apply space-y-16 text-gray-600 dark:text-gray-300;
+  }
+  
+  .legal-section {
+    @apply border-b border-gray-50 dark:border-gray-800 pb-16 last:border-0 last:pb-0;
+  }
+
+  .legal-section h2 {
+    @apply text-2xl sm:text-3xl font-black text-gray-900 dark:text-white mb-8 tracking-tight flex items-center;
+  }
+
+  .legal-section h2::before {
+    content: '';
+    @apply w-2 h-8 bg-purple-600 rounded-full mr-4 inline-block shadow-lg shadow-purple-500/20;
+  }
+
+  .legal-section p {
+    @apply text-lg leading-relaxed mb-6 font-medium;
+  }
+
+  .legal-section ul {
+    @apply space-y-4 my-8;
+  }
+
+  .legal-section li {
+    @apply flex items-start text-lg leading-relaxed font-medium;
+  }
+
+  .legal-section li::before {
+    content: '→';
+    @apply text-purple-600 font-black mr-4 mt-0.5;
+  }
+
+  .contact-info {
+    @apply bg-purple-50/50 dark:bg-purple-900/10 rounded-3xl p-8 border border-purple-100/50 dark:border-purple-800/30 mt-8;
+  }
+
+  .contact-info p {
+    @apply flex items-center text-purple-900 dark:text-purple-100 font-bold mb-4 last:mb-0;
+  }
+
+  .contact-info strong {
+    @apply text-purple-600 dark:text-purple-400 mr-2;
+  }
+</style>
