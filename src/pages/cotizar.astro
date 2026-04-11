@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import SimpleFooter from '../components/SimpleFooter.astro';
+import Icon from '../components/Icon.astro';
+
+const services = [
+  "Plataforma SaaS",
+  "Inteligencia Artificial / Agentes",
+  "Desarrollo de Software a Medida",
+  "Consultoría Técnica / CTO as a Service",
+  "Otro"
+];
+---
+
+<Layout 
+  title="Cotizar Proyecto | Thinka"
+  description="Solicita una cotización para tu proyecto de software o inteligencia artificial. Nuestro equipo experto te ayudará a definir la mejor solución técnica."
+>
+  <Navbar />
+  
+  <main class="bg-white dark:bg-gray-900 min-h-screen">
+    <section class="py-20 lg:py-32 relative overflow-hidden">
+      <!-- Background elements -->
+      <div class="absolute inset-0 pointer-events-none opacity-30">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[120px]"></div>
+      </div>
+
+      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16">
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 text-sm font-black mb-6 uppercase tracking-widest">
+              Solicitud de Presupuesto
+            </div>
+            <h1 class="text-5xl lg:text-7xl font-black text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
+              Diseñemos tu <br/>
+              <span class="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent italic pr-4 py-2" style="box-decoration-break: clone; -webkit-box-decoration-break: clone;">solución ideal</span>
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed font-medium max-w-2xl mx-auto">
+              Cuéntanos brevemente sobre tu proyecto y los objetivos que buscas alcanzar. Analizaremos tu requerimiento para entregarte una propuesta técnica y comercial sólida.
+            </p>
+          </div>
+
+          <!-- Quote Form -->
+          <div class="bg-gray-50 dark:bg-gray-800/50 rounded-[3rem] p-8 sm:p-16 border border-gray-100 dark:border-gray-800 shadow-xl">
+            <form class="grid gap-10">
+              <!-- Personal Info -->
+              <div class="grid sm:grid-cols-2 gap-8">
+                <div class="space-y-3">
+                  <label class="text-sm font-black text-gray-400 uppercase tracking-widest ml-1">Nombre Completo</label>
+                  <input type="text" placeholder="Ej: Roberto Silva" class="w-full px-8 py-5 rounded-2xl bg-white dark:bg-gray-900 border-2 border-transparent focus:border-purple-500 outline-none transition-all dark:text-white shadow-sm" required />
+                </div>
+                <div class="space-y-3">
+                  <label class="text-sm font-black text-gray-400 uppercase tracking-widest ml-1">Correo Corporativo</label>
+                  <input type="email" placeholder="roberto@empresa.com" class="w-full px-8 py-5 rounded-2xl bg-white dark:bg-gray-900 border-2 border-transparent focus:border-purple-500 outline-none transition-all dark:text-white shadow-sm" required />
+                </div>
+              </div>
+
+              <!-- Project Type -->
+              <div class="space-y-5">
+                <label class="text-sm font-black text-gray-400 uppercase tracking-widest ml-1">Tipo de Servicio</label>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {services.map(service => (
+                    <label class="relative flex items-center p-5 rounded-2xl bg-white dark:bg-gray-900 border-2 border-gray-100 dark:border-gray-800 cursor-pointer hover:border-purple-200 dark:hover:border-purple-900 transition-all group">
+                      <input type="checkbox" class="sr-only peer" />
+                      <div class="w-5 h-5 rounded-full border-2 border-gray-200 dark:border-gray-700 peer-checked:bg-purple-600 peer-checked:border-purple-600 mr-4 transition-all"></div>
+                      <span class="text-sm font-bold text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white">{service}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Details -->
+              <div class="space-y-3">
+                <label class="text-sm font-black text-gray-400 uppercase tracking-widest ml-1">Descripción del Proyecto</label>
+                <textarea rows="6" placeholder="Cuéntanos sobre los objetivos, funcionalidades clave o desafíos técnicos..." class="w-full px-8 py-6 rounded-3xl bg-white dark:bg-gray-900 border-2 border-transparent focus:border-purple-500 outline-none transition-all dark:text-white shadow-sm resize-none" required></textarea>
+              </div>
+
+              <div class="flex flex-col items-center gap-6">
+                <button type="submit" class="w-full sm:w-auto px-16 py-6 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-xl font-black rounded-2xl shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-1 transition-all active:scale-95">
+                  Solicitar Propuesta
+                </button>
+                <p class="text-sm font-bold text-gray-400 flex items-center">
+                  <Icon name="lock" size={16} class="mr-2" />
+                  Tu información está protegida por nuestra política de confidencialidad.
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SimpleFooter />
+</Layout>
