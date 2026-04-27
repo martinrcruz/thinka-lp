@@ -37,10 +37,11 @@ interface Props {
 }
 
 const { name, size = 20, class: className = "", title, ariaLabel } = Astro.props;
-const decorative = !title && !ariaLabel;
+const label = ariaLabel ?? title;
+const decorative = !label;
 const ariaAttrs = decorative
-  ? { "aria-hidden": "true" }
-  : { role: "img", "aria-label": ariaLabel ?? title };
+  ? ({ "aria-hidden": "true" } as const)
+  : ({ role: "img", "aria-label": label } as const);
 ---
 
 {name === "check" && (

@@ -1,0 +1,109 @@
+---
+---
+
+<div class="bg-gradient-to-br from-brand-navy to-brand-obsidian p-8 rounded-3xl border border-brand-indigo/30 shadow-2xl relative overflow-hidden group">
+  <!-- Background Glow -->
+  <div class="absolute -right-20 -bottom-20 h-80 w-80 rounded-full bg-brand-indigo/10 blur-[100px] group-hover:bg-brand-indigo/20 transition-all duration-700"></div>
+
+  <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h3 class="text-3xl font-bold mb-4">Calcula tu Retorno de Inversión</h3>
+      <p class="text-brand-slate mb-8">
+        Descubre cuánto tiempo y dinero puede ahorrar tu empresa al automatizar procesos repetitivos con Thinka.
+      </p>
+
+      <div class="space-y-6">
+        <div>
+          <label for="hours" class="block text-sm font-medium text-brand-slate mb-2">
+            Horas manuales semanales (equipo)
+          </label>
+          <input 
+            type="range" 
+            id="hours-range" 
+            min="5" 
+            max="100" 
+            value="25" 
+            class="w-full h-2 bg-brand-obsidian rounded-lg appearance-none cursor-pointer accent-brand-primary"
+          />
+          <div class="flex justify-between mt-2 text-xs text-brand-slate">
+            <span>5 hrs</span>
+            <span id="hours-display" class="text-brand-primary font-bold">25 hrs</span>
+            <span>100 hrs</span>
+          </div>
+        </div>
+
+        <div>
+          <label for="cost" class="block text-sm font-medium text-brand-slate mb-2">
+            Costo promedio por hora (CLP)
+          </label>
+          <input 
+            type="number" 
+            id="cost-input" 
+            value="15000" 
+            step="1000"
+            class="w-full bg-brand-obsidian border border-white/10 rounded-xl px-4 py-2 text-brand-white focus:border-brand-primary outline-none transition-colors"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/5 flex flex-col items-center justify-center text-center relative overflow-hidden group/result">
+      <!-- Success Pulse -->
+      <div class="absolute inset-0 bg-brand-primary/5 opacity-0 group-hover/result:opacity-100 transition-opacity duration-500"></div>
+      
+      <p class="text-brand-slate uppercase tracking-widest text-xs font-bold mb-2 relative z-10">Ahorro Mensual Estimado</p>
+      <div id="roi-result" class="text-5xl md:text-6xl font-black text-brand-primary mb-4 relative z-10 transition-all duration-300">
+        $1.500.000
+      </div>
+      <p class="text-brand-slate text-sm relative z-10">
+        Liberas <span id="hours-freed" class="text-brand-white font-bold">100</span> horas de talento humano al mes.
+      </p>
+      
+      <div class="mt-8 pt-8 border-t border-white/10 w-full relative z-10">
+        <p class="text-xs text-brand-slate italic">
+          * Basado en una reducción del 80% del trabajo manual con IA administrada.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { employeeCount } from '../stores/roiStore';
+
+  const hoursRange = document.getElementById('hours-range') as HTMLInputElement;
+  const hoursDisplay = document.getElementById('hours-display');
+  const costInput = document.getElementById('cost-input') as HTMLInputElement;
+  const roiResult = document.getElementById('roi-result');
+  const hoursFreed = document.getElementById('hours-freed');
+
+  function calculateROI() {
+    const hours = parseInt(hoursRange.value);
+    const cost = parseInt(costInput.value);
+    
+    // Update the store so the 3D animation can react
+    employeeCount.set(hours);
+    
+    // Assume 4 weeks per month and 80% efficiency gain
+    const monthlyHours = hours * 4;
+    const savings = monthlyHours * 0.8 * cost;
+    const freed = Math.round(monthlyHours * 0.8);
+
+    if (hoursDisplay) hoursDisplay.innerText = `${hours} hrs`;
+    if (roiResult) {
+      roiResult.innerText = `$${savings.toLocaleString('es-CL')}`;
+      // Add a small bounce animation effect on update
+      roiResult.classList.remove('scale-110');
+      void roiResult.offsetWidth; // trigger reflow
+      roiResult.classList.add('scale-110');
+      setTimeout(() => roiResult.classList.remove('scale-110'), 150);
+    }
+    if (hoursFreed) hoursFreed.innerText = freed.toString();
+  }
+
+  hoursRange?.addEventListener('input', calculateROI);
+  costInput?.addEventListener('input', calculateROI);
+  
+  // Initialize
+  calculateROI();
+</script>

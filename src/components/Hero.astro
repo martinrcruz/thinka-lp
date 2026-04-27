@@ -1,5 +1,6 @@
 ---
 import Icon from "./Icon.astro";
+import NeuralCoreCanvas from "./3d/NeuralCoreCanvas.svelte";
 ---
 
 <section class="relative bg-white dark:bg-gray-900 overflow-hidden">
@@ -15,49 +16,46 @@ import Icon from "./Icon.astro";
       <div class="sm:text-center lg:text-left">
         <div class="inline-flex items-center px-4 py-2 rounded-full border border-purple-100 bg-purple-50/50 dark:bg-purple-900/20 dark:border-purple-800/50 text-purple-700 dark:text-purple-300 text-sm font-bold mb-8 animate-fade-in">
           <span class="flex h-2 w-2 rounded-full bg-purple-600 mr-3 animate-ping"></span>
-          SaaS, Software e Inteligencia Artificial
+          Thinka · IA Administrada para Empresas
         </div>
         
-        <h1 class="text-5xl sm:text-6xl lg:text-[3.2rem] xl:text-[4.5rem] font-black text-gray-900 dark:text-white leading-[1.1] tracking-tight mb-8">
-          <span class="block">Ingeniería de Software</span>
-          <span class="block bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent italic pb-4 -mb-4 pr-4 xl:whitespace-nowrap">potenciada por IA</span>
+        <h1 class="hero-title text-5xl sm:text-6xl lg:text-[3.2rem] xl:text-[4.5rem] font-black text-gray-900 dark:text-white leading-[1.1] tracking-tight mb-8">
+          <span class="block">IA administrada para</span>
+          <span class="block bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent italic pb-4 -mb-4 pr-4 xl:whitespace-nowrap">trabajar más rápido</span>
         </h1>
         
-        <p class="mt-8 text-xl text-gray-600 dark:text-gray-300 max-w-2xl sm:mx-auto lg:mx-0 leading-relaxed font-medium">
-          Desarrollamos plataformas SaaS escalables y soluciones de Inteligencia Artificial que optimizan tus operaciones y potencian tu ROI. De la idea al código en tiempo récord.
+        <p class="hero-description mt-8 text-xl text-gray-600 dark:text-gray-300 max-w-2xl sm:mx-auto lg:mx-0 leading-relaxed font-medium">
+          Implementamos asistentes de IA, automatizaciones e integraciones privadas para tu empresa, conectadas a tus documentos y procesos reales, sin complejidad técnica.
         </p>
         
         <div class="mt-12 flex flex-col sm:flex-row gap-5 sm:justify-center lg:justify-start">
-          <a href="/cotizar" id="hero-primary-cta" class="group inline-flex justify-center items-center px-10 py-5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-lg font-bold rounded-2xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 active:scale-95">
-            Iniciar Consultoría Estratégica
+          <a href="#contact" id="hero-primary-cta" class="hero-cta magnetic-btn group inline-flex justify-center items-center px-10 py-5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-lg font-bold rounded-2xl hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 hover:-translate-y-1 active:scale-95">
+            Solicitar diagnóstico
             <Icon name="arrow-right" size={20} class="ml-3 group-hover:translate-x-1 transition-transform" />
           </a>
-          <a href="#services" id="hero-secondary-cta" class="inline-flex justify-center items-center px-10 py-5 border-2 border-gray-100 dark:border-gray-800 text-lg font-bold rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 hover:shadow-xl active:scale-95">
-            Ver Nuestros Productos
+          <a href="#products" id="hero-secondary-cta" class="hero-cta magnetic-btn inline-flex justify-center items-center px-10 py-5 border-2 border-gray-100 dark:border-gray-800 text-lg font-bold rounded-2xl text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 hover:shadow-xl active:scale-95">
+            Ver casos de uso
           </a>
         </div>
       </div>
 
       <div class="mt-20 lg:mt-0 relative">
-        <div class="relative z-10 animate-float">
-          <div class="relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 p-2 rounded-[3rem] shadow-2xl border border-gray-100 dark:border-gray-700">
-            <img
-              src="/assets/images/main-hero-image.png"
-              width="800"
-              height="800"
-              alt="Soluciones de Software y IA Thinka"
-              class="rounded-[2.5rem] w-full h-auto object-cover shadow-inner"
-              loading="eager"
-            />
+        <div class="relative z-10 animate-float h-[500px] sm:h-[600px] lg:h-[700px] w-full">
+          <div class="relative bg-gradient-to-br from-white/40 to-gray-50/40 dark:from-gray-800/40 dark:to-gray-900/40 p-2 rounded-[3rem] shadow-2xl border border-gray-100/50 dark:border-gray-700/50 backdrop-blur-xl w-full h-full overflow-hidden">
+            <!-- 3D Canvas element -->
+            <div class="absolute inset-0 rounded-[2.5rem] overflow-hidden">
+              <NeuralCoreCanvas client:load />
+            </div>
+
             <!-- Overlay element -->
-            <div class="absolute -bottom-10 -left-10 bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700 hidden sm:block">
+            <div class="absolute -bottom-10 -left-10 bg-white/90 dark:bg-gray-800/90 backdrop-blur-lg p-6 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700 hidden sm:block z-20">
               <div class="flex items-center gap-4">
-                <div class="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center text-white">
+                <div class="w-12 h-12 bg-[#00FF94] rounded-2xl flex items-center justify-center text-gray-900">
                   <Icon name="activity" size={24} />
                 </div>
                 <div>
-                  <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Sistemas Activos</p>
-                  <p class="text-xl font-black text-gray-900 dark:text-white">99.9% Uptime</p>
+                  <p class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Core Status</p>
+                  <p class="text-xl font-black text-gray-900 dark:text-white">Active & Syncing</p>
                 </div>
               </div>
             </div>
@@ -71,47 +69,90 @@ import Icon from "./Icon.astro";
     </div>
 
     <!-- Full width horizontal items -->
-    <div class="pt-12 border-t border-gray-100 dark:border-gray-800 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-      <div class="flex items-center gap-3 group">
+    <div class="pt-12 border-t border-gray-100 dark:border-gray-800 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+      <div class="hero-feature flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/40 flex items-center justify-center text-purple-600 group-hover:scale-110 transition-transform">
           <Icon name="check" size={20} />
         </div>
-        <span class="text-sm font-bold text-gray-500 dark:text-gray-400">Arquitectura Escalable</span>
+        <span class="text-sm font-bold text-gray-500 dark:text-gray-400">Asistentes Virtuales</span>
       </div>
-      <div class="flex items-center gap-3 group">
+      <div class="hero-feature flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center text-indigo-600 group-hover:scale-110 transition-transform">
           <Icon name="cpu" size={20} />
         </div>
-        <span class="text-sm font-bold text-gray-500 dark:text-gray-400">IA de Vanguardia</span>
+        <span class="text-sm font-bold text-gray-500 dark:text-gray-400">Automatizaciones</span>
       </div>
-      <div class="flex items-center gap-3 group">
+      <div class="hero-feature flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform">
           <Icon name="package" size={20} />
         </div>
-        <span class="text-sm font-bold text-gray-500 dark:text-gray-400">Infraestructura Cloud</span>
+        <span class="text-sm font-bold text-gray-500 dark:text-gray-400">Workspace Privado</span>
       </div>
-      <div class="flex items-center gap-3 group">
+      <div class="hero-feature flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-xl bg-green-100 dark:bg-green-900/40 flex items-center justify-center text-green-600 group-hover:scale-110 transition-transform">
           <Icon name="shield" size={20} />
         </div>
-        <span class="text-sm font-bold text-gray-500 dark:text-gray-400">Seguridad Avanzada</span>
+        <span class="text-sm font-bold text-gray-500 dark:text-gray-400">Servicio Administrado</span>
       </div>
-      <div class="flex items-center gap-3 group">
+      <div class="hero-feature flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-xl bg-orange-100 dark:bg-orange-900/40 flex items-center justify-center text-orange-600 group-hover:scale-110 transition-transform">
           <Icon name="activity" size={20} />
         </div>
-        <span class="text-sm font-bold text-gray-500 dark:text-gray-400">Cumplimiento Legal</span>
-      </div>
-      <div class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-900/40 flex items-center justify-center text-red-600 group-hover:scale-110 transition-transform">
-          <Icon name="eye" size={20} />
-        </div>
-        <span class="text-sm font-bold text-gray-500 dark:text-gray-400">Soporte 24/7</span>
+        <span class="text-sm font-bold text-gray-500 dark:text-gray-400">Sin Complejidad</span>
       </div>
     </div>
   </div>
 
-  <style>
+  <script>
+  import { gsap } from "gsap";
+
+  // Run on client side
+  const initHeroAnimations = () => {
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    
+    // Scale Up & Blur In for the hero image / 3d container
+    tl.fromTo(
+      ".animate-float", 
+      { scale: 0.95, filter: "blur(20px)", opacity: 0 },
+      { scale: 1, filter: "blur(0px)", opacity: 1, duration: 1.5 },
+      0
+    );
+
+    // Text Reveal (left to right, masking)
+    tl.fromTo(
+      ".hero-title span",
+      { x: -50, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, stagger: 0.2 },
+      0.2
+    );
+
+    tl.fromTo(
+      ".hero-description",
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1 },
+      0.6
+    );
+
+    tl.fromTo(
+      ".hero-cta",
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, stagger: 0.1 },
+      0.8
+    );
+    
+    tl.fromTo(
+      ".hero-feature",
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.5, stagger: 0.1 },
+      1
+    );
+  };
+
+  document.addEventListener("DOMContentLoaded", initHeroAnimations);
+  document.addEventListener("astro:page-load", initHeroAnimations);
+</script>
+
+<style>
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-20px); }
@@ -128,4 +169,3 @@ import Icon from "./Icon.astro";
     }
   </style>
 </section>
-

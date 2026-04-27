@@ -1,29 +1,572 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
-import Partners from '../components/Partners.astro';
-import Services from '../components/Services.astro';
-import Products from '../components/Products.astro';
-import SocialProof from '../components/SocialProof.astro';
-import LeadMagnet from '../components/LeadMagnet.astro';
-import SimpleFooter from '../components/SimpleFooter.astro';
+import NavbarManaged from '../components/NavbarManaged.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import SpotlightCard from '../components/SpotlightCard.astro';
+import PlanCard from '../components/PlanCard.astro';
+import ROICalculator from '../components/ROICalculator.astro';
+import FAQItem from '../components/FAQItem.astro';
+import CTAButton from '../components/CTAButton.astro';
+import Footer from '../components/Footer.astro';
+import DataChaosCanvas from '../components/3d/DataChaosCanvasWrapper.ts';
+import OrchestratorCanvas from '../components/3d/OrchestratorCanvasWrapper.ts';
+import FloatingModuleCanvas from '../components/3d/FloatingModuleCanvasWrapper.ts';
+import DataProcessorCanvas from '../components/3d/DataProcessorCanvasWrapper.ts';
+import NeuralCoreCanvas from '../components/3d/NeuralCoreCanvasWrapper.ts';
+
+const useCases = [
+  {
+    title: "Asistente Interno Experto",
+    description: "Toda la documentación y manuales de tu empresa consultables en segundos por tu equipo.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>`,
+    span: "md:col-span-2",
+    type: "knowledge" as const
+  },
+  {
+    title: "Soporte Omnicanal 24/7",
+    description: "Atención inmediata en WhatsApp, Web y Correo con el tono de tu marca.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg>`,
+    span: "md:col-span-1",
+    type: "support" as const
+  },
+  {
+    title: "Automatización de Correos",
+    description: "Clasificación inteligente y redacción de borradores para que solo tengas que revisar y enviar.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
+    span: "md:col-span-1",
+    type: "automation" as const
+  },
+  {
+    title: "Análisis de Datos Proactivo",
+    description: "Convierte planillas complejas en insights de negocio sin ser un experto en datos.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
+    span: "md:col-span-2",
+    type: "analytics" as const
+  },
+  {
+    title: "Onboarding Inteligente",
+    description: "Guía a tus nuevos clientes o empleados con procesos personalizados guiados por IA.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    span: "md:col-span-1",
+    type: "onboarding" as const
+  },
+  {
+    title: "Gestión Documental",
+    description: "Búsqueda semántica en miles de archivos. Encuentra lo que necesitas por concepto, no por nombre.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"/><polyline points="14 2 14 8 20 8"/><path d="M3 15h6"/><path d="M3 18h6"/><path d="M3 12h6"/></svg>`,
+    span: "md:col-span-1",
+    type: "documents" as const
+  }
+];
+
+const plans = [
+  {
+    name: "Starter Managed",
+    price: "$290.000",
+    description: "Ideal para equipos que quieren empezar a automatizar sus primeros procesos.",
+    features: [
+      "1 Asistente IA personalizado",
+      "Base de conocimiento (hasta 50 docs)",
+      "Integración con WhatsApp",
+      "Mantenimiento mensual incluido",
+      "Soporte vía correo"
+    ]
+  },
+  {
+    name: "Business Managed",
+    price: "$650.000",
+    description: "La solución completa para empresas en crecimiento con múltiples áreas.",
+    isPopular: true,
+    features: [
+      "3 Asistentes IA especializados",
+      "Conexión con CRM y APIs",
+      "Base de conocimiento ilimitada",
+      "Dashboard de métricas de ROI",
+      "Consultoría estratégica bimensual",
+      "Soporte prioritario 24/7"
+    ]
+  },
+  {
+    name: "Custom Enterprise",
+    price: "Custom",
+    description: "Infraestructura dedicada y soluciones a medida para grandes operaciones.",
+    features: [
+      "Asistentes ilimitados",
+      "Despliegue On-Premise o Nube Privada",
+      "Seguridad y cumplimiento a medida",
+      "Entrenamiento de modelos propios",
+      "Account Manager dedicado"
+    ]
+  }
+];
+
+const faqs = [
+  {
+    question: "¿En qué se diferencia de usar ChatGPT?",
+    answer: "ChatGPT es una herramienta genérica. Thinka es un servicio administrado que utiliza tus datos privados bajo protocolos de seguridad empresarial, integrado con tus sistemas actuales y mantenido por expertos para que tú no tengas que aprender a programar prompts."
+  },
+  {
+    question: "¿Mis datos están seguros?",
+    answer: "Absolutamente. Utilizamos entornos aislados por cliente. Tus datos no se utilizan para entrenar modelos públicos y cumplimos con estándares de seguridad para el manejo de información corporativa sensible."
+  },
+  {
+    question: "¿Cuánto tiempo toma la implementación?",
+    answer: "Un asistente base puede estar listo en menos de 72 horas. Automatizaciones más complejas con integraciones de sistema suelen tomar entre 1 y 2 semanas."
+  },
+  {
+    question: "¿Necesito conocimientos técnicos?",
+    answer: "Ninguno. Somos un servicio administrado. Nosotros configuramos, entrenamos y mantenemos la IA por ti. Tu equipo solo interactúa con una herramienta fácil de usar."
+  }
+];
 ---
 
 <Layout 
-  title="Soluciones de Software, SaaS e Inteligencia Artificial | Thinka"
-  description="Expertos en Soluciones de Software, SaaS e Inteligencia Artificial. Desarrollamos software a medida y automatizamos procesos para optimizar tu operación global."
+  title="Thinka IA Administrada | Automatización e Inteligencia para Empresas en Chile"
+  description="Reduzca el trabajo manual y aumente la productividad con IA administrada. Implementamos asistentes inteligentes y automatizaciones a medida para su empresa."
 >
-  <Navbar />
-  
+  <NavbarManaged />
+
   <main id="main-content">
-    <Hero />
-    <SocialProof />
-    <Services />
-    <Products />
-    <LeadMagnet />
-    <Partners />
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex flex-col justify-center pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-brand-obsidian">
+      <!-- Minimalist Background Animation -->
+      <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <!-- Glowing Orbs with increased opacity and adjusted blend modes for visibility against dark bg -->
+        <div class="absolute top-[10%] left-[10%] w-[50vw] h-[50vw] max-w-[700px] max-h-[700px] bg-brand-primary/20 blur-[100px] rounded-full mix-blend-screen animate-blob"></div>
+        <div class="absolute top-[30%] right-[5%] w-[45vw] h-[45vw] max-w-[600px] max-h-[600px] bg-brand-indigo/20 blur-[100px] rounded-full mix-blend-screen animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-[20%] left-[30%] w-[60vw] h-[60vw] max-w-[900px] max-h-[900px] bg-[#6366F1]/15 blur-[120px] rounded-full mix-blend-screen animate-blob animation-delay-4000"></div>
+        
+        <!-- Subtle grid overlay -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_80%,transparent_100%)]"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex-grow flex flex-col justify-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-8 animate-fade-in">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
+          </span>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-brand-primary">Infrastructure Status: Optimal</span>
+        </div>
+        
+        <h1 class="text-fluid-h1 font-extrabold tracking-tight mb-8 leading-[1.1] text-gradient-white">
+          Recupere el control de su tiempo con <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-indigo">IA Administrada</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-brand-slate max-w-3xl mx-auto mb-12 leading-relaxed">
+          Libere a su equipo de las tareas repetitivas. Diseñamos e implementamos su <span class="text-brand-white">infraestructura de inteligencia</span> para que usted solo se preocupe de escalar.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <CTAButton href="#contacto" size="lg" variant="primary" class="shadow-glow">
+            Solicitar Diagnóstico Gratuito
+          </CTAButton>
+          <CTAButton href="#roi" size="lg" variant="outline">
+            Ver Calculadora de ROI
+          </CTAButton>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-24 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 mb-6">
+              <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+              <span class="text-[10px] font-bold tracking-widest uppercase text-red-500">Inefficiency Alert</span>
+            </div>
+            <h2 class="text-fluid-h2 font-bold mb-8 leading-tight text-gradient-white">
+              ¿Su equipo está atrapado en <span class="text-brand-indigo">tareas invisibles</span>?
+            </h2>
+            <div class="space-y-6">
+              {[
+                "Correos repetitivos que consumen horas críticas.",
+                "Silos de información en manuales desactualizados.",
+                "Falta de trazabilidad en la atención al cliente.",
+                "Procesos manuales que frenan el escalamiento."
+              ].map(item => (
+                <div class="flex items-center gap-4 group">
+                  <div class="flex-shrink-0 h-6 w-6 text-red-400 group-hover:scale-110 transition-transform">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                  </div>
+                  <p class="text-lg text-brand-slate group-hover:text-brand-white transition-colors">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div class="bg-brand-navy/30 backdrop-blur-xl p-10 rounded-[40px] border border-white/5 relative group overflow-hidden h-[500px] flex flex-col justify-end">
+             <div class="absolute inset-0 bg-gradient-to-br from-brand-indigo/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+             <!-- Blueprint lines in the card -->
+             <div class="absolute top-0 left-0 w-full h-px bg-white/5 z-20"></div>
+             <div class="absolute top-0 left-0 w-px h-full bg-white/5 z-20"></div>
+             
+             <!-- 3D Canvas Background -->
+             <div class="absolute inset-0 z-0 opacity-80 mix-blend-screen transition-opacity duration-1000 group-hover:opacity-100">
+               <DataChaosCanvas client:load />
+             </div>
+
+             <div class="relative z-10 bg-brand-obsidian/80 backdrop-blur-md p-6 rounded-3xl border border-white/10 shadow-2xl">
+               <div class="text-6xl font-black text-brand-primary mb-2 tracking-tighter">80%</div>
+               <p class="text-xl font-bold mb-2 text-brand-white">Del trabajo administrativo es automatizable.</p>
+               <p class="text-brand-slate text-sm leading-relaxed">
+                 Thinka no es solo software; es la <strong class="text-white">infraestructura administrada</strong> que recupera el tiempo de su talento humano.
+               </p>
+               <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-brand-primary/40 uppercase tracking-widest">
+                 <span>analysis: complete</span>
+                 <span>efficiency: verified</span>
+               </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Transition: Problem to Solution -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 relative">
+      <div class="absolute left-1/2 top-0 -translate-x-1/2 w-px h-full bg-gradient-to-b from-brand-indigo/20 via-brand-primary/50 to-brand-primary/20"></div>
+      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div class="w-8 h-8 rounded-full bg-brand-obsidian border border-brand-primary/30 flex items-center justify-center animate-bounce shadow-glow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7-7-7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Use Cases Bento Grid -->
+    <section id="soluciones" class="py-24 relative overflow-hidden blueprint-grid">
+      <!-- Decorative Coordinates -->
+      <div class="absolute top-8 left-8 text-[10px] font-mono text-white/20 tracking-widest uppercase pointer-events-none">
+        lat: -29.9533 / lon: -71.3395
+      </div>
+      <div class="absolute bottom-8 right-8 text-[10px] font-mono text-white/20 tracking-widest uppercase pointer-events-none">
+        status: system_active_0x4F
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 mb-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-primary animate-pulse"></span>
+            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-primary">Capabilities</span>
+          </div>
+          <h2 class="text-fluid-h2 font-bold mb-6 text-gradient-white">Casos de Uso de Alto Impacto</h2>
+          <p class="text-brand-slate text-lg max-w-2xl mx-auto">
+            Infraestructura de IA diseñada para resolver desafíos industriales con precisión quirúrgica.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {useCases.map((useCase, index) => (
+            <SpotlightCard 
+              class={`${useCase.span} reveal group`} 
+              delay={index * 100}
+            >
+              <div class="flex flex-col h-full relative z-10">
+                <div class="flex justify-between items-start mb-6">
+                  <div class="inline-flex p-3 rounded-2xl bg-white/5 border border-white/10 text-brand-primary w-fit group-hover:scale-110 transition-transform duration-500">
+                    <Fragment set:html={useCase.icon} />
+                  </div>
+                  
+                  <!-- 3D Floating Icon -->
+                  <div class="w-24 h-24 -mt-4 -mr-4 pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                    <FloatingModuleCanvas type={useCase.type} client:visible />
+                  </div>
+                </div>
+                
+                <h3 class="text-2xl font-bold mb-4 text-brand-white group-hover:text-brand-primary transition-colors duration-300">
+                  {useCase.title}
+                </h3>
+                <p class="text-brand-slate leading-relaxed mb-6">
+                  {useCase.description}
+                </p>
+                <div class="mt-auto flex items-center gap-2 text-xs font-mono text-brand-primary/50 group-hover:text-brand-primary transition-colors">
+                  <span class="w-8 h-[1px] bg-current"></span>
+                  VIEW_SPEC_0{index + 1}
+                </div>
+              </div>
+            </SpotlightCard>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Managed Process Section -->
+    <section class="py-24 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-indigo/10 border border-brand-indigo/20 mb-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-indigo animate-pulse"></span>
+            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-indigo">Workflow</span>
+          </div>
+          <h2 class="text-fluid-h2 font-bold mb-6 text-gradient-white">Su IA lista en 3 pasos</h2>
+          <p class="text-brand-slate text-lg">Infraestructura administrada. Nosotros ejecutamos, usted escala.</p>
+        </div>
+
+        <div class="mb-16 hidden">
+          <OrchestratorCanvas client:load />
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-12 relative max-w-5xl mx-auto pt-8">
+          <!-- Animated connection line (visible only on desktop) -->
+          <div class="hidden md:block absolute top-8 left-[16%] right-[16%] h-[2px] bg-white/5 -z-20 rounded-full overflow-hidden -translate-y-1/2">
+            <div class="absolute top-0 left-0 h-full w-1/3 bg-gradient-to-r from-transparent via-brand-primary to-transparent opacity-80 animate-flow" style="background-size: 200% 100%;"></div>
+          </div>
+          
+          {[
+            {
+              step: "01",
+              title: "Diagnóstico & Estrategia",
+              desc: "Analizamos sus procesos actuales y detectamos dónde la IA generará el mayor ROI inmediato."
+            },
+            {
+              step: "02",
+              title: "Implementación Managed",
+              desc: "Configuramos la infraestructura, conectamos sus datos y entrenamos los modelos. Sin código."
+            },
+            {
+              step: "03",
+              title: "Mejora Continua",
+              desc: "Monitoreamos y optimizamos sus asistentes mensualmente para asegurar el máximo valor."
+            }
+          ].map((item, index) => (
+            <div class="relative group reveal" style={`animation-delay: ${index * 200}ms;`}>
+              <!-- Animated node -->
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-brand-obsidian border-2 border-white/10 flex items-center justify-center group-hover:border-brand-primary group-hover:shadow-[0_0_20px_rgba(0,255,148,0.4)] transition-all duration-500 z-10">
+                <span class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 group-hover:from-brand-primary group-hover:to-brand-indigo">{item.step}</span>
+                
+                <!-- Inner glow dot -->
+                <div class="absolute -z-10 w-full h-full rounded-full bg-brand-primary/0 group-hover:bg-brand-primary/10 transition-colors duration-500 blur-md"></div>
+              </div>
+              
+              <!-- Card -->
+              <div class="pt-12 pb-10 px-8 rounded-[32px] bg-brand-navy/20 border border-white/5 group-hover:bg-brand-navy/40 group-hover:border-brand-primary/20 transition-all duration-500 h-full text-center relative overflow-hidden">
+                <!-- Hover gradient background -->
+                <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <h3 class="text-xl font-bold mb-4 text-brand-white relative z-10">{item.title}</h3>
+                <p class="text-brand-slate leading-relaxed text-sm relative z-10">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI Section -->
+    <section id="roi" class="py-24 relative overflow-hidden blueprint-grid">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="mb-16 text-center">
+           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 mb-4">
+             <span class="w-1.5 h-1.5 rounded-full bg-brand-primary animate-pulse"></span>
+             <span class="text-[10px] font-bold tracking-widest uppercase text-brand-primary">ROI Analytics</span>
+           </div>
+           <h2 class="text-fluid-h2 font-bold mb-6 text-gradient-white">Resultados Medibles, No Promesas</h2>
+           <p class="text-brand-slate text-lg">La IA es una inversión en eficiencia. Calcule su impacto real aquí.</p>
+        </div>
+        <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
+          <div class="bg-brand-navy/50 backdrop-blur-xl border border-white/10 rounded-[40px] p-4 md:p-8 shadow-2xl">
+            <ROICalculator />
+          </div>
+          
+          <div class="hidden lg:flex relative h-full min-h-[500px] rounded-[40px] border border-white/5 bg-gradient-to-t from-brand-navy/30 to-transparent items-center justify-center overflow-hidden">
+            <div class="absolute top-8 left-8 text-[10px] font-mono text-brand-primary/40 tracking-widest uppercase">
+              NEURAL_PROCESSOR<br/>
+              data: converging
+            </div>
+            <!-- Neural Network / Processor Visualization -->
+            <DataProcessorCanvas client:load />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="planes" class="py-24 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-indigo/10 border border-brand-indigo/20 mb-4">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-indigo animate-pulse"></span>
+            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-indigo">Service Plans</span>
+          </div>
+          <h2 class="text-fluid-h2 font-bold mb-6 text-gradient-white">Inversión en Infraestructura</h2>
+          <p class="text-brand-slate text-lg max-w-2xl mx-auto">
+            Modelos de servicio administrado diseñados para escalar según la complejidad de su operación.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {plans.map(plan => (
+            <PlanCard {...plan} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center">Preguntas Frecuentes</h2>
+        <div class="bg-brand-navy/50 rounded-3xl p-8 border border-white/5">
+          {faqs.map(faq => (
+            <FAQItem {...faq} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-32 relative overflow-hidden">
+      <div class="absolute inset-0 bg-brand-primary/5 blur-[150px] -z-10 animate-pulse-slow"></div>
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-brand-navy/50 backdrop-blur-2xl border border-brand-primary/30 p-12 md:p-24 rounded-[60px] shadow-2xl relative overflow-hidden group">
+        <!-- Blueprint detail inside CTA -->
+        <div class="absolute top-0 right-0 p-8 text-[8px] font-mono text-brand-primary/20 tracking-tighter uppercase pointer-events-none">
+          terminal_init_v0.2.1<br/>
+          encryption: active<br/>
+          ready_for_deploy
+        </div>
+
+        <h2 class="text-fluid-h2 font-extrabold mb-8 leading-tight text-gradient-white">
+          ¿Listo para liderar con <span class="text-brand-primary">Infraestructura Inteligente</span>?
+        </h2>
+        <p class="text-xl text-brand-slate mb-12 max-w-2xl mx-auto leading-relaxed">
+          Obtenga un diagnóstico de arquitectura gratuito y descubra exactamente dónde puede automatizar su operación hoy.
+        </p>
+        <div id="contacto" class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <CTAButton href="/contacto" size="lg" variant="primary" class="shadow-glow min-w-[240px]">
+            Solicitar Diagnóstico Ahora
+          </CTAButton>
+          <a href="https://wa.me/56981843411" class="group/wa flex items-center gap-3 text-brand-slate hover:text-brand-primary transition-all duration-300 font-medium">
+            <span class="p-2 rounded-full bg-white/5 border border-white/10 group-hover/wa:border-brand-primary/30 transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </span>
+            Hablar con un experto
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <SimpleFooter />
+  <Footer />
+
+  <!-- Sticky Mobile CTA -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-brand-obsidian/80 backdrop-blur-lg border-t border-white/10 z-40 transform translate-y-0 transition-transform duration-300" id="sticky-cta">
+    <CTAButton href="#contacto" size="lg" variant="primary" class="w-full">
+      Solicitar Diagnóstico
+    </CTAButton>
+  </div>
 </Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const initGlobalAnimations = () => {
+    // Reveal animation for cards and sections
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    revealElements.forEach((el) => {
+      gsap.fromTo(el, 
+        { 
+          opacity: 0, 
+          y: 30,
+          scale: 0.95,
+          filter: "blur(10px)"
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: "blur(0px)",
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    });
+
+    // Text Reveal (Masking effect) for headings
+    const textReveals = document.querySelectorAll('.text-fluid-h2');
+    textReveals.forEach((el) => {
+      // Simple mask reveal effect using clip-path
+      gsap.fromTo(el,
+        {
+          clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+          x: -20
+        },
+        {
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+          x: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+          }
+        }
+      );
+    });
+
+    // Magnetic Buttons
+    const magneticButtons = document.querySelectorAll('.magnetic-btn');
+    magneticButtons.forEach(btn => {
+      if (!(btn instanceof HTMLElement)) return;
+      
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        gsap.to(btn, {
+          x: x * 0.2,
+          y: y * 0.2,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+      
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, {
+          x: 0,
+          y: 0,
+          duration: 0.5,
+          ease: "elastic.out(1, 0.3)"
+        });
+      });
+    });
+  };
+
+  const stickyCta = document.getElementById('sticky-cta');
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 500) {
+      stickyCta?.classList.remove('translate-y-full');
+      stickyCta?.classList.add('translate-y-0');
+    } else {
+      stickyCta?.classList.remove('translate-y-0');
+      stickyCta?.classList.add('translate-y-full');
+    }
+    lastScrollY = window.scrollY;
+  });
+
+  document.addEventListener("DOMContentLoaded", initGlobalAnimations);
+  document.addEventListener("astro:page-load", initGlobalAnimations);
+</script>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+</style>

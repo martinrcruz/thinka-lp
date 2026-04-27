@@ -1,0 +1,355 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import SimpleFooter from '../components/SimpleFooter.astro';
+import Icon from '../components/Icon.astro';
+
+const thinkaHubJsonLd = {
+  "@type": "SoftwareApplication",
+  "@id": "https://thinka.cl/plataforma#software",
+  "name": "Thinka",
+  "url": "https://thinka.cl/plataforma",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "inLanguage": ["es", "en"],
+  "publisher": { "@id": "https://thinka.cl/#organization" },
+  "description": "Plataforma SaaS empresarial para crear, orquestar y operar agentes de IA con RAG, automatizaciones, observabilidad, auditoría y control de costos.",
+  "featureList": [
+    "Aislamiento por empresa (Multi-tenant)",
+    "Control de accesos (RBAC / ABAC)",
+    "Asistentes conversacionales y agentes avanzados",
+    "Automatizaciones con triggers y flujos inteligentes",
+    "Base de conocimiento (RAG) con documentos propios",
+    "Trazabilidad, auditoría y observabilidad completa",
+    "Control de costos y límites de consumo",
+    "Entorno seguro y privado por empresa"
+  ]
+};
+---
+
+<Layout
+  title="Plataforma | Thinka - IA Empresarial con Control y Seguridad"
+  description="Conoce la plataforma de Thinka para crear, orquestar y operar agentes de IA con RAG, automatizaciones, observabilidad y control de costos. Segura y lista para escalar."
+  keywords="plataforma IA, agentes de IA, automatización con IA, RAG empresarial, seguridad IA, trazabilidad IA, SaaS inteligencia artificial, control de costos IA"
+  jsonLdGraph={[thinkaHubJsonLd]}
+>
+  <Navbar />
+
+  <main class="bg-white dark:bg-gray-900">
+    <section class="relative py-24 lg:py-32 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-purple-50 to-white dark:from-purple-950/10 dark:to-gray-900 pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+          <div>
+            <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 text-sm font-bold mb-8">
+              <Icon name="package" size={16} class="mr-2" />
+              Plataforma de IA para Empresas
+            </div>
+            <h1 class="text-5xl lg:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight">
+              La Plataforma <span class="text-purple-600">Thinka</span>
+            </h1>
+            <p class="mt-8 text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+              Thinka permite a tu empresa tener su propio entorno de inteligencia artificial, de forma segura, ordenada y fácil de administrar. Crea asistentes, agentes y automatizaciones con contexto real de tu negocio.
+            </p>
+            <div class="mt-12 flex flex-col sm:flex-row gap-4">
+              <a href="/cotizar" class="inline-flex justify-center items-center px-8 py-4 bg-purple-600 text-white font-bold rounded-2xl hover:bg-purple-700 transition-all shadow-lg hover:shadow-purple-500/25">
+                Solicitar Demo
+              </a>
+              <a href="#overview" class="inline-flex justify-center items-center px-8 py-4 border-2 border-gray-100 dark:border-gray-800 text-gray-700 dark:text-gray-300 font-bold rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all">
+                Ver Cómo Funciona
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-16 lg:mt-0 relative">
+            <div class="bg-gray-900 rounded-[2.5rem] p-8 shadow-2xl border border-gray-800 relative overflow-hidden">
+              <div class="flex items-center justify-between mb-8">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white">
+                    <Icon name="cpu" size={24} />
+                  </div>
+                  <div>
+                    <h2 class="text-lg font-bold text-white">Operación de Agentes</h2>
+                    <p class="text-sm text-gray-400">Observabilidad, auditoría y límites</p>
+                  </div>
+                </div>
+                <div class="px-3 py-1 bg-green-600/20 text-green-400 rounded-full text-xs font-bold border border-green-500/30">LISTO PARA PRODUCCIÓN</div>
+              </div>
+
+              <div class="space-y-4">
+                <div class="bg-gray-800/50 p-4 rounded-2xl border border-gray-800">
+                  <p class="text-gray-300 text-sm font-semibold mb-2">Seguridad multi-tenant</p>
+                  <p class="text-gray-400 text-xs leading-relaxed">Aislamiento de datos y control de accesos (RBAC/ABAC) por empresa.</p>
+                </div>
+                <div class="bg-gray-800/50 p-4 rounded-2xl border border-gray-800">
+                  <p class="text-gray-300 text-sm font-semibold mb-2">RAG por tenant</p>
+                  <p class="text-gray-400 text-xs leading-relaxed">Knowledge base con metadata por empresa para respuestas consistentes.</p>
+                </div>
+                <div class="bg-gray-800/50 p-4 rounded-2xl border border-gray-800">
+                  <p class="text-gray-300 text-sm font-semibold mb-2">Costos controlados</p>
+                  <p class="text-gray-400 text-xs leading-relaxed">Metering y límites por plan para tokens, agentes, automatizaciones y almacenamiento.</p>
+                </div>
+              </div>
+            </div>
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl -z-10"></div>
+            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl -z-10"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">¿Qué es Thinka?</h2>
+          <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Es una plataforma empresarial que permite a cada empresa tener su propio entorno de inteligencia artificial. Centraliza chatbots, asistentes y flujos automatizados con control total sobre usuarios, permisos, documentos y trazabilidad.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 dark:bg-gray-800/50 p-10 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-xl">
+            <div class="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-purple-400 mb-8">
+              <Icon name="check" size={28} />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Entorno Privado</h3>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
+              Cada empresa tiene su propio espacio y su propia información. La información de un cliente no se mezcla con la de otro.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 dark:bg-gray-800/50 p-10 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-xl">
+            <div class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-8">
+              <Icon name="cpu" size={28} />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">IA con Contexto</h3>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
+              Conecta documentos, catálogos y manuales para que la IA responda con información real de tu negocio en segundos.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 dark:bg-gray-800/50 p-10 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-xl">
+            <div class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 mb-8">
+              <Icon name="activity" size={28} />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Control Operativo</h3>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
+              Gestiona usuarios, permisos y límites de consumo. Mantén trazabilidad completa de cada acción realizada por la IA.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="multi-tenant" class="py-24 bg-gray-50 dark:bg-gray-800/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">Seguridad y Separación por Empresa</h2>
+          <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Diseñada para uso empresarial real, con foco en el aislamiento de datos y la gobernanza de la información corporativa.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-gray-900 p-10 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-xl">
+            <div class="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-purple-400 mb-8">
+              <Icon name="shield" size={28} />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Aislamiento de Datos</h3>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
+              Tu información está separada y protegida. No se utiliza para entrenar modelos globales ni se comparte con otros tenants.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-900 p-10 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-xl">
+            <div class="w-14 h-14 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-8">
+              <Icon name="lock" size={28} />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Gestión de Accesos</h3>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
+              Define quién puede acceder, qué módulos puede ver y qué permisos tiene cada usuario dentro de tu espacio de IA.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-900 p-10 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-xl">
+            <div class="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 mb-8">
+              <Icon name="eye" size={28} />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Auditoría & Trazabilidad</h3>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
+              Registro detallado de actividad para soporte, cumplimiento y control interno. Ten visibilidad total de lo que ocurre en el sistema.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="agents" class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">Asistentes, Agentes y Automatizaciones</h2>
+          <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Una solución flexible que crece con tu empresa, desde chatbots de atención simple hasta agentes operativos complejos.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-gray-900 rounded-[2.5rem] p-12 border border-gray-800 shadow-2xl">
+            <h3 class="text-2xl font-bold text-white mb-6">Asistentes & Chatbots</h3>
+            <ul class="space-y-4 text-sm text-gray-300">
+              <li class="flex items-start"><Icon name="check" size={16} class="text-purple-400 mr-3 mt-1" /> Asistentes de ventas y soporte 24/7</li>
+              <li class="flex items-start"><Icon name="check" size={16} class="text-purple-400 mr-3 mt-1" /> Consultas sobre documentos, manuales y políticas</li>
+              <li class="flex items-start"><Icon name="check" size={16} class="text-purple-400 mr-3 mt-1" /> Respuestas con contexto real de tu negocio</li>
+            </ul>
+          </div>
+
+          <div class="bg-white dark:bg-gray-900 rounded-[2.5rem] p-12 border border-gray-100 dark:border-gray-800 shadow-2xl">
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Agentes & Automatización</h3>
+            <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-300">
+              <li class="flex items-start"><Icon name="check" size={16} class="text-purple-600 mr-3 mt-1" /> Agentes multi-step para procesos operativos</li>
+              <li class="flex items-start"><Icon name="check" size={16} class="text-purple-600 mr-3 mt-1" /> Automatización de tareas repetitivas y sensibles</li>
+              <li class="flex items-start"><Icon name="check" size={16} class="text-purple-600 mr-3 mt-1" /> Integración con herramientas y flujos internos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rag" class="py-24 bg-gray-50 dark:bg-gray-800/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">Conecta tu Información a la IA</h2>
+          <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Sube tus documentos y bases de conocimiento para que la IA responda siempre con información veraz y actualizada.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-gray-900 p-10 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-xl">
+            <div class="w-14 h-14 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center text-purple-600 dark:text-purple-400 mb-8">
+              <Icon name="package" size={28} />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Carga de Documentos</h3>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
+              Sube PDFs, manuales, catálogos y políticas internas de forma fácil y segura dentro de tu panel.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-900 p-10 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-xl">
+            <div class="w-14 h-14 bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-8">
+              <Icon name="cpu" size={28} />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Base de Conocimiento</h3>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
+              Centraliza la información corporativa en un solo lugar para que toda la IA de la empresa hable el mismo idioma.
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-900 p-10 rounded-[2.5rem] border border-gray-100 dark:border-gray-800 shadow-xl">
+            <div class="w-14 h-14 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 mb-8">
+              <Icon name="activity" size={28} />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Respuestas Precisas</h3>
+            <p class="text-gray-500 dark:text-gray-400 leading-relaxed text-sm">
+              La IA utiliza tu información como única fuente de verdad, reduciendo alucinaciones y errores.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ops" class="py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">Visibilidad, Control y Límites</h2>
+          <p class="mt-4 text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            Mantén el control total del uso y los costos de la IA en tu organización con métricas claras y límites configurables.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gray-900 rounded-[2.5rem] p-10 border border-gray-800 shadow-2xl">
+            <div class="w-14 h-14 bg-purple-600/20 rounded-2xl flex items-center justify-center text-purple-300 mb-8">
+              <Icon name="activity" size={28} />
+            </div>
+            <h3 class="text-xl font-bold text-white mb-4">Métricas de Uso</h3>
+            <p class="text-gray-300 leading-relaxed text-sm">
+              Visualiza cuántos tokens se consumen, cuántas ejecuciones se realizan y el rendimiento de tus agentes.
+            </p>
+          </div>
+
+          <div class="bg-gray-900 rounded-[2.5rem] p-10 border border-gray-800 shadow-2xl">
+            <div class="w-14 h-14 bg-indigo-600/20 rounded-2xl flex items-center justify-center text-indigo-300 mb-8">
+              <Icon name="eye" size={28} />
+            </div>
+            <h3 class="text-xl font-bold text-white mb-4">Control de Costos</h3>
+            <p class="text-gray-300 leading-relaxed text-sm">
+              Configura límites de consumo por empresa o por módulo para evitar sorpresas en la facturación.
+            </p>
+          </div>
+
+          <div class="bg-gray-900 rounded-[2.5rem] p-10 border border-gray-800 shadow-2xl">
+            <div class="w-14 h-14 bg-blue-600/20 rounded-2xl flex items-center justify-center text-blue-300 mb-8">
+              <Icon name="chart" size={28} />
+            </div>
+            <h3 class="text-xl font-bold text-white mb-4">Historial de Eventos</h3>
+            <p class="text-gray-300 leading-relaxed text-sm">
+              Seguimiento completo de cada interacción importante para auditoría y mejora continua de los procesos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-gray-50 dark:bg-gray-800/50">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white">FAQ de la Plataforma</h2>
+          <p class="mt-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+            Respuestas rápidas para entender cómo Thinka puede transformar tu negocio.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <details class="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm">
+            <summary class="cursor-pointer list-none flex items-center justify-between font-bold text-gray-900 dark:text-white">
+              ¿Thinka es solo un chatbot?
+              <Icon name="arrow-right" size={16} class="ml-4 rotate-90 group-open:rotate-[270deg] transition-transform" />
+            </summary>
+            <p class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+              No. Es una plataforma integral que combina asistentes, agentes avanzados y automatizaciones con foco en seguridad y control empresarial.
+            </p>
+          </details>
+
+          <details class="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm">
+            <summary class="cursor-pointer list-none flex items-center justify-between font-bold text-gray-900 dark:text-white">
+              ¿Cómo garantizan que mi información esté segura?
+              <Icon name="arrow-right" size={16} class="ml-4 rotate-90 group-open:rotate-[270deg] transition-transform" />
+            </summary>
+            <p class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+              Cada empresa tiene un entorno privado y aislado. Los datos nunca se mezclan ni se usan para entrenar modelos públicos.
+            </p>
+          </details>
+
+          <details class="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 p-6 shadow-sm">
+            <summary class="cursor-pointer list-none flex items-center justify-between font-bold text-gray-900 dark:text-white">
+              ¿Puedo escalar el uso a medida que crezco?
+              <Icon name="arrow-right" size={16} class="ml-4 rotate-90 group-open:rotate-[270deg] transition-transform" />
+            </summary>
+            <p class="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+              Sí. La plataforma es escalable por diseño. Puedes empezar con un asistente simple y evolucionar hacia agentes y automatizaciones más complejas.
+            </p>
+          </details>
+        </div>
+
+        <div class="mt-12 flex justify-center">
+          <a href="/cotizar" class="inline-flex items-center px-10 py-5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-black rounded-2xl hover:shadow-xl hover:shadow-purple-500/20 transition-all">
+            Solicitar una demo
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SimpleFooter />
+</Layout>

@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  icon?: string;
+  class?: string;
+  gradient?: boolean;
+}
+
+const { title, description, icon, class: className = '', gradient = false } = Astro.props;
+---
+
+<div class:list={[
+  "relative group overflow-hidden rounded-3xl bg-brand-navy p-8 border border-white/5 hover:border-brand-primary/30 transition-all duration-500",
+  className
+]}>
+  {gradient && (
+    <div class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-primary/5 blur-[80px] group-hover:bg-brand-primary/10 transition-all duration-500"></div>
+  )}
+  
+  <div class="relative z-10">
+    {icon && (
+      <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 text-brand-primary group-hover:scale-110 transition-transform duration-300">
+        <Fragment set:html={icon} />
+      </div>
+    )}
+    
+    <h3 class="mb-3 text-xl font-bold text-brand-white group-hover:text-brand-primary transition-colors duration-300">
+      {title}
+    </h3>
+    
+    <p class="text-brand-slate leading-relaxed">
+      {description}
+    </p>
+  </div>
+</div>

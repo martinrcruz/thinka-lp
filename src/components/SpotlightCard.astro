@@ -1,0 +1,80 @@
+---
+interface Props {
+  class?: string;
+  delay?: number;
+}
+
+const { class: className, delay = 0 } = Astro.props;
+---
+
+<div 
+  class={`spotlight-card group relative rounded-3xl bg-brand-navy/40 backdrop-blur-xl overflow-hidden p-8 transition-all duration-500 hover:shadow-spotlight ${className}`}
+  style={`animation-delay: ${delay}ms;`}
+>
+  <!-- Spotlight Effect Layer -->
+  <div class="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100" id="spotlight"></div>
+  
+  <!-- Content -->
+  <div class="relative z-10 h-full">
+    <slot />
+  </div>
+
+  <!-- Glass Reflective Border (simulated with CSS) -->
+  <div class="absolute inset-0 border border-white/5 rounded-3xl pointer-events-none transition-colors duration-500 group-hover:border-brand-primary/20"></div>
+  
+  <!-- Subtle Gradient Border -->
+  <div class="absolute inset-0 p-[1px] rounded-3xl bg-gradient-to-br from-white/10 to-transparent opacity-50 group-hover:opacity-100 transition-opacity pointer-events-none">
+    <div class="w-full h-full rounded-[calc(1.5rem-1px)]"></div>
+  </div>
+</div>
+
+<script>
+  function initSpotlight() {
+    const cards = document.querySelectorAll('.spotlight-card');
+    
+    cards.forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const mouseEvent = e as MouseEvent;
+        const rect = card.getBoundingClientRect();
+        const x = mouseEvent.clientX - rect.left;
+        const y = mouseEvent.clientY - rect.top;
+        
+        (card as HTMLElement).style.setProperty('--x', `${x}px`);
+        (card as HTMLElement).style.setProperty('--y', `${y}px`);
+      });
+    });
+  }
+
+  // Init on load and after view transitions
+  initSpotlight();
+  document.addEventListener('astro:after-swap', initSpotlight);
+</script>
+
+<style>
+  .spotlight-card {
+    /* Glassmorphism 2.0 simulation */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  #spotlight {
+    background: radial-gradient(
+      600px circle at var(--x, 0) var(--y, 0),
+      rgba(0, 255, 148, 0.15),
+      transparent 40%
+    );
+  }
+
+  /* Staggered reveal support */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes reveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
