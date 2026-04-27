@@ -1,0 +1,72 @@
+---
+import CTAButton from './CTAButton.astro';
+
+interface Props {
+  name: string;
+  price: string;
+  description: string;
+  features: string[];
+  isPopular?: boolean;
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+const { 
+  name, 
+  price, 
+  description, 
+  features, 
+  isPopular = false,
+  ctaText = "Comenzar ahora",
+  ctaHref = "#contacto"
+} = Astro.props;
+---
+
+<div class:list={[
+  "relative flex flex-col p-8 rounded-[32px] border transition-all duration-700 backdrop-blur-md overflow-hidden group",
+  isPopular 
+    ? "bg-brand-navy border-brand-primary/40 shadow-glow scale-105 z-10" 
+    : "bg-brand-navy/30 border-white/5 hover:border-brand-primary/20 hover:bg-brand-navy/50"
+]}>
+  <!-- Blueprint Corner Detail -->
+  <div class="absolute top-0 right-0 p-4 text-[8px] font-mono text-white/10 group-hover:text-brand-primary/20 transition-colors pointer-events-none">
+    0x{Math.random().toString(16).slice(2, 6).toUpperCase()}
+  </div>
+
+  {isPopular && (
+    <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-brand-primary text-brand-obsidian text-[10px] font-black rounded-full uppercase tracking-[0.2em] shadow-glow">
+      Most Popular
+    </div>
+  )}
+
+  <div class="mb-8">
+    <h3 class="text-2xl font-bold mb-2 group-hover:text-brand-primary transition-colors">{name}</h3>
+    <p class="text-brand-slate text-sm leading-relaxed">{description}</p>
+  </div>
+
+  <div class="mb-8">
+    <div class="flex items-baseline gap-1">
+      <span class="text-4xl font-black tracking-tighter text-brand-white">{price}</span>
+      {price !== 'Custom' && <span class="text-brand-slate text-xs font-mono">/CLP_MONTH</span>}
+    </div>
+  </div>
+
+  <ul class="space-y-4 mb-10 flex-grow">
+    {features.map((feature) => (
+      <li class="flex items-start gap-3 text-sm text-brand-white/70 group-hover:text-brand-white/90 transition-colors">
+        <svg class="h-5 w-5 text-brand-primary shrink-0 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+        </svg>
+        {feature}
+      </li>
+    ))}
+  </ul>
+
+  <CTAButton 
+    href={ctaHref} 
+    variant={isPopular ? 'primary' : 'outline'} 
+    class={`w-full ${isPopular ? 'shadow-glow' : ''}`}
+  >
+    {ctaText}
+  </CTAButton>
+</div>

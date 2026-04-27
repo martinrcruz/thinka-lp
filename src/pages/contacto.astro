@@ -1,108 +1,200 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import SimpleFooter from '../components/SimpleFooter.astro';
-import Icon from '../components/Icon.astro';
+import NavbarManaged from '../components/NavbarManaged.astro';
+import Footer from '../components/Footer.astro';
+import CTAButton from '../components/CTAButton.astro';
 
 const contactMethods = [
   {
     title: "Correo Electrónico",
     value: "contacto@thinka.cl",
     href: "mailto:contacto@thinka.cl",
-    icon: "mail",
-    color: "bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400"
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
+    color: "text-brand-primary bg-brand-primary/10 border-brand-primary/20"
   },
   {
     title: "WhatsApp Directo",
     value: "+56 9 8184 3411",
     href: "https://wa.me/56981843411",
-    icon: "whatsapp",
-    color: "bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-400"
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg>`,
+    color: "text-brand-indigo bg-brand-indigo/10 border-brand-indigo/20"
   },
   {
     title: "Ubicación",
     value: "Santiago, Chile",
     href: "#",
-    icon: "map-pin",
-    color: "bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400"
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`,
+    color: "text-blue-400 bg-blue-500/10 border-blue-500/20"
   }
 ];
 ---
 
 <Layout 
   title="Contacto | Thinka"
-  description="¿Tienes un proyecto en mente? Ponte en contacto con nosotros y hablemos sobre cómo podemos ayudarte con software e inteligencia artificial."
+  description="¿Tienes un proyecto en mente? Ponte en contacto con nosotros y hablemos sobre cómo podemos ayudarte con infraestructura de inteligencia artificial."
 >
-  <Navbar />
+  <NavbarManaged />
   
-  <main class="bg-gray-50/50 dark:bg-gray-950/20 min-h-screen">
-    <section class="py-20 lg:py-32">
-      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12">
-        <div class="grid lg:grid-cols-2 gap-20 items-start">
-          <!-- Text Content -->
-          <div>
-            <h1 class="text-5xl lg:text-7xl font-black text-gray-900 dark:text-white mb-8 leading-tight tracking-tight">
-              Hablemos de <br/>
-              <span class="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent italic pr-4 py-2" style="box-decoration-break: clone; -webkit-box-decoration-break: clone;">tu próximo gran proyecto</span>
-            </h1>
-            <p class="text-xl text-gray-600 dark:text-gray-400 mb-12 leading-relaxed font-medium">
-              Estamos listos para escucharte. Ya sea una consulta técnica, una idea de negocio o una solicitud de cotización, nuestro equipo responderá en menos de 24 horas hábiles.
-            </p>
+  <main class="bg-brand-obsidian min-h-screen relative overflow-hidden pt-32 pb-20 lg:pt-48 lg:pb-32">
+    <!-- Minimalist Background Animation -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-[10%] left-[10%] w-[50vw] h-[50vw] max-w-[700px] max-h-[700px] bg-brand-primary/20 blur-[100px] rounded-full mix-blend-screen animate-blob"></div>
+      <div class="absolute top-[30%] right-[5%] w-[45vw] h-[45vw] max-w-[600px] max-h-[600px] bg-brand-indigo/20 blur-[100px] rounded-full mix-blend-screen animate-blob animation-delay-2000"></div>
+      
+      <!-- Subtle grid overlay -->
+      <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_80%,transparent_100%)]"></div>
+    </div>
 
-            <div class="grid gap-6">
-              {contactMethods.map(method => (
-                <a href={method.href} class="flex items-center p-6 bg-white dark:bg-gray-900 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-all group">
-                  <div class={`w-14 h-14 rounded-2xl ${method.color} flex items-center justify-center mr-6 group-hover:scale-110 transition-transform`}>
-                    <Icon name={method.icon as any} size={28} />
-                  </div>
-                  <div>
-                    <p class="text-sm font-black text-gray-400 uppercase tracking-widest mb-1">{method.title}</p>
-                    <p class="text-xl font-bold text-gray-900 dark:text-white">{method.value}</p>
-                  </div>
-                </a>
-              ))}
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-20 items-start">
+        
+        <!-- Text Content -->
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-indigo/10 border border-brand-indigo/20 mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-indigo animate-pulse"></span>
+            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-indigo">Deploy</span>
+          </div>
+
+          <h1 class="text-5xl lg:text-7xl font-black text-brand-white mb-8 leading-tight tracking-tight">
+            Hablemos de <br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-indigo pr-4 py-2 italic" style="box-decoration-break: clone; -webkit-box-decoration-break: clone;">tu próximo gran proyecto</span>
+          </h1>
+          <p class="text-xl text-brand-slate mb-12 leading-relaxed font-medium">
+            Estamos listos para escucharte. Ya sea un diagnóstico de arquitectura, una idea de negocio o una solicitud de cotización, nuestro equipo responderá en menos de 24 horas hábiles.
+          </p>
+
+          <div class="grid gap-6">
+            {contactMethods.map((method, index) => (
+              <a href={method.href} class="flex items-center p-6 bg-brand-navy/30 backdrop-blur-md rounded-3xl border border-white/5 hover:border-brand-primary/30 shadow-lg hover:bg-brand-navy/50 transition-all duration-300 group" style={`animation-delay: ${index * 150}ms;`}>
+                <div class={`w-14 h-14 rounded-2xl border ${method.color} flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-500`}>
+                  <Fragment set:html={method.icon} />
+                </div>
+                <div>
+                  <p class="text-sm font-black text-brand-slate uppercase tracking-widest mb-1">{method.title}</p>
+                  <p class="text-xl font-bold text-brand-white group-hover:text-brand-primary transition-colors">{method.value}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="bg-brand-navy/40 backdrop-blur-xl rounded-[2.5rem] p-8 sm:p-12 border border-white/10 shadow-2xl relative overflow-hidden reveal" style="animation-delay: 300ms;">
+          <!-- Top blueprint line -->
+          <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-primary to-transparent opacity-50"></div>
+          
+          <div class="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+          
+          <div class="mb-8 flex items-center justify-between border-b border-white/5 pb-6">
+            <div>
+              <h2 class="text-2xl font-bold text-brand-white">Iniciar Transmisión</h2>
+              <p class="text-brand-slate text-sm mt-1">Ingresa los datos para solicitar un diagnóstico</p>
+            </div>
+            <div class="text-[10px] font-mono text-brand-primary/40 uppercase tracking-widest text-right">
+              PORT_OPEN<br/>
+              SECURE_CONN
             </div>
           </div>
 
-          <!-- Contact Form (Placeholder) -->
-          <div class="bg-white dark:bg-gray-900 rounded-[2.5rem] p-8 sm:p-12 border border-gray-100 dark:border-gray-800 shadow-2xl relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl"></div>
+          <form class="space-y-6 relative z-10">
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-brand-slate ml-1">Nombre</label>
+                <input type="text" placeholder="Ej: Juan Pérez" class="w-full px-6 py-4 rounded-2xl bg-brand-obsidian/80 border border-white/5 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/50 outline-none transition-all text-brand-white placeholder-brand-slate/50" required />
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-bold text-brand-slate ml-1">Empresa</label>
+                <input type="text" placeholder="Ej: Thinka SpA" class="w-full px-6 py-4 rounded-2xl bg-brand-obsidian/80 border border-white/5 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/50 outline-none transition-all text-brand-white placeholder-brand-slate/50" />
+              </div>
+            </div>
             
-            <form class="space-y-6 relative z-10">
-              <div class="grid sm:grid-cols-2 gap-6">
-                <div class="space-y-2">
-                  <label class="text-sm font-bold text-gray-700 dark:text-gray-300 ml-1">Nombre</label>
-                  <input type="text" placeholder="Ej: Juan Pérez" class="w-full px-6 py-4 rounded-2xl bg-gray-50 dark:bg-gray-800 border-2 border-transparent focus:border-purple-500 outline-none transition-all dark:text-white" required />
-                </div>
-                <div class="space-y-2">
-                  <label class="text-sm font-bold text-gray-700 dark:text-gray-300 ml-1">Empresa</label>
-                  <input type="text" placeholder="Ej: Thinka SpA" class="w-full px-6 py-4 rounded-2xl bg-gray-50 dark:bg-gray-800 border-2 border-transparent focus:border-purple-500 outline-none transition-all dark:text-white" />
-                </div>
-              </div>
-              
-              <div class="space-y-2">
-                <label class="text-sm font-bold text-gray-700 dark:text-gray-300 ml-1">Correo Corporativo</label>
-                <input type="email" placeholder="nombre@empresa.com" class="w-full px-6 py-4 rounded-2xl bg-gray-50 dark:bg-gray-800 border-2 border-transparent focus:border-purple-500 outline-none transition-all dark:text-white" required />
-              </div>
+            <div class="space-y-2">
+              <label class="text-sm font-bold text-brand-slate ml-1">Correo Corporativo</label>
+              <input type="email" placeholder="nombre@empresa.com" class="w-full px-6 py-4 rounded-2xl bg-brand-obsidian/80 border border-white/5 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/50 outline-none transition-all text-brand-white placeholder-brand-slate/50" required />
+            </div>
 
-              <div class="space-y-2">
-                <label class="text-sm font-bold text-gray-700 dark:text-gray-300 ml-1">Mensaje</label>
-                <textarea rows="4" placeholder="¿En qué podemos ayudarte?" class="w-full px-6 py-4 rounded-2xl bg-gray-50 dark:bg-gray-800 border-2 border-transparent focus:border-purple-500 outline-none transition-all dark:text-white resize-none" required></textarea>
-              </div>
+            <div class="space-y-2">
+              <label class="text-sm font-bold text-brand-slate ml-1">Mensaje / Requerimiento</label>
+              <textarea rows="4" placeholder="¿Qué procesos te gustaría automatizar?" class="w-full px-6 py-4 rounded-2xl bg-brand-obsidian/80 border border-white/5 focus:border-brand-primary focus:ring-1 focus:ring-brand-primary/50 outline-none transition-all text-brand-white placeholder-brand-slate/50 resize-none" required></textarea>
+            </div>
 
-              <button type="submit" class="w-full py-5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-black rounded-2xl shadow-xl hover:shadow-purple-500/20 hover:-translate-y-1 transition-all active:scale-95">
-                Enviar Mensaje
-              </button>
-              
-              <p class="text-center text-xs text-gray-400 mt-6">
-                Al enviar este formulario, aceptas nuestra <a href="/politica-privacidad" class="text-purple-600 font-bold hover:underline">Política de Privacidad</a>.
-              </p>
-            </form>
-          </div>
+            <button type="submit" class="magnetic-btn w-full py-5 bg-brand-primary text-brand-obsidian font-black rounded-2xl shadow-[0_0_20px_rgba(0,255,148,0.3)] hover:shadow-[0_0_30px_rgba(0,255,148,0.5)] transition-all duration-300 active:scale-95 flex justify-center items-center gap-2">
+              Enviar Solicitud
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            </button>
+            
+            <p class="text-center text-xs text-brand-slate mt-6">
+              Al enviar este formulario, aceptas nuestra <a href="/politica-privacidad" class="text-brand-primary font-bold hover:underline">Política de Privacidad</a>.
+            </p>
+          </form>
         </div>
       </div>
-    </section>
+    </div>
   </main>
 
-  <SimpleFooter />
+  <Footer />
 </Layout>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const initAnimations = () => {
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    revealElements.forEach((el) => {
+      gsap.fromTo(el, 
+        { 
+          opacity: 0, 
+          y: 30,
+          scale: 0.95,
+          filter: "blur(10px)"
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: "blur(0px)",
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%"
+          }
+        }
+      );
+    });
+
+    const magneticButtons = document.querySelectorAll('.magnetic-btn');
+    magneticButtons.forEach(btn => {
+      if (!(btn instanceof HTMLElement)) return;
+      
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        
+        gsap.to(btn, {
+          x: x * 0.2,
+          y: y * 0.2,
+          duration: 0.3,
+          ease: "power2.out"
+        });
+      });
+      
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, {
+          x: 0,
+          y: 0,
+          duration: 0.5,
+          ease: "elastic.out(1, 0.3)"
+        });
+      });
+    });
+  };
+
+  document.addEventListener("DOMContentLoaded", initAnimations);
+  document.addEventListener("astro:page-load", initAnimations);
+</script>

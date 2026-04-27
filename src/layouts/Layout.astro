@@ -6,13 +6,17 @@ interface Props {
 	description?: string;
     image?: string;
     favicon?: string;
+    keywords?: string;
+    jsonLdGraph?: unknown[];
 }
 
 const { 
     title, 
-    description = "Soluciones de Software, SaaS e Inteligencia Artificial. Consultoría tecnológica especializada en desarrollo a medida, automatización de procesos y transformación digital.",
+    description = "Thinka es la plataforma de IA empresarial para crear asistentes, agentes y automatizaciones con contexto real, seguridad y control.",
     image = "/assets/images/og-image.jpg",
-    favicon = "/favicon.svg"
+    favicon = "/favicon.svg",
+    keywords = "Thinka, plataforma IA empresas, agentes de IA, automatización con IA, asistentes virtuales, RAG empresarial, seguridad IA, trazabilidad IA, SaaS inteligencia artificial",
+    jsonLdGraph = []
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -23,9 +27,15 @@ const jsonLD = {
     {
       "@type": "Organization",
       "@id": "https://thinka.cl/#organization",
-      "name": "Thinka",
+      "name": "Thinka IA Administrada",
       "url": "https://thinka.cl",
       "logo": "https://thinka.cl/assets/images/logo-thinka.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "La Serena",
+        "addressRegion": "Coquimbo",
+        "addressCountry": "CL"
+      },
       "sameAs": [
         "https://www.linkedin.com/company/thinka-cl",
         "https://www.facebook.com/people/Thinka-Desarrollo-de-Software-con-IA/61580902276921/",
@@ -35,25 +45,29 @@ const jsonLD = {
         "@type": "ContactPoint",
         "telephone": "+56981843411",
         "contactType": "customer service",
-        "areaServed": "Global",
-        "availableLanguage": ["Spanish", "English"]
+        "areaServed": "CL",
+        "availableLanguage": ["Spanish"]
       },
-      "description": description
+      "description": "IA administrada para empresas en Chile. Automatización de procesos, asistentes virtuales y consultoría estratégica en inteligencia artificial."
     },
     {
       "@type": "WebSite",
       "@id": "https://thinka.cl/#website",
       "url": "https://thinka.cl",
-      "name": "Thinka",
+      "name": "Thinka IA Administrada",
       "publisher": { "@id": "https://thinka.cl/#organization" }
     },
     {
       "@type": "Service",
-      "serviceType": "Software Development",
+      "serviceType": "Managed AI Services",
       "provider": { "@id": "https://thinka.cl/#organization" },
-      "areaServed": "Global",
-      "description": "Desarrollo de Software a medida, plataformas SaaS e integración de Inteligencia Artificial."
-    }
+      "areaServed": {
+        "@type": "Country",
+        "name": "Chile"
+      },
+      "description": "Servicio administrado de IA que incluye configuración, entrenamiento y mantenimiento de asistentes inteligentes para optimizar la productividad empresarial."
+    },
+    ...jsonLdGraph
   ]
 };
 ---
@@ -66,6 +80,12 @@ const jsonLD = {
 		<link rel="icon" type="image/svg+xml" href={favicon} />
 		<meta name="generator" content={Astro.generator} />
         
+        <!-- Geo-Tagging Chile -->
+        <meta name="geo.region" content="CL-CO" />
+        <meta name="geo.placename" content="Coquimbo" />
+        <meta name="geo.position" content="-29.9533;-71.3395" />
+        <meta name="ICBM" content="-29.9533, -71.3395" />
+
         <SEO
             title={title}
             description={description}
@@ -79,8 +99,8 @@ const jsonLD = {
                 },
                 optional: {
                     description: description,
-                    locale: "es_ES",
-                    siteName: "Thinka - Software, SaaS e IA",
+                    locale: "es_CL",
+                    siteName: "Thinka IA Administrada",
                 }
             }}
             twitter={{
@@ -93,7 +113,7 @@ const jsonLD = {
             }}
             extend={{
                 meta: [
-                    { name: "keywords", content: "Soluciones de Software, Desarrollo SaaS, Inteligencia Artificial, Automatización de procesos, Consultoría Tecnológica, Desarrollo Web, Software a Medida" },
+                    { name: "keywords", content: keywords },
                 ],
             }}
         />
@@ -101,20 +121,105 @@ const jsonLD = {
         <!-- JSON-LD -->
         <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLD)} />
 
-        <!-- Google Fonts Inter -->
+        <!-- Fonts: Sora & Inter -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
 
         <style is:global>
-            /* Custom global styles if needed, mainly handled by Tailwind */
+            :root {
+                --brand-primary: #00FF94;
+                --brand-obsidian: #0B0F1A;
+                --brand-navy: #161C2C;
+                --brand-indigo: #6366F1;
+                --brand-white: #F8FAFC;
+                --brand-slate: #94A3B8;
+            }
+
             body {
                 font-family: 'Inter', sans-serif;
+                background-color: var(--brand-obsidian);
+                color: var(--brand-white);
+                min-height: 100vh;
+                position: relative;
+            }
+
+            /* Mesh Gradient Background */
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -2;
+                background: radial-gradient(circle at 0% 0%, rgba(22, 28, 44, 1) 0%, transparent 50%),
+                            radial-gradient(circle at 100% 0%, rgba(11, 15, 26, 1) 0%, transparent 50%),
+                            radial-gradient(circle at 100% 100%, rgba(22, 28, 44, 1) 0%, transparent 50%),
+                            radial-gradient(circle at 0% 100%, rgba(11, 15, 26, 1) 0%, transparent 50%);
+                background-attachment: fixed;
+            }
+
+            /* Noise Texture */
+            body::after {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                opacity: 0.03;
+                pointer-events: none;
+                background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3e%3cfilter id='noiseFilter'%3e%3cturbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3e%3c/filter%3e%3crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3e%3c/svg%3e");
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Sora', sans-serif;
+                text-wrap: balance;
+            }
+
+            .text-fluid-h1 {
+                font-size: clamp(2.5rem, 8vw, 4.5rem);
+            }
+
+            .text-fluid-h2 {
+                font-size: clamp(2rem, 5vw, 3.5rem);
+            }
+
+            .text-gradient-white {
+                background: linear-gradient(to bottom, #FFFFFF 0%, #94A3B8 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            /* Blueprint Details */
+            .blueprint-grid {
+                background-image: 
+                    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+
+            /* Custom scrollbar for deep obsidian theme */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
+            ::-webkit-scrollbar-track {
+                background: var(--brand-obsidian);
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #1f2937;
+                border-radius: 5px;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: var(--brand-indigo);
             }
         </style>
 	</head>
-	<body class="bg-white text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-100">
-		<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-purple-600 text-white px-4 py-2 rounded-lg z-[60]">
+	<body class="antialiased selection:bg-brand-primary/30 selection:text-brand-primary">
+		<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-brand-primary text-brand-obsidian font-bold px-4 py-2 rounded-lg z-[60]">
 			Saltar al contenido principal
 		</a>
 		<slot />

@@ -2,68 +2,75 @@
 import Icon from "./Icon.astro";
 const { logoSrc = "/assets/images/logo-thinka.png" } = Astro.props;
 ---
-<!-- Footer -->
-<footer class="footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-section">
-        <div class="footer-logo">
-          <img src={logoSrc} alt="Thinka Logo" width="120" height="40">
+
+<footer class="bg-brand-obsidian pt-24 pb-12 border-t border-white/5" role="contentinfo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+      <div class="col-span-1 md:col-span-1">
+        <div class="flex items-center gap-2 mb-6">
+          <img src={logoSrc} alt="Thinka" class="h-10 w-auto brightness-0 invert" />
+          <span class="text-xl font-bold tracking-tight text-brand-white">Thinka</span>
         </div>
-        <p class="footer-description" data-translate="footer-description">
-          <slot name="description">
-            Soluciones de software inteligentes que transforman tu negocio a través de la innovación tecnológica.
-          </slot>
+        <p class="text-brand-slate leading-relaxed mb-8">
+          IA administrada para empresas chilenas. Transformamos procesos complejos en flujos eficientes impulsados por inteligencia artificial privada.
         </p>
-      </div>
-
-      <div class="footer-section">
-        <slot name="services-col">
-          <h3 class="footer-title" data-translate="footer-services">Servicios</h3>
-          <ul class="footer-links">
-            <li><a href="#services">Software a Medida</a></li>
-            <li><a href="#services">Plataformas SaaS</a></li>
-            <li><a href="#services">Inteligencia Artificial</a></li>
-            <li><a href="#services">Consultoría Digital</a></li>
-          </ul>
-        </slot>
-      </div>
-
-      <div class="footer-section">
-        <slot name="company-col">
-          <h3 class="footer-title" data-translate="footer-company">Empresa</h3>
-          <ul class="footer-links">
-            <li><a href="#about" data-translate="nav-nosotros">Nosotros</a></li>
-            <li><a href="#portfolio" data-translate="nav-portafolio">Portafolio</a></li>
-            <li><a href="#testimonials" data-translate="nav-testimonios">Testimonios</a></li>
-            <li><a href="#contact" data-translate="nav-contacto">Contacto</a></li>
-            <li><a href="#careers">Carreras</a></li>
-          </ul>
-        </slot>
-      </div>
-
-      <div class="footer-section">
-        <h3 class="footer-title" data-translate="footer-follow">Síguenos</h3>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/company/thinka-cl/" aria-label="LinkedIn" class="social-link" target="_blank" rel="noopener noreferrer">
-            <Icon name="linkedin" size={24} />
+        <div class="flex gap-4">
+          <a href="https://www.linkedin.com/company/thinka-cl/" aria-label="LinkedIn" class="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center text-brand-slate hover:text-brand-primary hover:bg-white/10 transition-all">
+            <Icon name="linkedin" size={20} />
           </a>
-          <a href="https://www.instagram.com/thinka.cl/" aria-label="Instagram" class="social-link" target="_blank" rel="noopener noreferrer">
-            <Icon name="instagram" size={24} />
-          </a>
-          <a href="https://www.facebook.com/people/Thinka-Desarrollo-de-Software-con-IA/61580902276921/" aria-label="Facebook" class="social-link" target="_blank" rel="noopener noreferrer">
-            <Icon name="facebook" size={24} />
+          <a href="https://www.instagram.com/thinka.cl/" aria-label="Instagram" class="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center text-brand-slate hover:text-brand-primary hover:bg-white/10 transition-all">
+            <Icon name="instagram" size={20} />
           </a>
         </div>
+      </div>
+
+      <div>
+        <h3 class="text-brand-white font-bold mb-6">Soluciones</h3>
+        <ul class="space-y-4 text-brand-slate text-sm">
+          <li><a href="#soluciones" class="hover:text-brand-primary transition-colors">Asistente Interno</a></li>
+          <li><a href="#soluciones" class="hover:text-brand-primary transition-colors">Soporte Omnicanal</a></li>
+          <li><a href="#soluciones" class="hover:text-brand-primary transition-colors">Automatización de Emails</a></li>
+          <li><a href="#soluciones" class="hover:text-brand-primary transition-colors">Análisis de Datos IA</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-brand-white font-bold mb-6">Empresa</h3>
+        <ul class="space-y-4 text-brand-slate text-sm">
+          <li><a href="/nosotros" class="hover:text-brand-primary transition-colors">Sobre Nosotros</a></li>
+          <li><a href="#roi" class="hover:text-brand-primary transition-colors">Calculadora ROI</a></li>
+          <li><a href="#planes" class="hover:text-brand-primary transition-colors">Planes Managed</a></li>
+          <li><a href="/contacto" class="hover:text-brand-primary transition-colors">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-brand-white font-bold mb-6">Ubicación & Contacto</h3>
+        <ul class="space-y-4 text-brand-slate text-sm">
+          <li class="flex items-center gap-3">
+            <Icon name="map-pin" size={16} class="text-brand-primary" />
+            La Serena, Región de Coquimbo, Chile
+          </li>
+          <li class="flex items-center gap-3">
+            <Icon name="mail" size={16} class="text-brand-primary" />
+            contacto@thinka.cl
+          </li>
+          <li class="flex items-center gap-3">
+            <Icon name="whatsapp" size={16} class="text-brand-primary" />
+            +56 9 8184 3411
+          </li>
+        </ul>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <p>&copy; 2025 Thinka. <span data-translate="footer-rights">Todos los derechos reservados.</span></p>
-      <div class="footer-legal">
-        <a href="/politica-privacidad">Privacidad</a>
-        <a href="/terminos-condiciones">Términos</a>
-        <a href="/aviso-legal">Aviso Legal</a>
+    <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+      <p class="text-brand-slate text-xs">
+        &copy; {new Date().getFullYear()} Thinka IA Administrada. Todos los derechos reservados.
+      </p>
+      <div class="flex gap-6 text-xs text-brand-slate">
+        <a href="/politica-privacidad" class="hover:text-brand-white transition-colors">Privacidad</a>
+        <a href="/terminos-condiciones" class="hover:text-brand-white transition-colors">Términos</a>
+        <a href="/aviso-legal" class="hover:text-brand-white transition-colors">Legal</a>
       </div>
     </div>
   </div>

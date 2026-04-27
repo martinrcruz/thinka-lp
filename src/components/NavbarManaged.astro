@@ -1,0 +1,115 @@
+---
+import CTAButton from "./CTAButton.astro";
+---
+
+<header id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-white/0 bg-transparent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-24 transition-all duration-500" id="nav-container">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center">
+        <a href="/" class="flex items-center gap-3 group">
+          <div class="relative">
+            <img src="/assets/images/logo-thinka.png" alt="Thinka" class="h-10 w-auto brightness-0 invert transition-transform duration-500 group-hover:rotate-[360deg]" />
+            <div class="absolute inset-0 bg-brand-primary/20 blur-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </div>
+          <span class="text-2xl font-black tracking-tighter text-brand-white group-hover:text-brand-primary transition-colors">THINKA</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-10">
+        <a href="#soluciones" class="text-xs font-bold uppercase tracking-widest text-brand-slate hover:text-brand-primary transition-colors">Soluciones</a>
+        <a href="#roi" class="text-xs font-bold uppercase tracking-widest text-brand-slate hover:text-brand-primary transition-colors">ROI</a>
+        <a href="#planes" class="text-xs font-bold uppercase tracking-widest text-brand-slate hover:text-brand-primary transition-colors">Planes</a>
+        <a href="#faq" class="text-xs font-bold uppercase tracking-widest text-brand-slate hover:text-brand-primary transition-colors">FAQ</a>
+      </nav>
+
+      <!-- CTA Section -->
+      <div class="hidden md:flex items-center gap-6">
+        <a href="https://wa.me/56981843411" class="text-brand-slate hover:text-brand-primary transition-all flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          WhatsApp
+        </a>
+        <div id="nav-cta" class="opacity-0 translate-x-4 pointer-events-none transition-all duration-500">
+          <CTAButton href="#contacto" size="sm" variant="primary" class="shadow-glow">
+            Solicitar Diagnóstico
+          </CTAButton>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="mobile-menu-toggle" class="text-brand-white p-2 hover:text-brand-primary transition-colors" aria-label="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-brand-obsidian/95 backdrop-blur-2xl border-b border-white/10 overflow-hidden transition-all duration-500">
+    <div class="px-6 pt-4 pb-12 space-y-6">
+      <a href="#soluciones" class="block text-xl font-bold text-brand-slate hover:text-brand-primary transition-colors">Soluciones</a>
+      <a href="#roi" class="block text-xl font-bold text-brand-slate hover:text-brand-primary transition-colors">ROI</a>
+      <a href="#planes" class="block text-xl font-bold text-brand-slate hover:text-brand-primary transition-colors">Planes</a>
+      <a href="#faq" class="block text-xl font-bold text-brand-slate hover:text-brand-primary transition-colors">FAQ</a>
+      <div class="pt-4">
+        <CTAButton href="#contacto" size="lg" variant="primary" class="w-full shadow-glow">
+          Solicitar Diagnóstico
+        </CTAButton>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Magnetic FAB for Mobile -->
+<div id="magnetic-fab" class="fixed bottom-8 right-8 z-[60] md:hidden translate-y-24 opacity-0 transition-all duration-500">
+  <a href="#contacto" class="flex items-center justify-center w-16 h-16 rounded-full bg-brand-primary text-brand-obsidian shadow-glow-primary active:scale-95 transition-transform">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  </a>
+</div>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const navContainer = document.getElementById('nav-container');
+  const navCta = document.getElementById('nav-cta');
+  const fab = document.getElementById('magnetic-fab');
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      nav?.classList.add('bg-brand-obsidian/90', 'backdrop-blur-xl', 'border-white/10', 'py-2');
+      nav?.classList.remove('bg-transparent', 'border-white/0');
+      navContainer?.classList.replace('h-24', 'h-16');
+      navCta?.classList.remove('opacity-0', 'translate-x-4', 'pointer-events-none');
+    } else {
+      nav?.classList.remove('bg-brand-obsidian/90', 'backdrop-blur-xl', 'border-white/10', 'py-2');
+      nav?.classList.add('bg-transparent', 'border-white/0');
+      navContainer?.classList.replace('h-16', 'h-24');
+      navCta?.classList.add('opacity-0', 'translate-x-4', 'pointer-events-none');
+    }
+
+    if (window.scrollY > 500) {
+      fab?.classList.remove('translate-y-24', 'opacity-0');
+    } else {
+      fab?.classList.add('translate-y-24', 'opacity-0');
+    }
+  });
+
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => menu?.classList.add('hidden'));
+  });
+</script>
+
+<style>
+  .shadow-glow-primary {
+    box-shadow: 0 0 20px rgba(0, 255, 148, 0.4);
+  }
+</style>
