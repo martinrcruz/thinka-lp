@@ -1,0 +1,405 @@
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - generic [ref=e5]:
+      - link "Thinka THINKA" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img "Thinka" [ref=e9]
+        - generic [ref=e11]: THINKA
+      - navigation [ref=e12]:
+        - link "Soluciones" [ref=e13] [cursor=pointer]:
+          - /url: "#soluciones"
+        - link "ROI" [ref=e14] [cursor=pointer]:
+          - /url: "#roi"
+        - link "Planes" [ref=e15] [cursor=pointer]:
+          - /url: "#planes"
+        - link "FAQ" [ref=e16] [cursor=pointer]:
+          - /url: "#faq"
+      - generic [ref=e17]:
+        - link "WhatsApp" [ref=e18] [cursor=pointer]:
+          - /url: https://wa.me/56981843411
+          - text: WhatsApp
+        - generic:
+          - link "Solicitar Diagnóstico":
+            - /url: "#contacto"
+  - main [ref=e20]:
+    - generic [ref=e22]:
+      - generic [ref=e27]: "Sistemas de IA: Rendimiento Máximo"
+      - heading "Recupere el control de su tiempo con IA Administrada" [level=1] [ref=e28]
+      - paragraph [ref=e29]: Libere a su equipo de las tareas repetitivas. Diseñamos e implementamos su infraestructura de inteligencia para que usted solo se preocupe de escalar.
+      - generic [ref=e30]:
+        - link "Solicitar Diagnóstico Gratuito" [ref=e31] [cursor=pointer]:
+          - /url: "#contacto"
+        - link "Ver Calculadora de ROI" [ref=e32] [cursor=pointer]:
+          - /url: "#roi"
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - generic [ref=e39]: Fuga de ROI Detectada
+        - heading "¿Su equipo está atrapado en tareas invisibles?" [level=2] [ref=e40]
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - img [ref=e44]
+            - paragraph [ref=e46]: Correos repetitivos que consumen horas críticas.
+          - generic [ref=e47]:
+            - img [ref=e49]
+            - paragraph [ref=e51]: Silos de información en manuales desactualizados.
+          - generic [ref=e52]:
+            - img [ref=e54]
+            - paragraph [ref=e56]: Falta de trazabilidad en la atención al cliente.
+          - generic [ref=e57]:
+            - img [ref=e59]
+            - paragraph [ref=e61]: Procesos manuales que frenan el escalamiento.
+      - generic [ref=e68]:
+        - generic [ref=e69]: 80%
+        - paragraph [ref=e70]: Del trabajo administrativo es automatizable.
+        - paragraph [ref=e71]:
+          - text: Thinka no es solo software; es la
+          - strong [ref=e72]: infraestructura administrada
+          - text: que recupera el tiempo de su talento humano.
+        - generic [ref=e73]:
+          - generic [ref=e74]: "análisis: listo"
+          - generic [ref=e75]: "impacto: confirmado"
+    - img [ref=e80]
+    - generic [ref=e82]:
+      - generic: "lat: -29.9533 / lon: -71.3395"
+      - generic: "status: system_active_0x4F"
+      - generic [ref=e83]:
+        - generic [ref=e84]:
+          - generic [ref=e87]: Potencial de Crecimiento
+          - heading "Casos de Uso de Alto Impacto" [level=2] [ref=e88]
+          - paragraph [ref=e89]: Infraestructura de IA diseñada para resolver desafíos industriales con precisión quirúrgica.
+        - generic [ref=e90]:
+          - generic [ref=e93]:
+            - generic [ref=e94]:
+              - img [ref=e96]
+              - generic:
+                - img "Asistente Interno Experto"
+            - heading "Asistente Interno Experto" [level=3] [ref=e99]
+            - paragraph [ref=e100]: Toda la documentación y manuales de tu empresa consultables en segundos por tu equipo.
+            - generic [ref=e101]: VER_ESTRATEGIA_01
+          - generic [ref=e105]:
+            - generic [ref=e106]:
+              - img [ref=e108]
+              - generic:
+                - img "Soporte Omnicanal 24/7"
+            - heading "Soporte Omnicanal 24/7" [level=3] [ref=e110]
+            - paragraph [ref=e111]: Atención inmediata en WhatsApp, Web y Correo con el tono de tu marca.
+            - generic [ref=e112]: VER_ESTRATEGIA_02
+          - generic [ref=e116]:
+            - generic [ref=e117]:
+              - img [ref=e119]
+              - generic:
+                - img "Automatización de Correos"
+            - heading "Automatización de Correos" [level=3] [ref=e122]
+            - paragraph [ref=e123]: Clasificación inteligente y redacción de borradores para que solo tengas que revisar y enviar.
+            - generic [ref=e124]: VER_ESTRATEGIA_03
+          - generic [ref=e128]:
+            - generic [ref=e129]:
+              - img [ref=e131]
+              - generic:
+                - img "Análisis de Datos Proactivo"
+            - heading "Análisis de Datos Proactivo" [level=3] [ref=e132]
+            - paragraph [ref=e133]: Convierte planillas complejas en insights de negocio sin ser un experto en datos.
+            - generic [ref=e134]: VER_ESTRATEGIA_04
+          - generic [ref=e138]:
+            - generic [ref=e139]:
+              - img [ref=e141]
+              - generic:
+                - img "Onboarding Inteligente"
+            - heading "Onboarding Inteligente" [level=3] [ref=e146]
+            - paragraph [ref=e147]: Guía a tus nuevos clientes o empleados con procesos personalizados guiados por IA.
+            - generic [ref=e148]: VER_ESTRATEGIA_05
+          - generic [ref=e152]:
+            - generic [ref=e153]:
+              - img [ref=e155]
+              - generic:
+                - img "Gestión Documental"
+            - heading "Gestión Documental" [level=3] [ref=e158]
+            - paragraph [ref=e159]: Búsqueda semántica en miles de archivos. Encuentra lo que necesitas por concepto, no por nombre.
+            - generic [ref=e160]: VER_ESTRATEGIA_06
+    - generic [ref=e163]:
+      - generic [ref=e164]:
+        - generic [ref=e167]: Metodología de Escalamiento
+        - heading "Su IA lista en 3 pasos" [level=2] [ref=e168]
+        - paragraph [ref=e169]: Infraestructura administrada. Nosotros ejecutamos, usted escala.
+      - generic [ref=e170]:
+        - generic [ref=e174]:
+          - img [ref=e177]
+          - generic [ref=e181]:
+            - generic: "01"
+            - heading "Diagnóstico Estratégico" [level=3] [ref=e182]
+            - paragraph [ref=e183]: Analizamos su operación para identificar los puntos críticos de ineficiencia.
+            - generic [ref=e184]:
+              - generic [ref=e185]: Auditoría de Procesos
+              - generic [ref=e187]: Mapa de Oportunidades
+              - generic [ref=e189]: Proyección de ROI
+        - generic [ref=e192]:
+          - img [ref=e195]
+          - generic [ref=e199]:
+            - generic: "02"
+            - heading "Despliegue Managed" [level=3] [ref=e200]
+            - paragraph [ref=e201]: Construimos e integramos su infraestructura de IA de punta a punta.
+            - generic [ref=e202]:
+              - generic [ref=e203]: Entrenamiento de Datos
+              - generic [ref=e205]: Configuración de Agentes
+              - generic [ref=e207]: Integración Segura
+        - generic [ref=e210]:
+          - img [ref=e213]
+          - generic [ref=e215]:
+            - generic: "03"
+            - heading "Escalamiento & Mejora" [level=3] [ref=e216]
+            - paragraph [ref=e217]: Garantizamos que su IA aprenda y evolucione con su negocio mes a mes.
+            - generic [ref=e218]:
+              - generic [ref=e219]: Re-entrenamiento Mensual
+              - generic [ref=e221]: Auditoría de Calidad
+              - generic [ref=e223]: Soporte Proactivo
+    - generic [ref=e226]:
+      - generic [ref=e227]:
+        - generic [ref=e230]: Métricas de Retorno (ROI)
+        - heading "Resultados Medibles, No Promesas" [level=2] [ref=e231]
+        - paragraph [ref=e232]: La IA es una inversión en eficiencia. Calcule su impacto real aquí.
+      - generic [ref=e233]:
+        - generic [ref=e237]:
+          - generic [ref=e238]:
+            - heading "Calcula tu Retorno de Inversión" [level=3] [ref=e239]
+            - paragraph [ref=e240]: Descubre cuánto tiempo y dinero puede ahorrar tu empresa al automatizar procesos repetitivos con Thinka.
+            - generic [ref=e241]:
+              - generic [ref=e242]:
+                - generic [ref=e243]: Horas manuales semanales (equipo)
+                - slider [ref=e244] [cursor=pointer]: "25"
+                - generic [ref=e245]:
+                  - generic [ref=e246]: 5 hrs
+                  - generic [ref=e247]: 25 hrs
+                  - generic [ref=e248]: 100 hrs
+              - generic [ref=e249]:
+                - generic [ref=e250]: Costo promedio por hora (CLP)
+                - spinbutton [ref=e251]: "15000"
+          - generic [ref=e252]:
+            - paragraph [ref=e254]: Ahorro Mensual Estimado
+            - generic [ref=e255]: $1.200.000
+            - paragraph [ref=e256]: Liberas 80 horas de talento humano al mes.
+            - paragraph [ref=e258]: "* Basado en una reducción del 80% del trabajo manual con IA administrada."
+        - generic [ref=e260]:
+          - text: NÚCLEO_ESTRATÉGICO
+          - text: "datos: optimizados"
+    - generic [ref=e263]:
+      - generic [ref=e264]:
+        - generic [ref=e267]: Modelos de Inversión
+        - heading "Inversión en Infraestructura" [level=2] [ref=e268]
+        - paragraph [ref=e269]: Modelos de servicio administrado diseñados para escalar según la complejidad de su operación.
+      - generic [ref=e270]:
+        - generic [ref=e271]:
+          - generic: "0xB7D2"
+          - generic [ref=e272]:
+            - heading "Starter" [level=3] [ref=e273]
+            - paragraph [ref=e274]: PyMEs y validación de caso de uso inicial.
+          - generic [ref=e276]:
+            - generic [ref=e277]: $140.000
+            - generic [ref=e278]: /INVERSIÓN_MENSUAL
+          - list [ref=e279]:
+            - listitem [ref=e280]:
+              - img [ref=e281]
+              - text: 1 Workspace
+            - listitem [ref=e283]:
+              - img [ref=e284]
+              - text: 1 Asistente
+            - listitem [ref=e286]:
+              - img [ref=e287]
+              - text: RAG Global Básico (50 docs)
+            - listitem [ref=e289]:
+              - img [ref=e290]
+              - text: Reporte consolidado mensual
+          - link "Comenzar ahora" [ref=e292] [cursor=pointer]:
+            - /url: "#contacto"
+        - generic [ref=e293]:
+          - generic: "0xC2EB"
+          - generic [ref=e294]:
+            - heading "Professional" [level=3] [ref=e295]
+            - paragraph [ref=e296]: Empresas en crecimiento con operación diaria estructurada.
+          - generic [ref=e298]:
+            - generic [ref=e299]: $320.000
+            - generic [ref=e300]: /INVERSIÓN_MENSUAL
+          - list [ref=e301]:
+            - listitem [ref=e302]:
+              - img [ref=e303]
+              - text: 1 Workspace
+            - listitem [ref=e305]:
+              - img [ref=e306]
+              - text: 3 Asistentes
+            - listitem [ref=e308]:
+              - img [ref=e309]
+              - text: RAG específico por chatbot (200 docs)
+            - listitem [ref=e311]:
+              - img [ref=e312]
+              - text: Alertas de billing de uso
+          - link "Comenzar ahora" [ref=e314] [cursor=pointer]:
+            - /url: "#contacto"
+        - generic [ref=e315]:
+          - generic: "0x2FB7"
+          - generic [ref=e316]: Plan Destacado
+          - generic [ref=e317]:
+            - heading "Business" [level=3] [ref=e318]
+            - paragraph [ref=e319]: Operaciones críticas y múltiples áreas internas.
+          - generic [ref=e321]:
+            - generic [ref=e322]: $600.000
+            - generic [ref=e323]: /INVERSIÓN_MENSUAL
+          - list [ref=e324]:
+            - listitem [ref=e325]:
+              - img [ref=e326]
+              - text: 1 Workspace
+            - listitem [ref=e328]:
+              - img [ref=e329]
+              - text: 10 Asistentes
+            - listitem [ref=e331]:
+              - img [ref=e332]
+              - text: RAG avanzado (1.000 docs)
+            - listitem [ref=e334]:
+              - img [ref=e335]
+              - text: Auditoría central y local constante
+          - link "Comenzar ahora" [ref=e337] [cursor=pointer]:
+            - /url: "#contacto"
+        - generic [ref=e338]:
+          - generic: "0xC3BC"
+          - generic [ref=e339]:
+            - heading "Enterprise" [level=3] [ref=e340]
+            - paragraph [ref=e341]: Corporativos con alta carga transaccional de IA.
+          - generic [ref=e343]:
+            - generic [ref=e344]: $990.000
+            - generic [ref=e345]: /INVERSIÓN_MENSUAL
+          - list [ref=e346]:
+            - listitem [ref=e347]:
+              - img [ref=e348]
+              - text: 1 Workspace
+            - listitem [ref=e350]:
+              - img [ref=e351]
+              - text: 20 Asistentes
+            - listitem [ref=e353]:
+              - img [ref=e354]
+              - text: RAG por volumen de infraestructura
+            - listitem [ref=e356]:
+              - img [ref=e357]
+              - text: Trazabilidad en tiempo real
+          - link "Comenzar ahora" [ref=e359] [cursor=pointer]:
+            - /url: "#contacto"
+        - generic [ref=e360]:
+          - generic: "0x1A9B"
+          - generic [ref=e361]:
+            - heading "Custom" [level=3] [ref=e362]
+            - paragraph [ref=e363]: Instituciones con requerimientos específicos de hardware o seguridad.
+          - generic [ref=e366]: A cotizar
+          - list [ref=e367]:
+            - listitem [ref=e368]:
+              - img [ref=e369]
+              - text: A Medida
+            - listitem [ref=e371]:
+              - img [ref=e372]
+              - text: A medida
+            - listitem [ref=e374]:
+              - img [ref=e375]
+              - text: Integración completa de ecosistemas
+            - listitem [ref=e377]:
+              - img [ref=e378]
+              - text: Exportación de logs y auditoría
+          - link "Comenzar ahora" [ref=e380] [cursor=pointer]:
+            - /url: "#contacto"
+    - generic [ref=e382]:
+      - heading "Preguntas Frecuentes" [level=2] [ref=e383]
+      - generic [ref=e384]:
+        - group [ref=e386]:
+          - generic "¿En qué se diferencia de usar ChatGPT?" [ref=e387] [cursor=pointer]:
+            - heading "¿En qué se diferencia de usar ChatGPT?" [level=3] [ref=e388]
+            - img [ref=e390]
+        - group [ref=e393]:
+          - generic "¿Mis datos están seguros?" [ref=e394] [cursor=pointer]:
+            - heading "¿Mis datos están seguros?" [level=3] [ref=e395]
+            - img [ref=e397]
+        - group [ref=e400]:
+          - generic "¿Cuánto tiempo toma la implementación?" [ref=e401] [cursor=pointer]:
+            - heading "¿Cuánto tiempo toma la implementación?" [level=3] [ref=e402]
+            - img [ref=e404]
+        - group [ref=e407]:
+          - generic "¿Necesito conocimientos técnicos?" [ref=e408] [cursor=pointer]:
+            - heading "¿Necesito conocimientos técnicos?" [level=3] [ref=e409]
+            - img [ref=e411]
+    - generic [ref=e415]:
+      - generic:
+        - text: "sistema: activo"
+        - text: "seguridad: robusta"
+        - text: listo_para_escalar
+      - heading "¿Listo para liderar con Infraestructura Inteligente?" [level=2] [ref=e416]
+      - paragraph [ref=e417]: Obtenga un diagnóstico de arquitectura gratuito y descubra exactamente dónde puede automatizar su operación hoy.
+      - generic [ref=e418]:
+        - link "Solicitar Diagnóstico Ahora" [ref=e419] [cursor=pointer]:
+          - /url: /contacto
+        - link "Hablar con un experto" [ref=e420] [cursor=pointer]:
+          - /url: https://wa.me/56981843411
+          - img [ref=e422]
+          - text: Hablar con un experto
+  - contentinfo [ref=e424]:
+    - generic [ref=e425]:
+      - generic [ref=e426]:
+        - generic [ref=e427]:
+          - link "Thinka Icon THINKA" [ref=e428] [cursor=pointer]:
+            - /url: /
+            - img "Thinka Icon" [ref=e429]
+            - generic [ref=e430]: THINKA
+          - paragraph [ref=e431]: IA administrada para empresas chilenas. Transformamos procesos complejos en flujos eficientes impulsados por inteligencia artificial privada.
+          - generic [ref=e432]:
+            - link "LinkedIn" [ref=e433] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/thinka-cl/
+              - img [ref=e434]
+            - link "Instagram" [ref=e438] [cursor=pointer]:
+              - /url: https://www.instagram.com/thinka.cl/
+              - img [ref=e439]
+        - generic [ref=e442]:
+          - heading "Soluciones" [level=3] [ref=e443]
+          - list [ref=e444]:
+            - listitem [ref=e445]:
+              - link "Asistente Interno" [ref=e446] [cursor=pointer]:
+                - /url: "#soluciones"
+            - listitem [ref=e447]:
+              - link "Soporte Omnicanal" [ref=e448] [cursor=pointer]:
+                - /url: "#soluciones"
+            - listitem [ref=e449]:
+              - link "Automatización de Emails" [ref=e450] [cursor=pointer]:
+                - /url: "#soluciones"
+            - listitem [ref=e451]:
+              - link "Análisis de Datos IA" [ref=e452] [cursor=pointer]:
+                - /url: "#soluciones"
+        - generic [ref=e453]:
+          - heading "Empresa" [level=3] [ref=e454]
+          - list [ref=e455]:
+            - listitem [ref=e456]:
+              - link "Sobre Nosotros" [ref=e457] [cursor=pointer]:
+                - /url: /nosotros
+            - listitem [ref=e458]:
+              - link "Calculadora ROI" [ref=e459] [cursor=pointer]:
+                - /url: "#roi"
+            - listitem [ref=e460]:
+              - link "Planes Managed" [ref=e461] [cursor=pointer]:
+                - /url: "#planes"
+            - listitem [ref=e462]:
+              - link "Contacto" [ref=e463] [cursor=pointer]:
+                - /url: /contacto
+        - generic [ref=e464]:
+          - heading "Ubicación & Contacto" [level=3] [ref=e465]
+          - list [ref=e466]:
+            - listitem [ref=e467]:
+              - img [ref=e468]
+              - text: La Serena, Región de Coquimbo, Chile
+            - listitem [ref=e471]:
+              - img [ref=e472]
+              - text: contacto@thinka.cl
+            - listitem [ref=e475]:
+              - img [ref=e476]
+              - text: +56 9 8184 3411
+      - generic [ref=e478]:
+        - paragraph [ref=e479]: © 2026 Thinka IA Administrada. Todos los derechos reservados.
+        - generic [ref=e480]:
+          - link "Privacidad" [ref=e481] [cursor=pointer]:
+            - /url: /politica-privacidad
+          - link "Términos" [ref=e482] [cursor=pointer]:
+            - /url: /terminos-condiciones
+          - link "Legal" [ref=e483] [cursor=pointer]:
+            - /url: /aviso-legal

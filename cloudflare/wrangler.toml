@@ -1,0 +1,9 @@
+name = "thinka-proxy"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+GHOST_ORIGIN = "https://tu-instancia-ghost.com"
+
+# Rutas donde se activará este Worker
+# route = { pattern = "thinka.cl/*", zone_name = "thinka.cl" }

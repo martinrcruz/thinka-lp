@@ -1,14 +1,15 @@
 ---
 import Icon from "./Icon.astro";
-const { logoSrc = "/assets/images/logo-thinka.png", showSettings = true } = Astro.props;
+const { logoSrc = "/assets/images/icono thinka sin fondo.png", showSettings = true } = Astro.props;
 ---
 <!-- Header -->
 <header class="header" role="banner">
   <nav class="nav" role="navigation" aria-label="Navegación principal">
     <div class="nav-container">
       <div class="nav-logo">
-        <a href="/#" aria-label="Thinka - Inicio">
-          <img src={logoSrc} alt="Thinka Logo" width="240" height="80">
+        <a href="/#" aria-label="Thinka - Inicio" class="flex items-center gap-2">
+          <img src={logoSrc} alt="Thinka Logo" width="40" height="40">
+          <span class="text-xl font-black tracking-tighter uppercase">THINKA</span>
         </a>
       </div>
 

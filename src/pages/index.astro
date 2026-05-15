@@ -10,7 +10,7 @@ import CTAButton from '../components/CTAButton.astro';
 import Footer from '../components/Footer.astro';
 import DataChaosCanvas from '../components/3d/DataChaosCanvasWrapper.ts';
 import OrchestratorCanvas from '../components/3d/OrchestratorCanvasWrapper.ts';
-import FloatingModuleCanvas from '../components/3d/FloatingModuleCanvasWrapper.ts';
+
 import DataProcessorCanvas from '../components/3d/DataProcessorCanvasWrapper.ts';
 import NeuralCoreCanvas from '../components/3d/NeuralCoreCanvasWrapper.ts';
 
@@ -61,41 +61,64 @@ const useCases = [
 
 const plans = [
   {
-    name: "Starter Managed",
-    price: "$290.000",
-    description: "Ideal para equipos que quieren empezar a automatizar sus primeros procesos.",
+    name: "Starter",
+    price: "$140.000",
+    color: "#00ff94", // Cyan
+    description: "PyMEs y validación de caso de uso inicial.",
     features: [
-      "1 Asistente IA personalizado",
-      "Base de conocimiento (hasta 50 docs)",
-      "Integración con WhatsApp",
-      "Mantenimiento mensual incluido",
-      "Soporte vía correo"
+      "1 Workspace",
+      "1 Asistente",
+      "RAG Global Básico (50 docs)",
+      "Reporte consolidado mensual"
     ]
   },
   {
-    name: "Business Managed",
-    price: "$650.000",
-    description: "La solución completa para empresas en crecimiento con múltiples áreas.",
+    name: "Professional",
+    price: "$320.000",
+    color: "#3b82f6", // Blue
+    description: "Empresas en crecimiento con operación diaria estructurada.",
+    features: [
+      "1 Workspace",
+      "3 Asistentes",
+      "RAG específico por chatbot (200 docs)",
+      "Alertas de billing de uso"
+    ]
+  },
+  {
+    name: "Business",
+    price: "$600.000",
+    color: "#6366f1", // Indigo
+    description: "Operaciones críticas y múltiples áreas internas.",
     isPopular: true,
     features: [
-      "3 Asistentes IA especializados",
-      "Conexión con CRM y APIs",
-      "Base de conocimiento ilimitada",
-      "Dashboard de métricas de ROI",
-      "Consultoría estratégica bimensual",
-      "Soporte prioritario 24/7"
+      "1 Workspace",
+      "10 Asistentes",
+      "RAG avanzado (1.000 docs)",
+      "Auditoría central y local constante"
     ]
   },
   {
-    name: "Custom Enterprise",
-    price: "Custom",
-    description: "Infraestructura dedicada y soluciones a medida para grandes operaciones.",
+    name: "Enterprise",
+    price: "$990.000",
+    color: "#a855f7", // Purple
+    description: "Corporativos con alta carga transaccional de IA.",
     features: [
-      "Asistentes ilimitados",
-      "Despliegue On-Premise o Nube Privada",
-      "Seguridad y cumplimiento a medida",
-      "Entrenamiento de modelos propios",
-      "Account Manager dedicado"
+      "1 Workspace",
+      "20 Asistentes",
+      "RAG por volumen de infraestructura",
+      "Trazabilidad en tiempo real"
+    ]
+  },
+  {
+    name: "Custom",
+    price: "A cotizar",
+    color: "#f59e0b", // Amber
+    description: "Instituciones con requerimientos específicos de hardware o seguridad.",
+    features: [
+      "A Medida",
+      "A medida",
+      "Integración completa de ecosistemas",
+      "Exportación de logs y auditoría"
     ]
   }
 ];
@@ -146,7 +169,7 @@ const faqs = [
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
           </span>
-          <span class="text-[10px] font-bold tracking-widest uppercase text-brand-primary">Infrastructure Status: Optimal</span>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-brand-primary">Sistemas de IA: Rendimiento Máximo</span>
         </div>
         
         <h1 class="text-fluid-h1 font-extrabold tracking-tight mb-8 leading-[1.1] text-gradient-white">
@@ -175,7 +198,7 @@ const faqs = [
           <div>
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 mb-6">
               <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
-              <span class="text-[10px] font-bold tracking-widest uppercase text-red-500">Inefficiency Alert</span>
+              <span class="text-[10px] font-bold tracking-widest uppercase text-red-500">Fuga de ROI Detectada</span>
             </div>
             <h2 class="text-fluid-h2 font-bold mb-8 leading-tight text-gradient-white">
               ¿Su equipo está atrapado en <span class="text-brand-indigo">tareas invisibles</span>?
@@ -214,8 +237,8 @@ const faqs = [
                  Thinka no es solo software; es la <strong class="text-white">infraestructura administrada</strong> que recupera el tiempo de su talento humano.
                </p>
                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-brand-primary/40 uppercase tracking-widest">
-                 <span>analysis: complete</span>
-                 <span>efficiency: verified</span>
+                 <span>análisis: listo</span>
+                 <span>impacto: confirmado</span>
                </div>
              </div>
           </div>
@@ -249,7 +272,7 @@ const faqs = [
         <div class="text-center mb-16">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 mb-4">
             <span class="w-1.5 h-1.5 rounded-full bg-brand-primary animate-pulse"></span>
-            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-primary">Capabilities</span>
+            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-primary">Potencial de Crecimiento</span>
           </div>
           <h2 class="text-fluid-h2 font-bold mb-6 text-gradient-white">Casos de Uso de Alto Impacto</h2>
           <p class="text-brand-slate text-lg max-w-2xl mx-auto">
@@ -269,9 +292,14 @@ const faqs = [
                     <Fragment set:html={useCase.icon} />
                   </div>
                   
-                  <!-- 3D Floating Icon -->
-                  <div class="w-24 h-24 -mt-4 -mr-4 pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity duration-500">
-                    <FloatingModuleCanvas type={useCase.type} client:visible />
+                  <!-- HD 3D Icon -->
+                  <div class="w-32 h-32 -mt-10 -mr-10 pointer-events-none opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                    <img 
+                      src={`/assets/images/use-cases/${useCase.type}.png`} 
+                      alt={useCase.title} 
+                      class="ai-3d-icon w-full h-full object-contain opacity-0 transition-all duration-700"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
                 
@@ -283,7 +311,7 @@ const faqs = [
                 </p>
                 <div class="mt-auto flex items-center gap-2 text-xs font-mono text-brand-primary/50 group-hover:text-brand-primary transition-colors">
                   <span class="w-8 h-[1px] bg-current"></span>
-                  VIEW_SPEC_0{index + 1}
+                  VER_ESTRATEGIA_0{index + 1}
                 </div>
               </div>
             </SpotlightCard>
@@ -298,55 +326,68 @@ const faqs = [
         <div class="text-center mb-16">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-indigo/10 border border-brand-indigo/20 mb-4">
             <span class="w-1.5 h-1.5 rounded-full bg-brand-indigo animate-pulse"></span>
-            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-indigo">Workflow</span>
+            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-indigo">Metodología de Escalamiento</span>
           </div>
           <h2 class="text-fluid-h2 font-bold mb-6 text-gradient-white">Su IA lista en 3 pasos</h2>
           <p class="text-brand-slate text-lg">Infraestructura administrada. Nosotros ejecutamos, usted escala.</p>
         </div>
 
-        <div class="mb-16 hidden">
-          <OrchestratorCanvas client:load />
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-12 relative max-w-5xl mx-auto pt-8">
-          <!-- Animated connection line (visible only on desktop) -->
-          <div class="hidden md:block absolute top-8 left-[16%] right-[16%] h-[2px] bg-white/5 -z-20 rounded-full overflow-hidden -translate-y-1/2">
-            <div class="absolute top-0 left-0 h-full w-1/3 bg-gradient-to-r from-transparent via-brand-primary to-transparent opacity-80 animate-flow" style="background-size: 200% 100%;"></div>
+        <div class="grid md:grid-cols-3 gap-8 relative max-w-6xl mx-auto pt-12">
+          <!-- Desktop Connection Line -->
+          <div class="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-[1px] bg-brand-primary/20 -z-10">
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-brand-primary/50 to-transparent animate-pulse"></div>
           </div>
           
           {[
             {
               step: "01",
-              title: "Diagnóstico & Estrategia",
-              desc: "Analizamos sus procesos actuales y detectamos dónde la IA generará el mayor ROI inmediato."
+              title: "Diagnóstico Estratégico",
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8a3 3 0 0 0-3 3"/></svg>`,
+              desc: "Analizamos su operación para identificar los puntos críticos de ineficiencia.",
+              features: ["Auditoría de Procesos", "Mapa de Oportunidades", "Proyección de ROI"]
             },
             {
               step: "02",
-              title: "Implementación Managed",
-              desc: "Configuramos la infraestructura, conectamos sus datos y entrenamos los modelos. Sin código."
+              title: "Despliegue Managed",
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="m20 7-8-4-8 4 8 4 8-4Z"/><path d="m20 12-8-4-8 4 8 4 8-4Z"/><path d="m20 17-8-4-8 4 8 4 8-4Z"/></svg>`,
+              desc: "Construimos e integramos su infraestructura de IA de punta a punta.",
+              features: ["Entrenamiento de Datos", "Configuración de Agentes", "Integración Segura"]
             },
             {
               step: "03",
-              title: "Mejora Continua",
-              desc: "Monitoreamos y optimizamos sus asistentes mensualmente para asegurar el máximo valor."
+              title: "Escalamiento & Mejora",
+              icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M12 20v-6M6 20V10M18 20V4"/></svg>`,
+              desc: "Garantizamos que su IA aprenda y evolucione con su negocio mes a mes.",
+              features: ["Re-entrenamiento Mensual", "Auditoría de Calidad", "Soporte Proactivo"]
             }
           ].map((item, index) => (
             <div class="relative group reveal" style={`animation-delay: ${index * 200}ms;`}>
-              <!-- Animated node -->
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-brand-obsidian border-2 border-white/10 flex items-center justify-center group-hover:border-brand-primary group-hover:shadow-[0_0_20px_rgba(0,255,148,0.4)] transition-all duration-500 z-10">
-                <span class="text-xl font-black text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-400 group-hover:from-brand-primary group-hover:to-brand-indigo">{item.step}</span>
+              <!-- Step Indicator -->
+              <div class="flex flex-col items-center text-center">
+                <div class="w-12 h-12 rounded-full bg-brand-obsidian border border-brand-primary/30 flex items-center justify-center text-brand-primary mb-6 relative z-10 group-hover:scale-110 group-hover:border-brand-primary transition-all duration-500 shadow-[0_0_15px_rgba(0,255,148,0.1)] group-hover:shadow-[0_0_25px_rgba(0,255,148,0.3)]">
+                  <div class="absolute inset-0 rounded-full bg-brand-primary/5 animate-ping opacity-20"></div>
+                  <Fragment set:html={item.icon} />
+                </div>
                 
-                <!-- Inner glow dot -->
-                <div class="absolute -z-10 w-full h-full rounded-full bg-brand-primary/0 group-hover:bg-brand-primary/10 transition-colors duration-500 blur-md"></div>
-              </div>
-              
-              <!-- Card -->
-              <div class="pt-12 pb-10 px-8 rounded-[32px] bg-brand-navy/20 border border-white/5 group-hover:bg-brand-navy/40 group-hover:border-brand-primary/20 transition-all duration-500 h-full text-center relative overflow-hidden">
-                <!-- Hover gradient background -->
-                <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                <h3 class="text-xl font-bold mb-4 text-brand-white relative z-10">{item.title}</h3>
-                <p class="text-brand-slate leading-relaxed text-sm relative z-10">{item.desc}</p>
+                <!-- Card -->
+                <div class="w-full pt-8 pb-8 px-6 rounded-[32px] bg-brand-navy/30 border border-white/5 group-hover:border-brand-primary/20 transition-all duration-500 relative overflow-hidden h-full flex flex-col">
+                  <!-- Subtle numbering background -->
+                  <div class="absolute -top-4 -right-2 text-8xl font-black text-white/[0.03] pointer-events-none group-hover:text-brand-primary/[0.05] transition-colors duration-500 select-none">
+                    {item.step}
+                  </div>
+                  
+                  <h3 class="text-xl font-bold mb-3 text-brand-white relative z-10">{item.title}</h3>
+                  <p class="text-brand-slate text-sm mb-6 leading-relaxed relative z-10">{item.desc}</p>
+                  
+                  <div class="mt-auto pt-6 border-t border-white/5 flex flex-col gap-2 relative z-10">
+                    {item.features.map(feature => (
+                      <div class="flex items-center gap-2 text-[12px] text-brand-slate/80 group-hover:text-brand-primary/90 transition-colors">
+                        <div class="w-1 h-1 rounded-full bg-brand-primary/40 group-hover:bg-brand-primary transition-colors"></div>
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
@@ -360,7 +401,7 @@ const faqs = [
         <div class="mb-16 text-center">
            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 mb-4">
              <span class="w-1.5 h-1.5 rounded-full bg-brand-primary animate-pulse"></span>
-             <span class="text-[10px] font-bold tracking-widest uppercase text-brand-primary">ROI Analytics</span>
+             <span class="text-[10px] font-bold tracking-widest uppercase text-brand-primary">Métricas de Retorno (ROI)</span>
            </div>
            <h2 class="text-fluid-h2 font-bold mb-6 text-gradient-white">Resultados Medibles, No Promesas</h2>
            <p class="text-brand-slate text-lg">La IA es una inversión en eficiencia. Calcule su impacto real aquí.</p>
@@ -372,8 +413,8 @@ const faqs = [
           
           <div class="hidden lg:flex relative h-full min-h-[500px] rounded-[40px] border border-white/5 bg-gradient-to-t from-brand-navy/30 to-transparent items-center justify-center overflow-hidden">
             <div class="absolute top-8 left-8 text-[10px] font-mono text-brand-primary/40 tracking-widest uppercase">
-              NEURAL_PROCESSOR<br/>
-              data: converging
+              NÚCLEO_ESTRATÉGICO<br/>
+              datos: optimizados
             </div>
             <!-- Neural Network / Processor Visualization -->
             <DataProcessorCanvas client:load />
@@ -388,7 +429,7 @@ const faqs = [
         <div class="text-center mb-16">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-indigo/10 border border-brand-indigo/20 mb-4">
             <span class="w-1.5 h-1.5 rounded-full bg-brand-indigo animate-pulse"></span>
-            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-indigo">Service Plans</span>
+            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-indigo">Modelos de Inversión</span>
           </div>
           <h2 class="text-fluid-h2 font-bold mb-6 text-gradient-white">Inversión en Infraestructura</h2>
           <p class="text-brand-slate text-lg max-w-2xl mx-auto">
@@ -396,7 +437,7 @@ const faqs = [
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
           {plans.map(plan => (
             <PlanCard {...plan} />
           ))}
@@ -422,9 +463,9 @@ const faqs = [
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-brand-navy/50 backdrop-blur-2xl border border-brand-primary/30 p-12 md:p-24 rounded-[60px] shadow-2xl relative overflow-hidden group">
         <!-- Blueprint detail inside CTA -->
         <div class="absolute top-0 right-0 p-8 text-[8px] font-mono text-brand-primary/20 tracking-tighter uppercase pointer-events-none">
-          terminal_init_v0.2.1<br/>
-          encryption: active<br/>
-          ready_for_deploy
+          sistema: activo<br/>
+          seguridad: robusta<br/>
+          listo_para_escalar
         </div>
 
         <h2 class="text-fluid-h2 font-extrabold mb-8 leading-tight text-gradient-white">
@@ -559,6 +600,62 @@ const faqs = [
 
   document.addEventListener("DOMContentLoaded", initGlobalAnimations);
   document.addEventListener("astro:page-load", initGlobalAnimations);
+  // Process 3D icons to remove black background and make them truly transparent
+  function processIcons() {
+    const icons = document.querySelectorAll('.ai-3d-icon') as NodeListOf<HTMLImageElement>;
+    
+    icons.forEach(img => {
+      if (img.dataset.processed) return;
+      
+      const process = () => {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        
+        ctx.drawImage(img, 0, 0);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+
+        for (let i = 0; i < data.length; i += 4) {
+          const r = data[i];
+          const g = data[i+1];
+          const b = data[i+2];
+          
+          // Calculate luminance/intensity
+          // We use a slightly more aggressive threshold for "black" parts
+          const intensity = Math.max(r, g, b);
+          
+          if (intensity < 40) {
+            // Smoothly fade out dark pixels
+            data[i+3] = Math.pow(intensity / 40, 2) * 255;
+          }
+          
+          // If it's very dark, just make it transparent
+          if (intensity < 5) {
+            data[i+3] = 0;
+          }
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+        img.src = canvas.toDataURL();
+        img.dataset.processed = 'true';
+        img.classList.remove('opacity-0');
+        img.classList.add('opacity-100');
+      };
+
+      if (img.complete) {
+        process();
+      } else {
+        img.onload = process;
+      }
+    });
+  }
+
+  processIcons();
+  document.addEventListener('astro:after-swap', processIcons);
 </script>
 
 <style>

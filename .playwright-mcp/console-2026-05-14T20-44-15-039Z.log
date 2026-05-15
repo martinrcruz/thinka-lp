@@ -1,0 +1,2 @@
+[     193ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://thinka.cl/:0
+[   78204ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_TIMED_OUT @ https://5bav82-m.ns1pcdn.net/a/t128.jpg?r=27043942:0
