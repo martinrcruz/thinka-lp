@@ -12,10 +12,10 @@ interface Props {
 
 const { 
     title, 
-    description = "Thinka es la plataforma de IA empresarial para crear asistentes, agentes y automatizaciones con contexto real, seguridad y control.",
+    description = "Optimice su empresa con IA Administrada. Automatización de marketing, ventas y procesos con agentes inteligentes. Maximice su ROI y recupere el control de su tiempo con Thinka.",
     image = "/assets/images/og-image.jpg",
     favicon = "/favicon.svg",
-    keywords = "Thinka, plataforma IA empresas, agentes de IA, automatización con IA, asistentes virtuales, RAG empresarial, seguridad IA, trazabilidad IA, SaaS inteligencia artificial",
+    keywords = "Thinka, IA para empresas Chile, automatización marketing IA, agentes inteligentes ventas, optimización procesos negocio, inteligencia artificial aplicada, ahorro costos empresa, productividad laboral IA, consultoría IA Santiago",
     jsonLdGraph = []
 } = Astro.props;
 
@@ -217,7 +217,17 @@ const jsonLD = {
                 background: var(--brand-indigo);
             }
         </style>
-	</head>
+
+        <!-- Mautic Tracking -->
+        <script>
+            (function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
+            w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)};
+            a=d.createElement(t);m=d.getElementsByTagName(t)[0];
+            a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://crm.marketing.thinkahub.cl/mtc.js','mt');
+            mt('send', 'pageview', { domain: '.thinka.cl', cookieDomain: '.thinka.cl' });
+        </script>
+    </head>
 	<body class="antialiased selection:bg-brand-primary/30 selection:text-brand-primary">
 		<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-brand-primary text-brand-obsidian font-bold px-4 py-2 rounded-lg z-[60]">
 			Saltar al contenido principal
@@ -244,6 +254,38 @@ const jsonLD = {
 						});
 					});
 				});
+			});
+
+			// Form submission handler — envía formularios a Windmill webhook
+			document.addEventListener('submit', async function(e) {
+				var form = e.target;
+				if (!form.action || !form.action.includes('hooks/w/')) return;
+
+				e.preventDefault();
+				var data = {};
+				new FormData(form).forEach(function(v, k) { data[k] = v; });
+				data.source = window.location.hostname;
+
+				var btn = form.querySelector('button[type="submit"]');
+				var orig = btn ? btn.innerText : '';
+				if (btn) btn.innerHTML = 'Enviando...';
+
+				try {
+					var resp = await fetch(form.action, {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify(data)
+					});
+					var result = await resp.json();
+					if (result.status === 'success') {
+						form.innerHTML = '<div class="text-center py-12"><div style="color:#00FF94;font-size:3rem">✓</div><h3 style="color:white;font-size:1.5rem">¡Recibido!</h3><p style="color:#94A3B8">Te contactaremos pronto.</p></div>';
+					} else {
+						throw new Error(result.message || 'Error');
+					}
+				} catch(err) {
+					if (btn) btn.innerHTML = orig;
+					alert('Error al enviar. Intenta de nuevo.');
+				}
 			});
 		</script>
 	</body>

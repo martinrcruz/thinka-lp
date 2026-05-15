@@ -37,8 +37,9 @@ import Icon from "./Icon.astro";
       <div class="flex justify-between items-center h-20 lg:h-24">
         <!-- Logo -->
         <div class="flex-shrink-0 flex items-center">
-          <a href="/" class="hover:scale-105 transition-transform duration-300">
-            <img src="/assets/images/logo-thinka.png" alt="Thinka Logo" class="h-14 lg:h-18 w-auto dark:brightness-0 dark:invert" />
+          <a href="/" class="flex items-center gap-3 hover:scale-105 transition-all duration-300 group">
+            <img src="/assets/images/icono thinka sin fondo.png" alt="Thinka Icon" class="h-10 lg:h-12 w-auto dark:brightness-0 dark:invert group-hover:rotate-[360deg] transition-transform duration-500" />
+            <span class="text-2xl lg:text-3xl font-black tracking-tighter text-gray-900 dark:text-white">THINKA</span>
           </a>
         </div>
 
@@ -74,7 +75,10 @@ import Icon from "./Icon.astro";
   <div class="absolute right-0 top-0 bottom-0 w-full max-w-[300px] bg-white dark:bg-gray-900 shadow-2xl translate-x-full transition-transform duration-500 ease-in-out flex flex-col h-[100dvh]" id="mobile-menu-panel">
     <!-- Header del Sidebar -->
     <div class="p-6 flex justify-between items-center border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 flex-shrink-0">
-      <img src="/assets/images/logo-thinka.png" alt="Thinka Logo" class="h-10 w-auto dark:brightness-0 dark:invert" />
+      <a href="/" class="flex items-center gap-2">
+        <img src="/assets/images/icono thinka sin fondo.png" alt="Thinka Icon" class="h-8 w-auto dark:brightness-0 dark:invert" />
+        <span class="text-xl font-black tracking-tighter text-gray-900 dark:text-white">THINKA</span>
+      </a>
       <button id="close-mobile-menu" class="p-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-colors border border-gray-100 dark:border-gray-800" aria-label="Cerrar menú">
         <Icon name="x" size={24} />
       </button>

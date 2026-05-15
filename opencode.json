@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "cloudflare": {
+      "type": "local",
+      "command": ["npx", "-y", "@cloudflare/mcp-server-cloudflare", "run", "0fc5e328889650bd95f98c7104c5edc6"],
+      "enabled": true
+    }
+  }
+}
