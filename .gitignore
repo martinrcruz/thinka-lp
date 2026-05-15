@@ -27,3 +27,4 @@ pnpm-debug.log*
 .wrangler/
 .playwright-mcp/
 .env.cloudflare-api
+public/_redirects
