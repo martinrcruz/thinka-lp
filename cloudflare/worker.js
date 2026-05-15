@@ -1,30 +1,41 @@
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    
-    // CONFIGURACIÓN: Reemplaza esto con la URL real de tu VPS de Ghost
-    const GHOST_ORIGIN = env.GHOST_ORIGIN || "https://tu-instancia-ghost.com";
+    const GHOST_ORIGIN = env.GHOST_ORIGIN || "https://blog.marketing.thinkahub.cl";
 
-    // Proxy para el Blog
-    if (url.pathname.startsWith('/blog')) {
-      const newUrl = new URL(request.url);
-      newUrl.hostname = new URL(GHOST_ORIGIN).hostname;
-      newUrl.protocol = new URL(GHOST_ORIGIN).protocol;
-      
-      const modifiedRequest = new Request(newUrl, {
-        method: request.method,
-        headers: request.headers,
-        body: request.body,
-        redirect: 'manual'
+    if (url.pathname === '/health') {
+      return new Response(JSON.stringify({ status: 'ok', ghost: GHOST_ORIGIN }), {
+        headers: { 'content-type': 'application/json' }
       });
-
-      return fetch(modifiedRequest);
     }
 
-    // Proxy para el contenido principal (Astro en Cloudflare Pages)
-    // En Workers, si no interceptamos, la petición sigue su curso normal 
-    // pero si este Worker se despliega en "thinka.cl/*", debemos asegurarnos
-    // de que las peticiones que NO son /blog lleguen a Pages.
-    return fetch(request);
+    if (url.pathname.startsWith('/blog')) {
+      const ghostPath = url.pathname.replace(/^\/blog/, '') || '/';
+      const ghostUrl = `${GHOST_ORIGIN}${ghostPath}${url.search}`;
+
+      try {
+        const modifiedRequest = new Request(ghostUrl, {
+          method: request.method,
+          headers: request.headers,
+          body: request.body,
+          redirect: 'manual'
+        });
+        let response = await fetch(modifiedRequest);
+        if (response.headers.get('content-type')?.includes('text/html')) {
+          let html = await response.text();
+          html = html.replace(
+            /https?:\/\/blog\.marketing\.thinkahub\.cl/g,
+            'https://thinka.cl/blog'
+          );
+          response = new Response(html, response);
+          response.headers.set('Content-Type', 'text/html; charset=utf-8');
+        }
+        return response;
+      } catch (err) {
+        return new Response(`Proxy error: ${err.message}`, { status: 502 });
+      }
+    }
+
+    return Response.redirect('https://thinka.cl', 301);
   }
 }
